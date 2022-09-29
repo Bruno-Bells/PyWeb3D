@@ -25,7 +25,7 @@ To try PyWeb3D, import the appropriate libraries into the `<head>` tag of your h
   <script type="text/javascript" src="https://unpkg.com/three@0.144.0/build/three.js"></script>
 </head>
 ```
-Note the three.js that's been used, not the module version
+Note the `three.js` that's been used, not the module version
 
 Here's a boiler plate HTML template:
 ```html
@@ -63,3 +63,8 @@ from  pyweb3d import *
 **Note:** make sure that pyweb3d.py is in the same directory with your main html file (this is a currently limitation with `brython`)
 
 Check out the the [examples directory folder](https://github.com/Bruno-Odinukweze/PyWeb3D/tree/main/PyWeb3D/examples) for more examples on how to use it, all you need to do is open them in Chrome.
+
+# How to Contribute
+## Setting up your local environment
+ - Fork the repository - [quicklink](https://github.com/Bruno-Odinukweze/PyWeb3D/fork)
+ - 
