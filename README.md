@@ -27,7 +27,7 @@ To try PyWeb3D import the appropriate libraries into the `<head>` tag of your ht
 ```
 Note the three.js that's been used, not the module version
 
-Here's  boiler plate HTML template:
+Here's a boiler plate HTML template:
 ```
 <!DOCTYPE html>
 <html>
@@ -57,4 +57,4 @@ you can import pyweb3d and browser window as follows:
 from browser import document, window
 from  pyweb3d import *
 ```
-Check out the the [examples directory folder]](https://github.com/Bruno-Odinukweze/PyWeb3D/tree/main/PyWeb3D/examples) for more examples on how to use it, all you need to do is open them in Chrome.
+Check out the the [examples directory folder](https://github.com/Bruno-Odinukweze/PyWeb3D/tree/main/PyWeb3D/examples) for more examples on how to use it, all you need to do is open them in Chrome.
