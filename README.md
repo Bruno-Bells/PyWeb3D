@@ -27,7 +27,7 @@ To try PyWeb3D, import the appropriate libraries into the `<head>` tag of your h
 ```
 Note the `three.js` that's been used, not the module version
 
-Here's a boiler plate HTML template:
+Here's a HTML boilerplate:
 ```html
 <!DOCTYPE html>
 <html>
