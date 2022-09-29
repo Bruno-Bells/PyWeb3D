@@ -66,7 +66,6 @@ also note where `your-python-file.py` is been imported using the `<script>` tag.
 Check out the the [examples directory folder](https://github.com/Bruno-Odinukweze/PyWeb3D/tree/main/PyWeb3D/examples) for more examples on how to use pyWeb3D, all you need to do is open the `index.html` in your browser.
 
 # How to Contribute
-## Setting up your local environment
  - Fork the repository - [quicklink](https://github.com/Bruno-Odinukweze/PyWeb3D/fork)
  - Clone the forked repository to your local system.
  - Add a Git remote for the original repository.
@@ -78,7 +77,7 @@ Check out the the [examples directory folder](https://github.com/Bruno-Odinukwez
  - Open a pull request from the new branch to the original repo.
  - Clean up after your pull request is merged.
 
-refer to this [article](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/) for detailed explaination on the workflow
+refer to this [article](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/) for detailed explanation on the workflow
 
 # Credits and references
  - Inspired by **[three.js](https://threejs.org/)**
