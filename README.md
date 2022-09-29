@@ -50,11 +50,11 @@ Here's  boiler plate HTML template:
 </html>
 ```
 
-Download [pyweb3d.py]() and import it into `your-python-file.py`
+Download [pyweb3d.py](https://raw.githubusercontent.com/Bruno-Odinukweze/PyWeb3D/main/PyWeb3D/pyweb3d.py) and import it into `your-python-file.py`
 
 you can import pyweb3d and browser window as follows:
 ```
 from browser import document, window
 from  pyweb3d import *
 ```
-Check out the the [examples directory folder](https://github.com/Bruno-Odinukweze/PyWeb3D/PyWeb3D/examples/) for more examples on how to use it, all you need to do is open them in Chrome.
+Check out the the [examples directory folder]](https://github.com/Bruno-Odinukweze/PyWeb3D/tree/main/PyWeb3D/examples) for more examples on how to use it, all you need to do is open them in Chrome.
