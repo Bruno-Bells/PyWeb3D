@@ -86,7 +86,6 @@ Check out the the [examples directory folder](https://github.com/Bruno-Odinukwez
  git checkout -b <your branch name>
  ```
  - Fix or add your own features. Commit and push to your forked version of the repository
- - commit your changes locally and push
  - then create a PR
 
 # Credits and references
