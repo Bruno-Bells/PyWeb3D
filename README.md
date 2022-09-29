@@ -70,7 +70,7 @@ Check out the the [examples directory folder](https://github.com/Bruno-Odinukwez
  - Clone the forked repository to your local system.
  - Add a Git remote for the original repository.
  - Create a feature branch in which to place your changes.
- - Check the issues list for something to do or your feature
+ - Check the issues list for something to do or add your feature
  - Make your changes to the new branch.
  - Commit the changes to the branch.
  - Push the branch to GitHub.
