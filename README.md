@@ -18,7 +18,7 @@ In summary PyWeb3D is [three.js](https://threejs.org/) with python syntax.
 
 # Try PyWeb3D
 To try PyWeb3D, import the appropriate libraries into the `<head>` tag of your html page with:
-``` 
+```html 
 <head>     
   <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
@@ -53,13 +53,13 @@ Here's a boiler plate HTML template:
 
 Download [pyweb3d.py](https://raw.githubusercontent.com/Bruno-Odinukweze/PyWeb3D/main/PyWeb3D/pyweb3d.py) and import it into `your-python-file.py`
 
-you can import pyweb3d and browser window into `your-python-file.py` as follows:
+you can import `pyweb3d` and `browser window` into `your-python-file.py` as follows:
 ```python
 from browser import document, window
 from  pyweb3d import *
 
 ...
 ```
-Note: make sure that pyweb3d.py is in the same directory with your main html file (this is a currently limitation with `brython`)
+**Note:** make sure that pyweb3d.py is in the same directory with your main html file (this is a currently limitation with `brython`)
 
 Check out the the [examples directory folder](https://github.com/Bruno-Odinukweze/PyWeb3D/tree/main/PyWeb3D/examples) for more examples on how to use it, all you need to do is open them in Chrome.
