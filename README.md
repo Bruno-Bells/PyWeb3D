@@ -74,5 +74,22 @@ Check out the the [examples directory folder](https://github.com/Bruno-Odinukwez
  ```
  - Add the original pyWeb3D project as your upstream (this will allow you to pull the latest changes) 
  ``` 
- git remote add upstream 
+ git remote add upstream git@github.com:Bruno-Odinukweze/PyWeb3D.git
  ```
+ - cd into the PyWeb3D
+ ```
+ cd PyWeb3D
+ ```
+ - Check the issues list for something to do
+ - Create a branch for the issue that you want to work on
+ ```
+ git checkout -b <your branch name>
+ ```
+ - Fix or add your own features. Commit and push to your forked version of the repository
+ - commit your changes locally and push
+ - then create a PR
+
+# Credits and references
+ - Inspired by **[three.js](https://threejs.org/)**
+ - **[brython](https://brython.info/)**
+ - **[python](https://python.org/)**
