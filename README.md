@@ -68,25 +68,17 @@ Check out the the [examples directory folder](https://github.com/Bruno-Odinukwez
 # How to Contribute
 ## Setting up your local environment
  - Fork the repository - [quicklink](https://github.com/Bruno-Odinukweze/PyWeb3D/fork)
- - clone the forked version in your account to your local machine 
- ``` 
- git clone https://github.com/<your username>/PyWeb3D
- ```
- - Add the original pyWeb3D project as your upstream (this will allow you to pull the latest changes) 
- ``` 
- git remote add upstream git@github.com:Bruno-Odinukweze/PyWeb3D.git
- ```
- - cd into the PyWeb3D
- ```
- cd PyWeb3D
- ```
- - Check the issues list for something to do
- - Create a branch for the issue that you want to work on
- ```
- git checkout -b <your branch name>
- ```
- - Fix or add your own features. Commit and push to your forked version of the repository
- - then create a PR
+ - Clone the forked repository to your local system.
+ - Add a Git remote for the original repository.
+ - Create a feature branch in which to place your changes.
+ - Check the issues list for something to do or your feature
+ - Make your changes to the new branch.
+ - Commit the changes to the branch.
+ - Push the branch to GitHub.
+ - Open a pull request from the new branch to the original repo.
+ - Clean up after your pull request is merged.
+
+refer to this [article](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/) for detailed explaination on the workflow
 
 # Credits and references
  - Inspired by **[three.js](https://threejs.org/)**
