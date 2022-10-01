@@ -79,6 +79,9 @@ Check out the the [examples directory folder](https://github.com/Bruno-Odinukwez
 
 refer to this [article](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/) for detailed explanation on the workflow
 
+**PyWeb3D Articles to read:**
+ - [Three.js with python syntax](https://medium.com/@brunoodinukweze1/three-js-with-python-syntax-pyweb3d-2152bed1a43d)
+
 # Credits and references
  - Inspired by **[three.js](https://threejs.org/)**
  - **[brython](https://brython.info/)**
