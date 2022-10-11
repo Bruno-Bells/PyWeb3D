@@ -5,7 +5,7 @@ if ( ! window.frameElement && window.location.protocol !== 'file:' ) {
 	// If this URL itself has a fragment, append it with a dot (since '#' in a URL fragment is not allowed).
 
 	let href = window.location.href;
-	const splitIndex = href.lastIndexOf( '/docs/' ) + 6;
+	const splitIndex = href.lastIndexOf( '/PyWeb3D/docs/' ) + 6;
 	const docsBaseURL = href.slice( 0, splitIndex );
 
 	let hash = window.location.hash;
@@ -100,10 +100,10 @@ function onDocumentLoad() {
 
 	const button = document.createElement( 'div' );
 	button.id = 'button';
-	button.innerHTML = '<img src="../files/ic_mode_edit_black_24dp.svg">';
+	button.innerHTML = '<img src="/PyWeb3D/files/ic_mode_edit_black_24dp.svg">';
 	button.addEventListener( 'click', function () {
 
-		window.open( 'https://github.com/mrdoob/three.js/blob/dev/docs/' + section + '/' + localizedPath + '.html' );
+		window.open( 'https://github.com/Bruno-Odinukweze/PyWeb3D/tree/dev/docs/' + section + '/' + localizedPath + '.html' );
 
 	}, false );
 
@@ -112,18 +112,18 @@ function onDocumentLoad() {
 	// Syntax highlighting
 
 	const styleBase = document.createElement( 'link' );
-	styleBase.href = pathname.substring( 0, pathname.indexOf( 'docs' ) + 4 ) + '/prettify/prettify.css';
+	styleBase.href = pathname.substring( 0, pathname.indexOf( 'docs' ) + 4 ) + '/PyWeb3D/prettify/prettify.css';
 	styleBase.rel = 'stylesheet';
 
 	const styleCustom = document.createElement( 'link' );
-	styleCustom.href = pathname.substring( 0, pathname.indexOf( 'docs' ) + 4 ) + '/prettify/threejs.css';
+	styleCustom.href = pathname.substring( 0, pathname.indexOf( 'docs' ) + 4 ) + '/PyWeb3D/prettify/threejs.css';
 	styleCustom.rel = 'stylesheet';
 
 	document.head.appendChild( styleBase );
 	document.head.appendChild( styleCustom );
 
 	const prettify = document.createElement( 'script' );
-	prettify.src = pathname.substring( 0, pathname.indexOf( 'docs' ) + 4 ) + '/prettify/prettify.js';
+	prettify.src = pathname.substring( 0, pathname.indexOf( 'docs' ) + 4 ) + '/PyWeb3D/prettify/prettify.js';
 
 	prettify.onload = function () {
 
