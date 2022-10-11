@@ -5,7 +5,7 @@ if ( ! window.frameElement && window.location.protocol !== 'file:' ) {
 	// If this URL itself has a fragment, append it with a dot (since '#' in a URL fragment is not allowed).
 
 	let href = window.location.href;
-	const splitIndex = href.lastIndexOf( '/PyWeb3D/docs/' ) + 6;
+	const splitIndex = href.lastIndexOf( '/docs/' ) + 6;
 	const docsBaseURL = href.slice( 0, splitIndex );
 
 	let hash = window.location.hash;
