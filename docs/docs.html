@@ -5,11 +5,11 @@
 		<meta charset="utf-8">
 		<title>PyWeb3D docs</title>
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<link rel="shortcut icon" href="{% static 'logo/pyweb3d_logo.ico' %}" media="(prefers-color-scheme: dark)"/>
-		<link rel="shortcut icon" href="{% static 'logo/pyweb3d_logo.ico' %}" media="(prefers-color-scheme: light)" />
-		<link rel="stylesheet" type="text/css" href="{% static 'files/main.css' %}">
+		<link rel="shortcut icon" href="/PyWeb3D/logo/pyweb3d_logo.ico" media="(prefers-color-scheme: dark)"/>
+		<link rel="shortcut icon" href="/PyWeb3D/logo/pyweb3d_logo.ico" media="(prefers-color-scheme: light)" />
+		<link rel="stylesheet" type="text/css" href="/PyWeb3Dfiles/main.css">
 		<!-- console sandbox -->
-		<script src="{% static 'build/three.min.js' %}" async defer></script>
+		<script src="/PyWeb3Dbuild/three.min.js" async defer></script>
 	</head>
 	<body>
 		<script type="text/javascript">
@@ -69,7 +69,7 @@
 
 		async function init() {
 
-			const list = await ( await fetch( "https://raw.githubusercontent.com/Bruno-Odinukweze/PyWeb3D/dev/docs/list.json" ) ).json();
+			const list = await ( await fetch( "/PyWeb3D/list.json" ) ).json();
 
 			// *BufferGeometry to *Geometry
 
