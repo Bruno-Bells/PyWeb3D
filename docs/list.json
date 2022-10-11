@@ -5,6 +5,7 @@
 		"Manual": {
 
 			"Getting Started": {
+				"Boilerplate ":"manual/en/introduction/Boilerplate",
 				"Creating a scene": "manual/en/introduction/Creating-a-scene",
 				"Installation": "manual/en/introduction/Installation",
 				"WebGL compatibility check": "manual/en/introduction/WebGL-compatibility-check",
