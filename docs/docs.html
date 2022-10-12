@@ -4,9 +4,9 @@
 		<meta charset="utf-8">
 		<title>PyWeb3D docs</title>
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<link rel="shortcut icon" href="/PyWeb3D/logo/pyweb3d_logo.ico" media="(prefers-color-scheme: dark)"/>
-		<link rel="shortcut icon" href="/PyWeb3D/logo/pyweb3d_logo.ico" media="(prefers-color-scheme: light)" />
-		<link rel="stylesheet" type="text/css" href="/PyWeb3D/files/main.css">
+		<link rel="shortcut icon" href="/logo/pyweb3d_logo.ico" media="(prefers-color-scheme: dark)"/>
+		<link rel="shortcut icon" href="/logo/pyweb3d_logo.ico" media="(prefers-color-scheme: light)" />
+		<link rel="stylesheet" type="text/css" href="/files/main.css">
 	
 		<!-- console sandbox -->
 		<!-- <script src="/PyWeb3D/build/three.min.js" async defer></script> -->
@@ -20,7 +20,7 @@
 		<div id="panel">
 
 			<div id="header">
-				<h1><a href="/PyWeb3D/">PyWeb3D</a></h1>
+				<h1><a href="/">PyWeb3D</a></h1>
 				<!-- <h1><a href="index.html">PyWeb3D</a></h1> -->
 
 				<div id="sections">
@@ -71,7 +71,7 @@
 
 		async function init() {
 
-			const list = await ( await fetch( "/PyWeb3D/list.json" ) ).json(); // production
+			const list = await ( await fetch( "list.json" ) ).json(); // production
 			// const list = await ( await fetch( "list.json" ) ).json(); // development
 
 			// *BufferGeometry to *Geometry
