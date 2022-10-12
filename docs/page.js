@@ -100,7 +100,8 @@ function onDocumentLoad() {
 
 	const button = document.createElement( 'div' );
 	button.id = 'button';
-	button.innerHTML = '<img src="/PyWeb3D/files/ic_mode_edit_black_24dp.svg">';
+	button.innerHTML = `<img src="${pathname.substring( 0, pathname.indexOf( 'docs' ) + 4 )}/files/ic_mode_edit_black_24dp.svg">`;
+	console.log(`${pathname.substring( 0, pathname.indexOf( 'docs' ) + 4 )}/files/ic_mode_edit_black_24dp.svg`)
 	button.addEventListener( 'click', function () {
 
 		window.open( 'https://github.com/Bruno-Odinukweze/PyWeb3D/tree/dev/docs/' + section + '/' + localizedPath + '.html' );
@@ -112,18 +113,18 @@ function onDocumentLoad() {
 	// Syntax highlighting
 
 	const styleBase = document.createElement( 'link' );
-	styleBase.href = pathname.substring( 0, pathname.indexOf( 'docs' ) + 4 ) + '/PyWeb3D/prettify/prettify.css';
+	styleBase.href = pathname.substring( 0, pathname.indexOf( 'docs' ) + 4 ) + '/prettify/prettify.css';
 	styleBase.rel = 'stylesheet';
 
 	const styleCustom = document.createElement( 'link' );
-	styleCustom.href = pathname.substring( 0, pathname.indexOf( 'docs' ) + 4 ) + '/PyWeb3D/prettify/threejs.css';
+	styleCustom.href = pathname.substring( 0, pathname.indexOf( 'docs' ) + 4 ) + '/prettify/threejs.css';
 	styleCustom.rel = 'stylesheet';
 
 	document.head.appendChild( styleBase );
 	document.head.appendChild( styleCustom );
 
 	const prettify = document.createElement( 'script' );
-	prettify.src = pathname.substring( 0, pathname.indexOf( 'docs' ) + 4 ) + '/PyWeb3D/prettify/prettify.js';
+	prettify.src = pathname.substring( 0, pathname.indexOf( 'docs' ) + 4 ) + '/prettify/prettify.js';
 
 	prettify.onload = function () {
 

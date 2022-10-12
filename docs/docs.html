@@ -7,8 +7,10 @@
 		<link rel="shortcut icon" href="/PyWeb3D/logo/pyweb3d_logo.ico" media="(prefers-color-scheme: dark)"/>
 		<link rel="shortcut icon" href="/PyWeb3D/logo/pyweb3d_logo.ico" media="(prefers-color-scheme: light)" />
 		<link rel="stylesheet" type="text/css" href="/PyWeb3D/files/main.css">
+	
 		<!-- console sandbox -->
-		<script src="/PyWeb3D/build/three.min.js" async defer></script>
+		<!-- <script src="/PyWeb3D/build/three.min.js" async defer></script> -->
+		<script src="build/three.min.js" async defer></script>
 	</head>
 	<body>
 		<script type="text/javascript">
@@ -19,6 +21,7 @@
 
 			<div id="header">
 				<h1><a href="/PyWeb3D/">PyWeb3D</a></h1>
+				<!-- <h1><a href="index.html">PyWeb3D</a></h1> -->
 
 				<div id="sections">
 					<span class="selected">docs</span>
@@ -68,7 +71,8 @@
 
 		async function init() {
 
-			const list = await ( await fetch( "/PyWeb3D/list.json" ) ).json();
+			const list = await ( await fetch( "/PyWeb3D/list.json" ) ).json(); // production
+			// const list = await ( await fetch( "list.json" ) ).json(); // development
 
 			// *BufferGeometry to *Geometry
 
