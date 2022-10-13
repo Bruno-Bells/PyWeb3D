@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<base href="../../../" />
+		<script src="page.js"></script>
+		<link type="text/css" rel="stylesheet" href="page.css" />
+	</head>
+	<body>
+		<h1>[name]</h1>
+
+		<p>Before you can use pyweb3D, you need somewhere to display it. Save the following HTML to a file on your computer, along with a copy of [link:https://raw.githubusercontent.com/Bruno-Odinukweze/PyWeb3D/main/PyWeb3D/pyweb3d.py pyweb3d.py] in your root directory, and open it in your browser.</p>
+
+		<code>
+		&lt;!DOCTYPE html&gt;
+		&lt;html&gt;
+			&lt;head&gt;
+				&lt;meta charset="utf-8"&gt;
+				&lt;title&gt;My first pyweb3D app&lt;/title&gt;
+        &lt;script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"&gt;&lt;/script&gt;
+        &lt;script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"&gt;&lt;/script&gt;
+        &lt;script src="https://unpkg.com/three@0.144.0/build/three.js"&gt;&lt;/script&gt;
+				&lt;style&gt;
+					body { margin: 0; }
+				&lt;/style&gt;
+			&lt;/head&gt;
+			&lt;body onload="brython(1)"&gt;
+				&lt;script type="text/python" src="your-python-file.py"&gt;&lt;/script&gt;		
+			&lt;/body&gt;
+		&lt;/html&gt;
+		</code>
+
+
+	</body>
+</html>
