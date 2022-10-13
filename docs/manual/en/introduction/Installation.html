@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -7,35 +7,34 @@
 		<link type="text/css" rel="stylesheet" href="page.css" />
 	</head>
 	<body>
-		<h1>[name]</h1>
+		<h1>No [name]</h1>
+
+		<!-- <p>
+			if you prefer to work locally, go to the <a href="#local_installation">local installation section</a> 
+		</p> -->
 
 		<p>
-			if you prefer to work offline, go to the <a href="#offline_installation">offline section</a> 
+			You can use PyWeb3D without having to install anything. There are three steps you need to follow. <br>
 		</p>
-
 		<p>
-			Whichever you choose, be consistent and import all files from the same version of the library. Mixing files from different sources may cause duplicate code to be included, or even break the application in unexpected ways.
+			The first step is to add the following libraries and packages to the `&lt;head>&lt;/head>` tag of your HTML file.
 		</p>
 
-		<p>
-			All methods of installing three.js depend on ES modules (see [link:https://eloquentjavascript.net/10_modules.html#h_hF2FmOVxw7 Eloquent JavaScript: ECMAScript Modules]), which allow you to include only the parts of the library needed in the final project.
-		</p>
 
-		<h2>Install from npm</h2>
-
-		<p>
-			To install the [link:https://www.npmjs.com/package/three three] npm module, open a terminal window in your project folder and run:
-		</p>
 
 		<code>
-		npm install three
+		&lt;script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython.min.js">&lt;/script>
+		&lt;script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython_stdlib.js">&lt;/script>
+		&lt;script defer src="https://unpkg.com/three@0.145.0/build/three.js">&lt;/script>
+		&lt;script defer src="https://www.pyweb3d.org/package/pyweb3d.brython.js">&lt;/script>
 		</code>
 
 		<p>
-			The package will be downloaded and installed. Then you're ready to import it in your code:
+			Those are the four necessarily scripts you'll need in order to successfully use pyweb3D.
+		The first two lines will import the Brython scripts, the third line will import three.js script and the last script will import PyWeb3D
 		</p>
 
-		<code>
+		<!-- <code>
 		// Option 1: Import the entire three.js core library.
 		import * as THREE from 'three';
 
