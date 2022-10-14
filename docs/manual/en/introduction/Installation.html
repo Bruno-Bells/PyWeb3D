@@ -7,10 +7,10 @@
 		<link type="text/css" rel="stylesheet" href="page.css" />
 	</head>
 	<body>
-		<h1>No [name]</h1>
+		<h1 style="font-weight: bolder;" >No [name]</h1>
 
 		<!-- <p>
-			if you prefer to work locally, go to the <a href="#local_installation">local installation section</a> 
+			if you prefer to work locally, go to the [page:Installation local] installation section</a> 
 		</p> -->
 
 		<p>
@@ -18,7 +18,7 @@
 		</p>
 		<h2>Step 1</h2>
 		<p>
-			The first step is to add the necessary libraries and packages into the `&lt;head>&lt;/head>` tag of your HTML file.
+			Adding the necessary libraries and packages into the `&lt;head>&lt;/head>` tag of your HTML file.
 		</p>
 
 
@@ -41,43 +41,133 @@
 			So the opening `&lt;body>` tag will look like this one below:
 			<code>
 &lt;body onload="brython()">
-
 	...
-
 &lt;/body>
 			</code>
-		This second step tells the browser to call the brython function when the page load. During development phase you can pass an argument to the `brython()` function, like this: `onload="brython(1)"` or `onload="brython(2)"`. `1` is to have the error messages displayed to the web browser console. `2` is to also get the Javascript code displayed along with the error.
+		This second step tells the browser to call the brython function when the page load. <br><br> <strong>Note:</strong> During development phase you can pass an argument to the `brython()` function, like this: `onload="brython(1)"` or `onload="brython(2)"`. `1` is to have the error messages displayed to the web browser console. `2` is to also get the Javascript code displayed along with the error.
 		</p>
 
 		<h2>Step 3</h2>
 		<p>
-			The last step is to add a `&lt;script>&lt;/script>` tag inside the `&lt;body>&lt;/body>` where your python code will live <br>
+			The last step is to add a `&lt;script type="text/python"> &lt;/script>` tag inside the `&lt;body> &lt;/body>` tags where your python code will live.
 			There are two ways to do this:
 			<br>
 			First method: ( without `src` attribute)
 			<code>
 &lt;body onload="brython()">
-
 	&lt;script type="text/python">
 				# Your Python Code will live here
 	&lt;/script>
-
 &lt;/body>
 			</code>
 			or second method: (with `src` attribute)
 			<code>
 &lt;body onload="brython()">
-
 	&lt;script type="text/python" src="your-python-file.py">&lt;/script>
-
 &lt;/body>
 
 			</code>
 
 		</p>
-		<p><strong>Note:</strong> If you're using the second method, make sure that you python file is in the same folder or domain as your main HTML file</p>
 
-		<h1 name="local_installation" id="local_installation">Local [name]</h1>
+		<h2>Importing Packages</h2>
 		<p>
-			If you prefer to work locally, you will need to install brython on your PC
+			After the above steps, you'll be ready to import the packages into your code,
+			here's how to import <strong>pyweb3D</strong> and other necessary modules 
+			<code>
+from browser import document, window
+from  pyweb3d.pyweb3d import *
+			</code>
+			<strong>Note: </strong> <i><strong>browser</strong></i> is a brython package (an instance of your browser). Please refer to [link:https://brython.info/static_doc/en/intro.html brython's documentation]  to learn more about it's packages
 		</p>
+		
+		<h2>Puting it all together</h2>
+		<code>
+			&lt;!DOCTYPE html>
+		&lt;html>
+		   &lt;head>
+			 &lt;meta charset="utf-8">
+			 &lt;title>My first pyWeb3D app&lt;/title>
+        
+			 &lt;script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython.min.js">&lt;/script>
+			 &lt;script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython_stdlib.js">&lt;/script>
+			 &lt;script defer src="https://unpkg.com/three@0.145.0/build/three.js">&lt;/script>
+			 &lt;script defer src="https://www.pyweb3d.org/package/v1.0.0/pyweb3d.brython.js">&lt;/script>
+        
+			 &lt;style>
+				body { margin: 0; }
+			 &lt;/style>
+		   &lt;/head>
+		   &lt;body onload="brython()">
+				&lt;script type="text/python">
+					from browser import document, window
+					from  pyweb3d.pyweb3d import *
+					...
+				&lt;/script>
+		   &lt;/body>
+		&lt;/html>
+		</code>
+		<h1>Run a local server</h1> 
+		<p>
+		The HTML files can be opened in the browser, but it is recommended to start a web server in the application directory.
+<br> <br>
+		Plugins for popular code editors
+		Some code editors have plugins which will spawn a simple server on demand.
+
+		<ul>
+			<li>[link:https://marketplace.visualstudio.com/items?itemName=yandeu.five-server Five Server] for Visual Studio Code.</li>
+			<li>[link:https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer Live Server] for Visual Studio Code.</li>
+			<li>[link:https://atom.io/packages/atom-live-server Live Server] for Atom.</li>
+		</ul>
+
+		</p>
+		<h2>Python server</h2>
+		<p>if you're not using any of the above code editors, you can spin up the python server by running this in a command line(from your working directory)</p>
+		<code>
+//Python 2.x
+python -m SimpleHTTPServer
+
+//Python 3.x
+python -m http.server
+		</code>
+		<h1 style="font-weight: bolder;">Local [name]</h1>
+		<p>
+			If you prefer to install pyWeb3D locally, you will need to install or download <strong>brython</strong>, <strong>three.js</strong> and <strong>pyweb3D</strong>. 
+			We will go with the download method to keep things simple.
+			<h3>download links:</h3>
+			<ul>
+				<li><a onclick="saveFile('https://cdn.jsdelivr.net/npm/brython@3.10.7/brython.min.js')">brython.js</a></li>
+				<li><a onclick="saveFile('https://cdn.jsdelivr.net/npm/brython@3.10.7/brython_stdlib.js')">brython_stdlib.js</a></li>
+				<li><a onclick="saveFile('https://unpkg.com/three@0.145.0/build/three.js')">three.js</a></li>
+				<li><a onclick="saveFile('https://www.pyweb3d.org/package/v1.0.0/pyweb3d.brython.js')">pyweb3D</a></li>
+			</ul>
+		</p>
+		Download and add the files to your working directory, then load the files into the `&lt;head> &lt;/head>` tag of your HTML file using the `&lt;script src="">&lt;/script>` tags.
+		<code>		
+&lt;script type="text/javascript" src="brython.min.js">&lt;/script>
+&lt;script type="text/javascript" src="brython_stdlib.js">&lt;/script>
+&lt;script type="text/javascript" defer src="three.js">&lt;/script>
+&lt;script type="text/javascript" defer src="pyweb3d.brython.js">&lt;/script>
+		</code>
+		<script>
+			function saveFile(url) {
+			// Get file name from url.
+			var filename = url.substring(url.lastIndexOf("/") + 1).split("?")[0];
+			var xhr = new XMLHttpRequest();
+			xhr.responseType = 'blob';
+			xhr.onload = function() {
+				var a = document.createElement('a');
+				a.href = window.URL.createObjectURL(xhr.response); // xhr.response is a blob
+				a.download = filename; // Set the file name.
+				a.style.display = 'none';
+				document.body.appendChild(a);
+				a.click();
+				delete a;
+			};
+			xhr.open('GET', url);
+			xhr.send();
+			}
+		</script>
+		<br>
+
+		

@@ -6,10 +6,9 @@
 
 			"Getting Started": {
 				"Installation": "manual/en/introduction/Installation",
-				"Boilerplate ":"manual/en/introduction/Boilerplate",
+				"Boilerplate":"manual/en/introduction/Boilerplate",
 				"Creating a scene": "manual/en/introduction/Creating-a-scene",
 				"WebGL compatibility check": "manual/en/introduction/WebGL-compatibility-check",
-				"How to run things locally": "manual/en/introduction/How-to-run-things-locally",
 				"Drawing lines": "manual/en/introduction/Drawing-lines",
 				"Creating text": "manual/en/introduction/Creating-text",
 				"Loading 3D models": "manual/en/introduction/Loading-3D-models",
