@@ -100,7 +100,7 @@ function onDocumentLoad() {
 
 	const button = document.createElement( 'div' );
 	button.id = 'button';
-	button.innerHTML = '<img src="/files/ic_mode_edit_black_24dp.svg">';
+	button.innerHTML = '<img src="files/ic_mode_edit_black_24dp.svg">';
 	button.addEventListener( 'click', function () {
 
 		window.open( 'https://github.com/Bruno-Odinukweze/PyWeb3D/tree/dev/docs/' + section + '/' + localizedPath + '.html' );
