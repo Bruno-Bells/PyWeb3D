@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -7,142 +7,167 @@
 		<link type="text/css" rel="stylesheet" href="page.css" />
 	</head>
 	<body>
-		<h1>[name]</h1>
+		<h1 style="font-weight: bolder;" >No [name]</h1>
+
+		<!-- <p>
+			if you prefer to work locally, go to the [page:Installation local] installation section</a> 
+		</p> -->
 
 		<p>
-			You can install three.js with [link:https://www.npmjs.com/ npm] and modern build tools, or get started quickly with just static hosting or a CDN. For most users, installing from npm is the best choice.
+			You can use PyWeb3D without having to install anything. There are three steps you need to follow. <br>
 		</p>
-
+		<h2>Step 1</h2>
 		<p>
-			Whichever you choose, be consistent and import all files from the same version of the library. Mixing files from different sources may cause duplicate code to be included, or even break the application in unexpected ways.
+			Adding the necessary libraries and packages into the `&lt;head>&lt;/head>` tag of your HTML file.
 		</p>
 
-		<p>
-			All methods of installing three.js depend on ES modules (see [link:https://eloquentjavascript.net/10_modules.html#h_hF2FmOVxw7 Eloquent JavaScript: ECMAScript Modules]), which allow you to include only the parts of the library needed in the final project.
-		</p>
-
-		<h2>Install from npm</h2>
-
-		<p>
-			To install the [link:https://www.npmjs.com/package/three three] npm module, open a terminal window in your project folder and run:
-		</p>
-
-		<code>
-		npm install three
-		</code>
-
-		<p>
-			The package will be downloaded and installed. Then you're ready to import it in your code:
-		</p>
-
-		<code>
-		// Option 1: Import the entire three.js core library.
-		import * as THREE from 'three';
-
-		const scene = new THREE.Scene();
-
-
-		// Option 2: Import just the parts you need.
-		import { Scene } from 'three';
-
-		const scene = new Scene();
-		</code>
-
-		<p>
-			When installing from npm, you'll almost always use some sort of [link:https://eloquentjavascript.net/10_modules.html#h_zWTXAU93DC bundling tool] to combine all of the packages your project requires into a single JavaScript file. While any modern JavaScript bundler can be used with three.js, the most popular choice is [link:https://webpack.js.org/ webpack].
-		</p>
-
-		<p>
-			Not all features are accessed directly through the <em>three</em> module (also called a "bare import"). Other popular parts of the library — such as controls, loaders, and post-processing effects — must be imported from the [link:https://github.com/mrdoob/three.js/tree/dev/examples/jsm examples/jsm] subfolder. To learn more, see <em>Examples</em> below.
-		</p>
-
-		<p>
-			Learn more about npm modules from [link:https://eloquentjavascript.net/20_node.html#h_J6hW/SmL/a Eloquent JavaScript: Installing with npm].
-		</p>
-
-		<h2>Install from CDN or static hosting</h2>
-
-		<p>
-			The three.js library can be used without any build system, either by uploading files to your own web server or by using an existing CDN. Because the library relies on ES modules, any script that references it must use <em>type="module"</em> as shown below.
-			It is also required to define an Import Map which resolves the bare module specifier `three`.
-		</p>
-
-		<code>
-		&lt;script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js">&lt;/script>
-
-		&lt;script type="importmap">
-		  {
-		    "imports": {
-		      "three": "https://unpkg.com/three@&lt;version&gt;/build/three.module.js"
-		    }
-		  }
-		&lt;/script>
-
-		&lt;script type="module">
-
-		  import * as THREE from 'three';
-
-		  const scene = new THREE.Scene();
-
-		&lt;/script>
-		</code>
-
-		<p>
-			Since Import maps are not yet supported by all browsers, it is necessary to add the polyfill *es-module-shims.js*.
-		</p>
-
-		<h2>Examples</h2>
-
-		<p>
-			The core of three.js is focused on the most important components of a 3D engine. Many other useful components — such as controls, loaders, and post-processing effects — are part of the [link:https://github.com/mrdoob/three.js/tree/dev/examples/jsm examples/jsm] directory. They are referred to as "examples," because while you can use them off the shelf, they're also meant to be remixed and customized. These components are always kept in sync with the core library, whereas similar third-party packages on npm are maintained by different people and may not be up to date.
-		</p>
-
-		<p>
-			Examples do not need to be <em>installed</em> separately, but do need to be <em>imported</em> separately. If three.js was installed with npm, you can load the [page:OrbitControls] component with:
-		</p>
 
 
 		<code>
-		import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-
-		const controls = new OrbitControls( camera, renderer.domElement );
+		&lt;script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython.min.js">&lt;/script>
+		&lt;script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython_stdlib.js">&lt;/script>
+		&lt;script defer src="https://unpkg.com/three@0.145.0/build/three.js">&lt;/script>
+		&lt;script defer src="https://www.pyweb3d.org/package/v1.0.0/pyweb3d.brython.js">&lt;/script>
 		</code>
 
 		<p>
-			If three.js was installed from a CDN, use the same CDN to install other components:
+			Those are the four necessary scripts you'll need in order to successfully use pyweb3D.
+		The first two scripts will import <strong>Brython</strong>, the third script will import <strong>three.js</strong> and the last script will import <strong>PyWeb3D</strong>
 		</p>
 
+		<h2>Step 2</h2>
+		<p>
+			The second step is to add `onload="brython()"` into the opening `&lt;body>` tag of your HTML file as an attribute. <br>
+			So the opening `&lt;body>` tag will look like this one below:
+			<code>
+&lt;body onload="brython()">
+	...
+&lt;/body>
+			</code>
+		This second step tells the browser to call the brython function when the page load. <br><br> <strong>Note:</strong> During development phase you can pass an argument to the `brython()` function, like this: `onload="brython(1)"` or `onload="brython(2)"`. `1` is to have the error messages displayed to the web browser console. `2` is to also get the Javascript code displayed along with the error.
+		</p>
+
+		<h2>Step 3</h2>
+		<p>
+			The last step is to add a `&lt;script type="text/python"> &lt;/script>` tag inside the `&lt;body> &lt;/body>` tags where your python code will live.
+			There are two ways to do this:
+			<br>
+			First method: ( without `src` attribute)
+			<code>
+&lt;body onload="brython()">
+	&lt;script type="text/python">
+				# Your Python Code will live here
+	&lt;/script>
+&lt;/body>
+			</code>
+			or second method: (with `src` attribute)
+			<code>
+&lt;body onload="brython()">
+	&lt;script type="text/python" src="your-python-file.py">&lt;/script>
+&lt;/body>
+
+			</code>
+
+		</p>
+
+		<h2>Importing Packages</h2>
+		<p>
+			After the above steps, you'll be ready to import the packages into your code,
+			here's how to import <strong>pyweb3D</strong> and other necessary modules 
+			<code>
+from browser import document, window
+from  pyweb3d.pyweb3d import *
+			</code>
+			<strong>Note: </strong> <i><strong>browser</strong></i> is a brython package (an instance of your browser). Please refer to [link:https://brython.info/static_doc/en/intro.html brython's documentation]  to learn more about it's packages
+		</p>
+		
+		<h2>Puting it all together</h2>
 		<code>
-		&lt;script type="module">
-
-		  import { OrbitControls } from 'https://unpkg.com/three@&lt;version&gt;/examples/jsm/controls/OrbitControls.js';
-
-		  const controls = new OrbitControls( camera, renderer.domElement );
-
-		&lt;/script>
+			&lt;!DOCTYPE html>
+		&lt;html>
+		   &lt;head>
+			 &lt;meta charset="utf-8">
+			 &lt;title>My first pyWeb3D app&lt;/title>
+        
+			 &lt;script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython.min.js">&lt;/script>
+			 &lt;script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython_stdlib.js">&lt;/script>
+			 &lt;script defer src="https://unpkg.com/three@0.145.0/build/three.js">&lt;/script>
+			 &lt;script defer src="https://www.pyweb3d.org/package/v1.0.0/pyweb3d.brython.js">&lt;/script>
+        
+			 &lt;style>
+				body { margin: 0; }
+			 &lt;/style>
+		   &lt;/head>
+		   &lt;body onload="brython()">
+				&lt;script type="text/python">
+					from browser import document, window
+					from  pyweb3d.pyweb3d import *
+					...
+				&lt;/script>
+		   &lt;/body>
+		&lt;/html>
 		</code>
-
+		<h1>Run a local server</h1> 
 		<p>
-			It's important that all files use the same version. Do not import different examples from different versions, or use examples from a different version than the three.js library itself.
+		The HTML files can be opened in the browser, but it is recommended to start a web server in the application directory.
+<br> <br>
+		Plugins for popular code editors
+		Some code editors have plugins which will spawn a simple server on demand.
+
+		<ul>
+			<li>[link:https://marketplace.visualstudio.com/items?itemName=yandeu.five-server Five Server] for Visual Studio Code.</li>
+			<li>[link:https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer Live Server] for Visual Studio Code.</li>
+			<li>[link:https://atom.io/packages/atom-live-server Live Server] for Atom.</li>
+		</ul>
+
 		</p>
+		<h2>Python server</h2>
+		<p>if you're not using any of the above code editors, you can spin up the python server by running this in a command line(from your working directory)</p>
+		<code>
+//Python 2.x
+python -m SimpleHTTPServer
 
-		<h2>Compatibility</h2>
-
-		<h3>CommonJS imports</h3>
-
+//Python 3.x
+python -m http.server
+		</code>
+		<h1 style="font-weight: bolder;">Local [name]</h1>
 		<p>
-			While most modern JavaScript bundlers now support ES modules by default, some older build tools might not. In those cases you can likely configure the bundler to understand ES modules: [link:http://browserify.org/ Browserify] just needs the [link:https://github.com/babel/babelify babelify] plugin, for example.
+			If you prefer to install pyWeb3D locally, you will need to install or download <strong>brython</strong>, <strong>three.js</strong> and <strong>pyweb3D</strong>. 
+			We will go with the download method to keep things simple.
+			<h3>download links:</h3>
+			<ul>
+				<li><a onclick="saveFile('https://cdn.jsdelivr.net/npm/brython@3.10.7/brython.min.js')">brython.js</a></li>
+				<li><a onclick="saveFile('https://cdn.jsdelivr.net/npm/brython@3.10.7/brython_stdlib.js')">brython_stdlib.js</a></li>
+				<li><a onclick="saveFile('https://unpkg.com/three@0.145.0/build/three.js')">three.js</a></li>
+				<li><a onclick="saveFile('https://www.pyweb3d.org/package/v1.0.0/pyweb3d.brython.js')">pyweb3D</a></li>
+			</ul>
 		</p>
+		Download and add the files to your working directory, then load the files into the `&lt;head> &lt;/head>` tag of your HTML file using the `&lt;script src="">&lt;/script>` tags.
+		<code>		
+&lt;script type="text/javascript" src="brython.min.js">&lt;/script>
+&lt;script type="text/javascript" src="brython_stdlib.js">&lt;/script>
+&lt;script type="text/javascript" defer src="three.js">&lt;/script>
+&lt;script type="text/javascript" defer src="pyweb3d.brython.js">&lt;/script>
+		</code>
+		<script>
+			function saveFile(url) {
+			// Get file name from url.
+			var filename = url.substring(url.lastIndexOf("/") + 1).split("?")[0];
+			var xhr = new XMLHttpRequest();
+			xhr.responseType = 'blob';
+			xhr.onload = function() {
+				var a = document.createElement('a');
+				a.href = window.URL.createObjectURL(xhr.response); // xhr.response is a blob
+				a.download = filename; // Set the file name.
+				a.style.display = 'none';
+				document.body.appendChild(a);
+				a.click();
+				delete a;
+			};
+			xhr.open('GET', url);
+			xhr.send();
+			}
+		</script>
+		<br>
 
-		<h3>Node.js</h3>
-
-		<p>
-			Because three.js is built for the web, it depends on browser and DOM APIs that don't always exist in Node.js. Some of these issues can be resolved by using shims like [link:https://github.com/stackgl/headless-gl headless-gl], or by replacing components like [page:TextureLoader] with custom alternatives. Other DOM APIs may be deeply intertwined with the code that uses them, and will be harder to work around. We welcome simple and maintainable pull requests to improve Node.js support, but recommend opening an issue to discuss your improvements first.
-		</p>
-
-		<p>
-			Make sure to add `{ "type": "module" }` to your `package.json` to enable ES6 modules in your node project.
-		</p>
-
-	</body>
-</html> -->
+		
