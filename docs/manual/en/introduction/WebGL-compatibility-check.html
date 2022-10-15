@@ -14,22 +14,22 @@
 		</p>
 
 		<p>
-			Add	[link:https://github.com/mrdoob/three.js/blob/master/examples/jsm/capabilities/WebGL.js]
+			Add	[link:https://github.com/Bruno-Odinukweze/PyWeb3D/tree/main/examples/webGL.py]
 			to your Python code and run the following before attempting to render anything.
 		</p>
 
 		<code>
-		if ( WebGL.isWebGLAvailable() ) {
-
+			if isWebGLAvailable():
 			# Initiate function or other initializations here
-			animate();
-
-		} else {
-
-			const warning = WebGL.getWebGLErrorMessage();
-			document.getElementById( 'container' ).appendChild( warning );
-
-		}
+			animate()
+		else:
+			warning = getWebGLErrorMessage()
+			try:
+				document.getElementById( 'container' ).appendChild( warning )
+			except:
+				container = document.createElement('div')
+				container.appendChild(warning)
+				document.body.appendChild(container)
 		</code>
 	</body>
 </html>
