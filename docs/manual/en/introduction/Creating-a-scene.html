@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -9,44 +9,56 @@
 	<body>
 		<h1>[name]</h1>
 
-		<p>The goal of this section is to give a brief introduction to three.js. We will start by setting up a scene, with a spinning cube. A working example is provided at the bottom of the page in case you get stuck and need help.</p>
+		<p>The goal of this section is to give a brief introduction to three.js using pyweb3D. We will start by setting up a scene, with a spinning cube. A working example is provided at the bottom of the page in case you get stuck and need help.</p>
 
 		<h2>Before we start</h2>
 
-		<p>Before you can use three.js, you need somewhere to display it. Save the following HTML to a file on your computer, along with a copy of [link:https://threejs.org/build/three.js three.js] in the js/ directory, and open it in your browser.</p>
+		<p>Before you can use pyweb3D, you need somewhere to display it. Save the following HTML to a file on your computer and open it in your browser.</p>
 
 		<code>
-		&lt;!DOCTYPE html&gt;
-		&lt;html&gt;
-			&lt;head&gt;
-				&lt;meta charset="utf-8"&gt;
-				&lt;title&gt;My first three.js app&lt;/title&gt;
-				&lt;style&gt;
-					body { margin: 0; }
-				&lt;/style&gt;
-			&lt;/head&gt;
-			&lt;body&gt;
-				&lt;script src="js/three.js"&gt;&lt;/script&gt;
-				&lt;script&gt;
-					// Our Javascript will go here.
-				&lt;/script&gt;
-			&lt;/body&gt;
-		&lt;/html&gt;
+			&lt;!DOCTYPE html>
+		&lt;html>
+		  &lt;head>
+			&lt;meta charset="utf-8">
+			&lt;title>My first pyWeb3D app&lt;/title>
+			&lt;script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython.min.js">&lt;/script>
+			&lt;script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython_stdlib.js">&lt;/script>
+			&lt;script defer src="https://unpkg.com/three@0.145.0/build/three.js">&lt;/script>
+			&lt;script defer src="https://www.pyweb3d.org/package/v1.0.0/pyweb3d.brython.js">&lt;/script>
+			&lt;style>
+			    body { margin: 0; }
+			&lt;/style>
+		 &lt;/head>
+		 &lt;body onload="brython(1)">
+			&lt;script type="text/python">
+				# Our Python code will go here.
+			&lt;/script>
+		 &lt;/body>
+		&lt;/html>
 		</code>
 
-		<p>That's all. All the code below goes into the empty &lt;script&gt; tag.</p>
+		<p>That's all. All the code below goes into the empty `&lt;script type="text/python"&gt; &lt;/script>` tag.</p>
 
+		<h2>Importing Packages</h2>
+		<p>
+			Also, before we can start using pyweb3D in our code, we need to import it, along with other necessary packages
+			<code>
+from browser import document, window
+from  pyweb3d.pyweb3d import *
+			</code>
+			pyweb3D will import all the classes and functions from three.js in pythonic way.
+		</p>
 		<h2>Creating the scene</h2>
 
-		<p>To actually be able to display anything with three.js, we need three things: scene, camera and renderer, so that we can render the scene with camera.</p>
+		<p>To actually be able to display anything with three.js and pyweb3D, we need three things: scene, camera and renderer, so that we can render the scene with camera.</p>
 
 		<code>
-		const scene = new THREE.Scene();
-		const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+		scene = Scene()
+		camera = PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 )
 
-		const renderer = new THREE.WebGLRenderer();
-		renderer.setSize( window.innerWidth, window.innerHeight );
-		document.body.appendChild( renderer.domElement );
+		renderer = WebGLRenderer()
+		renderer.setSize( window.innerWidth, window.innerHeight )
+		document.body.appendChild( renderer.domElement )
 		</code>
 
 		<p>Let's take a moment to explain what's going on here. We have now set up the scene, our camera and the renderer.</p>
@@ -70,12 +82,12 @@
 		<p><em>"That's all good, but where's that cube you promised?"</em> Let's add it now.</p>
 
 		<code>
-		const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-		const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-		const cube = new THREE.Mesh( geometry, material );
-		scene.add( cube );
+		geometry = BoxGeometry( 1, 1, 1 )
+		material = MeshBasicMaterial( { 'color': 0x00ff00 } )
+		cube = Mesh( geometry, material )
+		scene.add( cube )
 
-		camera.position.z = 5;
+		camera.position.z = 5
 		</code>
 
 		<p>To create a cube, we need a `BoxGeometry`. This is an object that contains all the points (`vertices`) and fill (`faces`) of the cube. We'll explore this more in the future.</p>
@@ -91,11 +103,10 @@
 		<p>If you copied the code from above into the HTML file we created earlier, you wouldn't be able to see anything. This is because we're not actually rendering anything yet. For that, we need what's called a `render or animate loop`.</p>
 
 		<code>
-		function animate() {
-			requestAnimationFrame( animate );
-			renderer.render( scene, camera );
-		}
-		animate();
+		def animate(time):
+			window.requestAnimationFrame( animate )
+			renderer.render( scene, camera )
+		animate(0)
 		</code>
 
 		<p>This will create a loop that causes the renderer to draw the scene every time the screen is refreshed (on a typical screen this means 60 times per second). If you're new to writing games in the browser, you might say <em>"why don't we just create a setInterval ?"</em> The thing is - we could, but `requestAnimationFrame` has a number of advantages. Perhaps the most important one is that it pauses when the user navigates to another browser tab, hence not wasting their precious processing power and battery life.</p>
@@ -107,57 +118,59 @@
 		<p>Add the following code right above the `renderer.render` call in your `animate` function:</p>
 
 		<code>
-		cube.rotation.x += 0.01;
-		cube.rotation.y += 0.01;
+		cube.rotation.x += 0.01
+		cube.rotation.y += 0.01
 		</code>
 
 		<p>This will be run every frame (normally 60 times per second), and give the cube a nice rotation animation. Basically, anything you want to move or change while the app is running has to go through the animate loop. You can of course call other functions from there, so that you don't end up with an `animate` function that's hundreds of lines.</p>
 
 		<h2>The result</h2>
-		<p>Congratulations! You have now completed your first three.js application. It's simple, but you have to start somewhere.</p>
+		<p>Congratulations! You have now completed your first three.js application using pyweb3D. It's simple, but you have to start somewhere.</p>
 
-		<p>The full code is available below and as an editable [link:https://jsfiddle.net/fxurzeb4/ live example]. Play around with it to get a better understanding of how it works.</p>
+		<p>The full code is available below and as an editable [link:https://playcode.io/986035 live example]. Play around with it to get a better understanding of how it works.</p>
 
 		<code>
-		&lt;!DOCTYPE html&gt;
-		&lt;html&gt;
-			&lt;head&gt;
-				&lt;meta charset="utf-8"&gt;
-				&lt;title&gt;My first three.js app&lt;/title&gt;
-				&lt;style&gt;
-					body { margin: 0; }
-				&lt;/style&gt;
-			&lt;/head&gt;
-			&lt;body&gt;
-				&lt;script src="js/three.js"&gt;&lt;/script&gt;
-				&lt;script&gt;
-					const scene = new THREE.Scene();
-					const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-
-					const renderer = new THREE.WebGLRenderer();
-					renderer.setSize( window.innerWidth, window.innerHeight );
-					document.body.appendChild( renderer.domElement );
-
-					const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-					const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-					const cube = new THREE.Mesh( geometry, material );
-					scene.add( cube );
-
-					camera.position.z = 5;
-
-					function animate() {
-						requestAnimationFrame( animate );
-
-						cube.rotation.x += 0.01;
-						cube.rotation.y += 0.01;
-
-						renderer.render( scene, camera );
-					};
-
-					animate();
-				&lt;/script&gt;
-			&lt;/body&gt;
-		&lt;/html&gt;
+			&lt;!DOCTYPE html>
+		&lt;html>
+		  &lt;head>
+			&lt;meta charset="utf-8">
+			&lt;title>My first pyWeb3D app&lt;/title>
+			&lt;script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython.min.js">&lt;/script>
+			&lt;script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython_stdlib.js">&lt;/script>
+			&lt;script defer src="https://unpkg.com/three@0.145.0/build/three.js">&lt;/script>
+			&lt;script defer src="https://www.pyweb3d.org/package/v1.0.0/pyweb3d.brython.js">&lt;/script>
+			&lt;style>
+			    body { margin: 0; }
+			&lt;/style>
+		 &lt;/head>
+		 &lt;body onload="brython(1)">
+			&lt;script type="text/python">
+				from browser import document, window
+				from  pyweb3d.pyweb3d import *
+				
+				scene = Scene()
+				camera = PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 )
+			
+				renderer = WebGLRenderer()
+				renderer.setSize( window.innerWidth, window.innerHeight )
+				document.body.appendChild( renderer.domElement )
+				
+				geometry = BoxGeometry( 1, 1, 1 )
+				material = MeshBasicMaterial( { 'color': 0x00ff00 } )
+				cube = Mesh( geometry, material )
+				scene.add( cube )
+			
+				camera.position.z = 5
+				
+				def animate(time):
+					window.requestAnimationFrame( animate )
+					cube.rotation.x += 0.01
+					cube.rotation.y += 0.01
+					renderer.render( scene, camera )
+				animate(0)
+			&lt;/script>
+		 &lt;/body>
+		&lt;/html>
 		</code>
 	</body>
-</html> -->
+</html>
