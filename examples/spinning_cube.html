@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>My first pyWeb3D app</title>
+	<script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython_stdlib.js"></script>
+	<script defer src="https://unpkg.com/three@0.145.0/build/three.js"></script>
+	<script defer src="https://www.pyweb3d.org/pyweb3d/v1.0.0/pyweb3d.brython.js"></script>
+	<style>
+	    body { margin: 0; }
+	</style>
+ </head>
+ <body onload="brython(1)">
+	<script type="text/python">
+		from browser import document, window
+		from  pyweb3d.pyweb3d import *
+		
+		scene = Scene()
+		camera = PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 )
+	
+		renderer = WebGLRenderer()
+		renderer.setSize( window.innerWidth, window.innerHeight )
+		document.body.appendChild( renderer.domElement )
+		
+		geometry = BoxGeometry( 1, 1, 1 )
+		material = MeshBasicMaterial( { 'color': 0x00ff00 } )
+		cube = Mesh( geometry, material )
+		scene.add( cube )
+	
+		camera.position.z = 5
+		
+		def animate(time):
+			window.requestAnimationFrame( animate )
+			cube.rotation.x += 0.01
+			cube.rotation.y += 0.01
+			renderer.render( scene, camera )
+		animate(0)
+	</script>
+ </body>
+</html>
