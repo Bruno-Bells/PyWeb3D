@@ -14,7 +14,7 @@ In summary PyWeb3D is [three.js](https://threejs.org/) with python syntax.
 # Try PyWeb3D
 You can use PyWeb3D without having to install anything.
 
-Add the necessary libraries and packages into the <head></head> tag of your HTML file.
+Add the necessary libraries and packages into the `<head></head>` tag of your HTML file.
 ```html 
 <head>     
 	<script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython.min.js"></script>
