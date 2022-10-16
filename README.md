@@ -13,6 +13,7 @@ In summary PyWeb3D is [three.js](https://threejs.org/) with python syntax.
 
 # Try PyWeb3D
 You can use PyWeb3D without having to install anything.
+
 To try PyWeb3D, Add the necessary libraries and packages into the <head></head> tag of your HTML file.
 ```html 
 <head>     
@@ -53,8 +54,7 @@ you can import `pyweb3d` and `browser window` into `your-python-file.py` as foll
 ```python
 from browser import document, window
 from  pyweb3d import *
-
-...
+```
 
 Check out the the [examples directory folder](https://github.com/Bruno-Odinukweze/PyWeb3D/tree/main/examples) for more examples on how to use pyWeb3D, all you need to do is open the `index.html` in your browser.
 
