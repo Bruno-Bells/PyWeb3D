@@ -50,7 +50,7 @@ Here's a HTML boilerplate:
 </html>
 ```
 
-Check out the the [examples directory folder](https://github.com/Bruno-Odinukweze/PyWeb3D/tree/main/examples) for more examples on how to use pyWeb3D, all you need to do is open the `index.html` in your browser.
+Check out the the [examples directory folder](https://github.com/Bruno-Odinukweze/PyWeb3D/tree/main/examples) for more examples on how to use pyWeb3D, all you need to do is open the `HTML` file in your browser.
 
 # How to Contribute
  - Fork the repository - [quicklink](https://github.com/Bruno-Odinukweze/PyWeb3D/fork)
