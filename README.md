@@ -17,10 +17,10 @@ You can use PyWeb3D without having to install anything.
 Add the necessary libraries and packages into the <head></head> tag of your HTML file.
 ```html 
 <head>     
-  <script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython_stdlib.js"></script>
-<script defer src="https://unpkg.com/three@0.145.0/build/three.js"></script>
-<script defer src="https://www.pyweb3d.org/pyweb3d/v1.0.0/pyweb3d.brython.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython_stdlib.js"></script>
+	<script defer src="https://unpkg.com/three@0.145.0/build/three.js"></script>
+	<script defer src="https://www.pyweb3d.org/pyweb3d/v1.0.0/pyweb3d.brython.js"></script>
 </head>
 ```
 Note the `three.js` that's been used, not the module version
@@ -48,12 +48,6 @@ Here's a HTML boilerplate:
 	</script>
  </body>
 </html>
-```
-
-you can import `pyweb3d` and `browser window` into `your-python-file.py` as follows:
-```python
-from browser import document, window
-from  pyweb3d import *
 ```
 
 Check out the the [examples directory folder](https://github.com/Bruno-Odinukweze/PyWeb3D/tree/main/examples) for more examples on how to use pyWeb3D, all you need to do is open the `index.html` in your browser.
