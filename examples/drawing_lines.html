@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>Drawing Lines - pyWeb3D app</title>
+	<script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython_stdlib.js"></script>
+	<script defer src="https://unpkg.com/three@0.145.0/build/three.js"></script>
+	<script defer src="https://www.pyweb3d.org/pyweb3d/v1.0.0/pyweb3d.brython.js"></script>
+	<style>
+	    body { margin: 0; }
+	</style>
+ </head>
+ <body onload="brython(1)">
+	<script type="text/python">
+from browser import document, window
+from  pyweb3d.pyweb3d import *
+
+renderer = WebGLRenderer()
+renderer.setSize( window.innerWidth, window.innerHeight )
+document.body.appendChild( renderer.domElement )
+
+camera = PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 500 )
+camera.position.set( 0, 0, 100 )
+camera.lookAt( 0, 0, 0 )
+
+scene = Scene()
+
+# create a blue LineBasicMaterial
+material = LineBasicMaterial( { 'color': 0x0000ff } )
+
+points = []
+points.append( Vector3( -10, 0, 0 ) )
+points.append( Vector3( 0, 10, 0 ) )
+points.append( Vector3( 10, 0, 0 ) )
+
+geometry = BufferGeometry().setFromPoints( points )
+
+line = Line( geometry, material )
+
+scene.add( line )
+renderer.render( scene, camera )
+	</script>
+ </body>
+</html>
