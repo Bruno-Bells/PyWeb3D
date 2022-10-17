@@ -12,6 +12,7 @@
 		<link rel="shortcut icon" href="/docs/" media="(prefers-color-scheme: dark)"/>
 		<link rel="shortcut icon" href="/docs/logo/pyweb3d_logo.ico" media="(prefers-color-scheme: light)" />
 		<link rel="stylesheet" type="text/css" href="/docs/files/main.css">
+		<link rel="stylesheet" href="/docs/sponsor_modal.css">
 	</head>
 	<body class="home">
 
@@ -20,6 +21,27 @@
 		<script type="text/javascript">
 			// Google analytics goes here
 		</script>
+		<div id="custom_model_main" class="custom-model-main">
+			<div class="custom-model-inner">        
+			<div class="close-btn" id="close_sponsor">×</div>
+				<div class="custom-model-wrap">
+					<div class="pop-up-content-wrap">
+						<ul style="list-style-type: none;">
+							<h1>Sponsor PyWeb3D</h1>
+							<li style="display: flex; flex-direction: row;  align-items: center;">
+								<span style="min-width:30px;height:30px; padding: 0%; margin: 0%;">
+								  <img width="30" height="30"  alt="patreon" src="https://github.githubassets.com/images/modules/site/icons/funding_platforms/patreon.svg">
+								</span>
+								<span >
+								  <a style="text-decoration: none!important;" target="_blank" href="https://patreon.com/brunoodinukweze"><span>patreon.com/<strong>brunoodinukweze</strong></span></a>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>  
+			</div>  
+			<div id="overlay" class="bg-overlay"></div>
+		</div> 
 
 		<div id="panel">
 
@@ -83,7 +105,7 @@
 					</ul>
 					<ul>
 						<li >
-							<a style="outline:thick ridge #f40438; border-radius: 10px; display: flex; justify-content: center; padding: 5px;" href="#" target="_blank" rel="noopener">Sponsor 
+							<a id="sponsor" class="Click-here" style="outline:thick ridge #f40438; border-radius: 10px; display: flex; justify-content: center; padding: 5px;"  target="_blank" rel="noopener">Sponsor 
 								<svg style="height: 1.5em; margin-bottom:0%; padding-bottom:0%"  xmlns="http://www.w3.org/2000/svg" fill="#f40438" viewBox="0 0 24 24" stroke-width="1.5" stroke="#f40438" class="w-6 h-6">
 									<path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
 								</svg> PyWeb3D
@@ -121,14 +143,32 @@
 			.then(text=> document.getElementById('viewer').innerHTML = text);
 		};
 
+		// Sponsor Modal
+		btn = document.getElementById('sponsor')
+		close_btn = document.getElementById('close_sponsor')
+		close_with_overlay = document.getElementById('overlay')
+		custom_model_main = document.getElementById('custom_model_main')
+		btn.addEventListener('click', () => {
+			custom_model_main.classList.add('model-open')
+		})
+		close_btn.addEventListener('click', () => {
+			custom_model_main.classList.remove('model-open')
+		})
+		close_with_overlay.addEventListener('click', () => {
+			custom_model_main.classList.remove('model-open')
+		})
+
 		</script>
         
 		<div id="viewer">
 
 			<a id="button" class="text" href=".">submit project</a>
+			<div style="color:rgb(158, 156, 156);align-items: center;	margin-left: auto; margin-right: auto; padding-top:20%;  width: 29em">
 
+				<h1>Submitted projects will show here....</h1>
+				<h1>Please continue to introduction or documentation.</h1>
+			</div >
 			<div id="projects">
-				<h1 style="display:flex; justify-content:center">Submitted projects will show here....</h1>
 <!-- 			
 				<a href="https://eyes.nasa.gov/apps/mars2020/" target="_blank" rel="noopener"><img src="files/projects/mars2020.png" loading="lazy"/></a>
 				<a href="https://threejs-journey.xyz/" target="_blank" rel="noopener"><img src="files/projects/threejs-journey.png" loading="lazy"/></a>
