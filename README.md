@@ -19,8 +19,8 @@ Add the necessary libraries and packages into the `<head></head>` tag of your HT
 <head>     
 	<script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython_stdlib.js"></script>
-	<script defer src="https://unpkg.com/three@0.145.0/build/three.js"></script>
-	<script defer src="https://www.pyweb3d.org/pyweb3d/v1.0.0/pyweb3d.brython.js"></script>
+	<script src="https://unpkg.com/three@0.145.0/build/three.js"></script>
+	<script src="https://www.pyweb3d.org/pyweb3d/v1.0.0/pyweb3d.brython.js"></script>
 </head>
 ```
 Note the `three.js` that's been used, not the module version
