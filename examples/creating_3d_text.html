@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>My first pyWeb3D app</title>
+	<script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython_stdlib.js"></script>
+	<script src="https://unpkg.com/three@0.145.0/build/three.js"></script>
+	<script src="https://www.pyweb3d.org/pyweb3d/v1.0.0/pyweb3d.brython.js"></script>
+	<style>
+	    body { margin: 0; }
+	</style>
+ </head>
+ <body onload="brython(1)">
+    <script src="../jsm/geometries/TextGeometry.js"></script>
+    <script src="../jsm/loaders/FontLoader.js"></script>
+    <script src="../jsm/controls/OrbitControls.js"></script>
+    
+
+	<script type="text/python">
+from browser import document, window
+from  pyweb3d.pyweb3d import *
+from javascript import Math
+
+FontLoader = window.THREE.FontLoader.new
+TextGeometry = window.THREE.TextGeometry.new
+OrbitControls = window.THREE.OrbitControls.new
+
+renderer = WebGLRenderer()
+renderer.setSize( window.innerWidth, window.innerHeight )
+document.body.appendChild( renderer.domElement )
+
+camera = PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 1, 1500 )
+camera.position.set( 0, 400, 700 )
+camera.lookAt( 0, 150, 0 )
+
+scene = Scene()
+scene.background = Color( 0x000000 )
+scene.fog = Fog( 0x000000, 250, 1400 )
+
+# LIGHTS
+dirLight = DirectionalLight( 0xffffff, 0.125 )
+dirLight.position.set( 0, 0, 1 ).normalize()
+scene.add( dirLight )
+
+pointLight = PointLight( 0xffffff, 1.5 )
+pointLight.position.set( 0, 100, 90 )
+scene.add( pointLight )
+
+Ambientlight = AmbientLight( 0x404040 )
+scene.add( Ambientlight )
+
+# // CONTROLS
+controls = OrbitControls(camera, renderer.domElement)
+
+
+# // RESIZE HAMDLER
+def onWindowResize(resize):
+    windowHalfX = window.innerWidth / 2
+    camera.aspect = window.innerWidth / window.innerHeight
+    camera.updateProjectionMatrix()
+    renderer.setSize( window.innerWidth, window.innerHeight )
+
+window.addEventListener( 'resize', onWindowResize )
+
+loader = FontLoader()
+
+def myLoader(font):
+    geometry = TextGeometry('PyWeb3D', {
+        'font': font,
+        'size': 70,
+        'height': 20,
+        'curveSegments': 10,
+        'bevelEnabled': True,
+        'bevelOffset': 0,
+        'bevelSegments': 1,
+        'bevelSize': 0.8,
+        'bevelThickness': 3
+    })
+    geometry.computeBoundingBox()
+    centerOffset = - 0.5 * ( geometry.boundingBox.max.x - geometry.boundingBox.min.x )
+    materials = [
+        MeshPhongMaterial( { 'color': 0xffffff, 'flatShading': True } ), 
+        MeshPhongMaterial( { 'color': 0xffffff } )
+    ]
+    textMesh = Mesh(geometry, materials)
+    textMesh.castShadow = True
+    textMesh.position.y = 30
+    textMesh.position.x = centerOffset
+    textMesh.position.z = 0
+
+    textMesh.rotation.x = 0
+    textMesh.rotation.y = Math.PI * 2
+    scene.add(textMesh)
+
+plane = Mesh(
+        PlaneGeometry( 10000, 10000 ),
+        MeshBasicMaterial( { 'color': 0xffffff, 'opacity': 0.5, 'transparent': True } )
+    )
+plane.position.y = 100
+plane.rotation.x = - Math.PI / 2
+scene.add( plane )
+
+
+loader.load('../examples/fonts/gentilis_bold.typeface.json', myLoader)
+
+def animate(time):
+    renderer.render(scene, camera)
+    window.requestAnimationFrame(animate)
+
+animate(0)
+		
+	</script>
+ </body>
+</html>
