@@ -1,7 +1,7 @@
-import {
-	Vector3,
-	Vector4
-} from 'three';
+
+Vector3 = window.THREE.Vector3;
+Vector4 = window.THREE.Vector4;
+
 
 /**
  * NURBS utils
@@ -474,14 +474,14 @@ function calcSurfacePoint( p, q, U, V, P, u, v, target ) {
 
 
 
-export {
-	findSpan,
-	calcBasisFunctions,
-	calcBSplinePoint,
-	calcBasisFunctionDerivatives,
-	calcBSplineDerivatives,
-	calcKoverI,
-	calcRationalCurveDerivatives,
-	calcNURBSDerivatives,
-	calcSurfacePoint,
-};
+
+window.THREE.findSpan = findSpan;
+window.THREE.calcBasisFunctions = calcBasisFunctions;
+window.THREE.calcBSplinePoint = calcBSplinePoint;
+window.THREE.calcBasisFunctionDerivatives = calcBasisFunctionDerivatives;
+window.THREE.calcBSplineDerivatives = calcBSplineDerivatives;
+window.THREE.calcKoverI = calcKoverI;
+window.THREE.calcRationalCurveDerivatives = calcRationalCurveDerivatives;
+window.THREE.calcNURBSDerivatives = calcNURBSDerivatives;
+window.THREE.calcSurfacePoint = calcSurfacePoint;
+

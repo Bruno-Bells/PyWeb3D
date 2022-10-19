@@ -1,15 +1,15 @@
-import {
-	LinearFilter,
-	Mesh,
-	NearestFilter,
-	OrthographicCamera,
-	PlaneGeometry,
-	RGBAFormat,
-	Scene,
-	ShaderMaterial,
-	StereoCamera,
-	WebGLRenderTarget
-} from 'three';
+
+LinearFilter = window.THREE.LinearFilter;
+Mesh = window.THREE.Mesh;
+NearestFilter = window.THREE.NearestFilter;
+OrthographicCamera = window.THREE.OrthographicCamera;
+PlaneGeometry = window.THREE.PlaneGeometry;
+RGBAFormat = window.THREE.RGBAFormat;
+Scene = window.THREE.Scene;
+ShaderMaterial = window.THREE.ShaderMaterial;
+StereoCamera = window.THREE.StereoCamera;
+WebGLRenderTarget = window.THREE.WebGLRenderTarget;
+
 
 class ParallaxBarrierEffect {
 
@@ -113,4 +113,4 @@ class ParallaxBarrierEffect {
 
 }
 
-export { ParallaxBarrierEffect };
+window.THREE.ParallaxBarrierEffect = ParallaxBarrierEffect;

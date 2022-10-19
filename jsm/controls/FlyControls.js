@@ -1,8 +1,8 @@
-import {
-	EventDispatcher,
-	Quaternion,
-	Vector3
-} from 'three';
+
+EventDispatcher = window.THREE.EventDispatcher;
+Quaternion = window.THREE.Quaternion;
+Vector3 = window.THREE.Vector3;
+
 
 const _changeEvent = { type: 'change' };
 
@@ -281,4 +281,4 @@ function contextmenu( event ) {
 
 }
 
-export { FlyControls };
+window.THREE.FlyControls = FlyControls;

@@ -1,4 +1,5 @@
-import { Vector3, Matrix4 } from 'three';
+Vector3 = window.THREE.Vector3;
+Matrix4 = window.THREE.Matrix4;
 
 const inverseProjectionMatrix = new Matrix4();
 
@@ -149,4 +150,4 @@ class CSMFrustum {
 
 }
 
-export { CSMFrustum };
+window.THREE.CSMFrustum = CSMFrustum;

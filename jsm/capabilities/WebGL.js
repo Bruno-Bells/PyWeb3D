@@ -88,4 +88,4 @@ class WebGL {
 
 }
 
-export default WebGL;
+window.THREE.WebGL = WebGL;

@@ -1,10 +1,10 @@
-import {
-	BackSide,
-	Color,
-	ShaderMaterial,
-	UniformsLib,
-	UniformsUtils
-} from 'three';
+
+BackSide = window.THREE.BackSide;
+Color = window.THREE.Color;
+ShaderMaterial = window.THREE.ShaderMaterial;
+UniformsLib = window.THREE.UniformsLib;
+UniformsUtils = window.THREE.UniformsUtils;
+
 
 /**
  * Reference: https://en.wikipedia.org/wiki/Cel_shading
@@ -550,4 +550,4 @@ class OutlineEffect {
 
 }
 
-export { OutlineEffect };
+window.THREE.OutlineEffect = OutlineEffect;

@@ -1,8 +1,8 @@
-import {
-	FileLoader,
-	Loader,
-	ShapePath
-} from 'three';
+
+FileLoader = window.THREE.FileLoader;
+Loader = window.THREE.Loader;
+ShapePath = window.THREE.ShapePath;
+
 
 class FontLoader extends Loader {
 
@@ -180,4 +180,5 @@ function createPath( char, scale, offsetX, offsetY, data ) {
 
 }
 
-export { FontLoader, Font };
+window.THREE.FontLoader = FontLoader;
+window.THREE.Font = Font;

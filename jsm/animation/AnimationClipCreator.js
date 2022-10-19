@@ -1,10 +1,10 @@
 
-AnimationClip = window.THREE.AnimationClip
-BooleanKeyframeTrack = window.THREE.AnimationClip
-ColorKeyframeTrack = window.THREE.AnimationClip
-NumberKeyframeTrack = window.THREE.AnimationClip
-Vector3 = window.THREE.AnimationClip
-VectorKeyframeTrack = window.THREE.AnimationClip
+AnimationClip = window.THREE.AnimationClip;
+BooleanKeyframeTrack = window.THREE.AnimationClip;
+ColorKeyframeTrack = window.THREE.AnimationClip;
+NumberKeyframeTrack = window.THREE.AnimationClip;
+Vector3 = window.THREE.AnimationClip;
+VectorKeyframeTrack = window.THREE.AnimationClip;
 
 
 class AnimationClipCreator {
@@ -111,4 +111,4 @@ class AnimationClipCreator {
 
 }
 
-window.THREE.AnimationClipCreator = AnimationClipCreator
+window.THREE.AnimationClipCreator = AnimationClipCreator;

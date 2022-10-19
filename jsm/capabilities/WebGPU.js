@@ -36,4 +36,4 @@ class WebGPU {
 
 }
 
-export default WebGPU;
+window.THREE.WebGPU = WebGPU;

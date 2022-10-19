@@ -1,7 +1,7 @@
-import {
-	Curve,
-	Vector3
-} from 'three';
+
+Curve = window.THREE.Curve;
+Vector3 = window.THREE.Vector3;
+
 
 /**
  * A bunch of parametric curves
@@ -404,19 +404,19 @@ class DecoratedTorusKnot5c extends Curve {
 
 }
 
-export {
-	GrannyKnot,
-	HeartCurve,
-	VivianiCurve,
-	KnotCurve,
-	HelixCurve,
-	TrefoilKnot,
-	TorusKnot,
-	CinquefoilKnot,
-	TrefoilPolynomialKnot,
-	FigureEightPolynomialKnot,
-	DecoratedTorusKnot4a,
-	DecoratedTorusKnot4b,
-	DecoratedTorusKnot5a,
-	DecoratedTorusKnot5c
-};
+
+window.THREE.GrannyKnot = GrannyKnot;
+window.THREE.HeartCurve = HeartCurve;
+window.THREE.VivianiCurve = VivianiCurve;
+window.THREE.KnotCurve = KnotCurve;
+window.THREE.HelixCurve = HelixCurve;
+window.THREE.TrefoilKnot = TrefoilKnot;
+window.THREE.TorusKnot = TorusKnot;
+window.THREE.CinquefoilKnot = CinquefoilKnot;
+window.THREE.TrefoilPolynomialKnot = TrefoilPolynomialKnot;
+window.THREE.FigureEightPolynomialKnot = FigureEightPolynomialKnot;
+window.THREE.DecoratedTorusKnot4a = DecoratedTorusKnot4a;
+window.THREE.DecoratedTorusKnot4b = DecoratedTorusKnot4b;
+window.THREE.DecoratedTorusKnot5a = DecoratedTorusKnot5a;
+window.THREE.DecoratedTorusKnot5c = DecoratedTorusKnot5c;
+

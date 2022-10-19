@@ -1,10 +1,10 @@
-import {
-	EventDispatcher,
-	MOUSE,
-	Quaternion,
-	Vector2,
-	Vector3
-} from 'three';
+
+EventDispatcher = window.THREE.EventDispatcher;
+MOUSE = window.THREE.MOUSE;
+Quaternion = window.THREE.Quaternion;
+Vector2 = window.THREE.Vector2;
+Vector3 = window.THREE.Vector3;
+
 
 const _changeEvent = { type: 'change' };
 const _startEvent = { type: 'start' };
@@ -811,4 +811,4 @@ class TrackballControls extends EventDispatcher {
 
 }
 
-export { TrackballControls };
+window.THREE.TrackballControls = TrackballControls;

@@ -1,4 +1,4 @@
-import { ShaderChunk } from 'three';
+ShaderChunk = window.THREE.ShaderChunk;
 
 const CSMShader = {
 	lights_fragment_begin: /* glsl */`
@@ -248,4 +248,4 @@ uniform float shadowFar;
 	` + ShaderChunk.lights_pars_begin
 };
 
-export { CSMShader };
+window.THREE.CSMShader = CSMShader;

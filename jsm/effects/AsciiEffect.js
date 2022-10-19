@@ -263,4 +263,4 @@ class AsciiEffect {
 
 }
 
-export { AsciiEffect };
+window.THREE.AsciiEffect = AsciiEffect;

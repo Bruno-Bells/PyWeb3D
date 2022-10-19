@@ -1,11 +1,11 @@
-import {
-	EventDispatcher,
-	Matrix4,
-	Plane,
-	Raycaster,
-	Vector2,
-	Vector3
-} from 'three';
+
+EventDispatcher = window.THREE.EventDispatcher;
+Matrix4 = window.THREE.Matrix4;
+Plane = window.THREE.Plane;
+Raycaster = window.THREE.Raycaster;
+Vector2 = window.THREE.Vector2;
+Vector3 = window.THREE.Vector3;
+
 
 const _plane = new Plane();
 const _raycaster = new Raycaster();
@@ -217,4 +217,4 @@ class DragControls extends EventDispatcher {
 
 }
 
-export { DragControls };
+window.THREE.DragControls = DragControls

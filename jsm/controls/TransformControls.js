@@ -1,24 +1,24 @@
-import {
-	BoxGeometry,
-	BufferGeometry,
-	CylinderGeometry,
-	DoubleSide,
-	Euler,
-	Float32BufferAttribute,
-	Line,
-	LineBasicMaterial,
-	Matrix4,
-	Mesh,
-	MeshBasicMaterial,
-	Object3D,
-	OctahedronGeometry,
-	PlaneGeometry,
-	Quaternion,
-	Raycaster,
-	SphereGeometry,
-	TorusGeometry,
-	Vector3
-} from 'three';
+
+BoxGeometry = window.THREE.BoxGeometry;
+BufferGeometry = window.THREE.BufferGeometry;
+CylinderGeometry = window.THREE.CylinderGeometry;
+DoubleSide = window.THREE.DoubleSide;
+Euler = window.THREE.Euler;
+Float32BufferAttribute = window.THREE.Float32BufferAttribute;
+Line = window.THREE.Line;
+LineBasicMaterial = window.THREE.LineBasicMaterial;
+Matrix4 = window.THREE.Matrix4;
+Mesh = window.THREE.Mesh;
+MeshBasicMaterial = window.THREE.MeshBasicMaterial;
+Object3D = window.THREE.Object3D;
+OctahedronGeometry = window.THREE.OctahedronGeometry;
+PlaneGeometry = window.THREE.PlaneGeometry;
+Quaternion = window.THREE.Quaternion;
+Raycaster = window.THREE.Raycaster;
+SphereGeometry = window.THREE.SphereGeometry;
+TorusGeometry = window.THREE.TorusGeometry;
+Vector3 = window.THREE.Vector3;
+
 
 const _raycaster = new Raycaster();
 
@@ -1555,4 +1555,6 @@ class TransformControlsPlane extends Mesh {
 
 }
 
-export { TransformControls, TransformControlsGizmo, TransformControlsPlane };
+window.THREE.TransformControls = TransformControls;
+window.THREE.TransformControlsGizmo = TransformControlsGizmo;
+window.THREE.TransformControlsPlane = TransformControlsPlane;

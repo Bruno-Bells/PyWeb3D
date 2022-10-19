@@ -1,8 +1,8 @@
-import {
-	PerspectiveCamera,
-	Quaternion,
-	Vector3
-} from 'three';
+
+PerspectiveCamera = window.THREE.PerspectiveCamera;
+Quaternion = window.THREE.Quaternion;
+Vector3 = window.THREE.Vector3;
+
 
 /**
  * peppers ghost effect based on http://www.instructables.com/id/Reflective-Prism/?ALLSTEPS
@@ -150,4 +150,4 @@ class PeppersGhostEffect {
 
 }
 
-export { PeppersGhostEffect };
+window.THREE.PeppersGhostEffect = PeppersGhostEffect;

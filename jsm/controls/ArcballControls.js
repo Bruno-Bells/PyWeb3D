@@ -1,20 +1,20 @@
-import {
-	GridHelper,
-	EllipseCurve,
-	BufferGeometry,
-	Line,
-	LineBasicMaterial,
-	Raycaster,
-	Group,
-	Box3,
-	Sphere,
-	Quaternion,
-	Vector2,
-	Vector3,
-	Matrix4,
-	MathUtils,
-	EventDispatcher
-} from 'three';
+
+GridHelper = window.THREE.GridHelper;
+EllipseCurve = window.THREE.EllipseCurve;
+BufferGeometry = window.THREE.BufferGeometry;
+Line = window.THREE.Line;
+LineBasicMaterial = window.THREE.LineBasicMaterial;
+Raycaster = window.THREE.Raycaster;
+Group = window.THREE.Group;
+Box3 = window.THREE.Box3;
+Sphere = window.THREE.Sphere;
+Quaternion = window.THREE.Quaternion;
+Vector2 = window.THREE.Vector2;
+Vector3 = window.THREE.Vector3;
+Matrix4 = window.THREE.Matrix4;
+MathUtils = window.THREE.MathUtils;
+EventDispatcher = window.THREE.EventDispatcher;
+
 
 //trackball state
 const STATE = {
@@ -3213,4 +3213,4 @@ class ArcballControls extends EventDispatcher {
 
 }
 
-export { ArcballControls };
+window.THREE.ArcballControls = ArcballControls;

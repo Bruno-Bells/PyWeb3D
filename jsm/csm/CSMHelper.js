@@ -1,16 +1,16 @@
-import {
-	Group,
-	Mesh,
-	LineSegments,
-	BufferGeometry,
-	LineBasicMaterial,
-	Box3Helper,
-	Box3,
-	PlaneGeometry,
-	MeshBasicMaterial,
-	BufferAttribute,
-	DoubleSide
-} from 'three';
+
+Group = window.THREE.Group;
+Mesh = window.THREE.Mesh;
+LineSegments = window.THREE.LineSegments;
+BufferGeometry = window.THREE.BufferGeometry;
+LineBasicMaterial = window.THREE.LineBasicMaterial;
+Box3Helper = window.THREE.Box3Helper;
+Box3 = window.THREE.Box3;
+PlaneGeometry = window.THREE.PlaneGeometry;
+MeshBasicMaterial = window.THREE.MeshBasicMaterial;
+BufferAttribute = window.THREE.BufferAttribute;
+DoubleSide = window.THREE.DoubleSide;
+
 
 class CSMHelper extends Group {
 
@@ -190,4 +190,4 @@ class CSMHelper extends Group {
 
 }
 
-export { CSMHelper };
+window.THREE.CSMHelper = CSMHelper;

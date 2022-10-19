@@ -1,12 +1,12 @@
-import {
-	EventDispatcher,
-	MOUSE,
-	Quaternion,
-	Spherical,
-	TOUCH,
-	Vector2,
-	Vector3
-} from 'three';
+
+EventDispatcher = window.THREE.EventDispatcher;
+MOUSE = window.THREE.MOUSE;
+Quaternion = window.THREE.Quaternion;
+Spherical = window.THREE.Spherical;
+TOUCH = window.THREE.TOUCH;
+Vector2 = window.THREE.Vector2;
+Vector3 = window.THREE.Vector3;
+
 
 // This set of controls performs orbiting, dollying (zooming), and panning.
 // Unlike TrackballControls, it maintains the "up" direction object.up (+Y by default).
@@ -1244,4 +1244,5 @@ class MapControls extends OrbitControls {
 
 }
 
-export { OrbitControls, MapControls };
+window.THREE.OrbitControls = OrbitControls;
+window.THREE.MapControls = MapControls;

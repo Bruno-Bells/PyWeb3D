@@ -1,8 +1,8 @@
-import {
-	MathUtils,
-	Spherical,
-	Vector3
-} from 'three';
+
+MathUtils = window.THREE.MathUtils;
+Spherical = window.THREE.Spherical;
+Vector3 = window.THREE.Vector3;
+
 
 const _lookDirection = new Vector3();
 const _spherical = new Spherical();
@@ -322,4 +322,4 @@ function contextmenu( event ) {
 
 }
 
-export { FirstPersonControls };
+window.THREE.FirstPersonControls = FirstPersonControls;

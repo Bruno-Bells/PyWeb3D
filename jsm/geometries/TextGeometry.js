@@ -15,9 +15,9 @@
  * }
  */
 
-import {
-	ExtrudeGeometry
-} from 'three';
+
+ExtrudeGeometry = window.THREE.ExtrudeGeometry;
+
 
 class TextGeometry extends ExtrudeGeometry {
 
@@ -54,4 +54,4 @@ class TextGeometry extends ExtrudeGeometry {
 }
 
 
-export { TextGeometry };
+window.THREE.TextGeometry = TextGeometry;

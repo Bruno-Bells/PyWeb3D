@@ -1,17 +1,17 @@
-import {
-	BufferAttribute,
-	BufferGeometry,
-	Color,
-	Line,
-	LineBasicMaterial,
-	Matrix4,
-	Mesh,
-	MeshBasicMaterial,
-	Object3D,
-	Quaternion,
-	SphereGeometry,
-	Vector3
-} from 'three';
+
+BufferAttribute = window.THREE.BufferAttribute;
+BufferGeometry = window.THREE.BufferGeometry;
+Color = window.THREE.Color;
+Line = window.THREE.Line;
+LineBasicMaterial = window.THREE.LineBasicMaterial;
+Matrix4 = window.THREE.Matrix4;
+Mesh = window.THREE.Mesh;
+MeshBasicMaterial = window.THREE.MeshBasicMaterial;
+Object3D = window.THREE.Object3D;
+Quaternion = window.THREE.Quaternion;
+SphereGeometry = window.THREE.SphereGeometry;
+Vector3 = window.THREE.Vector3;
+
 
 const _q = new Quaternion();
 const _targetPos = new Vector3();
@@ -479,4 +479,5 @@ class CCDIKHelper extends Object3D {
 
 }
 
-export { CCDIKSolver, CCDIKHelper };
+window.THREE.CCDIKSolver = CCDIKSolver;
+window.THREE.CCDIKHelper = CCDIKHelper;

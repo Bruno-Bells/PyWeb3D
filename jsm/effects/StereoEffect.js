@@ -1,7 +1,7 @@
-import {
-	StereoCamera,
-	Vector2
-} from 'three';
+
+StereoCamera = window.THREE.StereoCamera;
+Vector2 = window.THREE.Vector2;
+
 
 class StereoEffect {
 
@@ -52,4 +52,4 @@ class StereoEffect {
 
 }
 
-export { StereoEffect };
+window.THREE.StereoEffect = StereoEffect;

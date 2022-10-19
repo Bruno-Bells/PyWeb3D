@@ -1,8 +1,8 @@
-import {
-	Euler,
-	EventDispatcher,
-	Vector3
-} from 'three';
+
+Euler = window.THREE.Euler
+EventDispatcher = window.THREE.EventDispatcher
+Vector3 = window.THREE.Vector3
+
 
 const _euler = new Euler( 0, 0, 0, 'YXZ' );
 const _vector = new Vector3();
@@ -154,4 +154,4 @@ class PointerLockControls extends EventDispatcher {
 
 }
 
-export { PointerLockControls };
+window.THREE.PointerLockControls = PointerLockControls

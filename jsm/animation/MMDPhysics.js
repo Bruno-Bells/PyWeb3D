@@ -1,17 +1,17 @@
-import {
-	Bone,
-	BoxGeometry,
-	CapsuleGeometry,
-	Color,
-	Euler,
-	Matrix4,
-	Mesh,
-	MeshBasicMaterial,
-	Object3D,
-	Quaternion,
-	SphereGeometry,
-	Vector3
-} from 'three';
+
+Bone = window.THREE.Bone;
+BoxGeometry = window.THREE.BoxGeometry;
+CapsuleGeometry = window.THREE.CapsuleGeometry;
+Color = window.THREE.Color;
+Euler = window.THREE.Euler;
+Matrix4 = window.THREE.Matrix4;
+Mesh = window.THREE.Mesh;
+MeshBasicMaterial = window.THREE.MeshBasicMaterial;
+Object3D = window.THREE.Object3D;
+Quaternion = window.THREE.Quaternion;
+SphereGeometry = window.THREE.SphereGeometry;
+Vector3 = window.THREE.Vector3;
+
 
 /**
  * Dependencies
@@ -1403,4 +1403,4 @@ class MMDPhysicsHelper extends Object3D {
 
 }
 
-export { MMDPhysics };
+window.THREE.MMDPhysics = MMDPhysics;
