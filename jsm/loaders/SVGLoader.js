@@ -1,17 +1,16 @@
-import {
-	Box2,
-	BufferGeometry,
-	FileLoader,
-	Float32BufferAttribute,
-	Loader,
-	Matrix3,
-	Path,
-	Shape,
-	ShapePath,
-	ShapeUtils,
-	Vector2,
-	Vector3
-} from 'three';
+
+Box2 = window.THREE.Box2;
+BufferGeometry = window.THREE.BufferGeometry;
+FileLoader = window.THREE.FileLoader;
+Float32BufferAttribute = window.THREE.Float32BufferAttribute;
+Loader = window.THREE.Loader;
+Matrix3 = window.THREE.Matrix3;
+Path = window.THREE.Path;
+Shape = window.THREE.Shape;
+ShapePath = window.THREE.ShapePath;
+ShapeUtils = window.THREE.ShapeUtils;
+Vector2 = window.THREE.Vector2;
+Vector3 = window.THREE.Vector3;
 
 class SVGLoader extends Loader {
 
@@ -2947,4 +2946,4 @@ class SVGLoader extends Loader {
 
 }
 
-export { SVGLoader };
+window.THREE.SVGLoader = SVGLoader;

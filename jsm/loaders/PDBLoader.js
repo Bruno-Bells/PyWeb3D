@@ -1,9 +1,9 @@
-import {
-	BufferGeometry,
-	FileLoader,
-	Float32BufferAttribute,
-	Loader
-} from 'three';
+
+BufferGeometry = window.THREE.BufferGeometry;
+FileLoader = window.THREE.FileLoader;
+Float32BufferAttribute = window.THREE.Float32BufferAttribute;
+Loader = window.THREE.Loader;
+
 
 class PDBLoader extends Loader {
 
@@ -224,4 +224,4 @@ class PDBLoader extends Loader {
 
 }
 
-export { PDBLoader };
+window.THREE.PDBLoader = PDBLoader;

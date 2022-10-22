@@ -1,18 +1,18 @@
-import {
-	AdditiveBlending,
-	BufferGeometry,
-	Color,
-	DoubleSide,
-	FileLoader,
-	Float32BufferAttribute,
-	Group,
-	Loader,
-	LoaderUtils,
-	Matrix4,
-	Mesh,
-	MeshPhongMaterial,
-	TextureLoader
-} from 'three';
+
+AdditiveBlending = window.THREE.AdditiveBlending;
+BufferGeometry = window.THREE.BufferGeometry;
+Color = window.THREE.Color;
+DoubleSide = window.THREE.DoubleSide;
+FileLoader = window.THREE.FileLoader;
+Float32BufferAttribute = window.THREE.Float32BufferAttribute;
+Group = window.THREE.Group;
+Loader = window.THREE.Loader;
+LoaderUtils = window.THREE.LoaderUtils;
+Matrix4 = window.THREE.Matrix4;
+Mesh = window.THREE.Mesh;
+MeshPhongMaterial = window.THREE.MeshPhongMaterial;
+TextureLoader = window.THREE.TextureLoader;
+
 
 /**
  * Autodesk 3DS three.js file loader, based on lib3ds.
@@ -1121,4 +1121,4 @@ const MESH_MATRIX = 0x4160;
 // const VIEWPORT_SIZE = 0x7020;
 // const NETWORK_VIEW = 0x7030;
 
-export { TDSLoader };
+window.THREE.TDSLoader = TDSLoader;

@@ -1,15 +1,15 @@
-import {
-	BufferAttribute,
-	BufferGeometry,
-	Float32BufferAttribute,
-	InstancedBufferAttribute,
-	InterleavedBuffer,
-	InterleavedBufferAttribute,
-	TriangleFanDrawMode,
-	TriangleStripDrawMode,
-	TrianglesDrawMode,
-	Vector3,
-} from 'three';
+
+BufferAttribute = window.THREE.BufferAttribute
+BufferGeometry = window.THREE.BufferGeometry
+Float32BufferAttribute = window.THREE.Float32BufferAttribute
+InstancedBufferAttribute = window.THREE.InstancedBufferAttribute
+InterleavedBuffer = window.THREE.InterleavedBuffer
+InterleavedBufferAttribute = window.THREE.InterleavedBufferAttribute
+TriangleFanDrawMode = window.THREE.TriangleFanDrawMode
+TriangleStripDrawMode = window.THREE.TriangleStripDrawMode
+TrianglesDrawMode = window.THREE.TrianglesDrawMode
+Vector3 = window.THREE.Vector3
+
 
 function computeTangents() {
 
@@ -1208,15 +1208,15 @@ function mergeGroups( geometry ) {
 
 }
 
-export {
-	computeTangents,
-	computeMikkTSpaceTangents,
-	mergeBufferGeometries,
-	mergeBufferAttributes,
-	interleaveAttributes,
-	estimateBytesUsed,
-	mergeVertices,
-	toTrianglesDrawMode,
-	computeMorphedAttributes,
-	mergeGroups
-};
+
+computeTangents = window.THREE.computeTangents;
+computeMikkTSpaceTangents = window.THREE.computeMikkTSpaceTangents;
+mergeBufferGeometries = window.THREE.mergeBufferGeometries;
+mergeBufferAttributes = window.THREE.mergeBufferAttributes;
+interleaveAttributes = window.THREE.interleaveAttributes;
+estimateBytesUsed = window.THREE.estimateBytesUsed;
+mergeVertices = window.THREE.mergeVertices;
+toTrianglesDrawMode = window.THREE.toTrianglesDrawMode;
+computeMorphedAttributes = window.THREE.computeMorphedAttributes;
+mergeGroups = window.THREE.mergeGroups;
+

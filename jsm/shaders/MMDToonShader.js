@@ -13,7 +13,8 @@
  *  * Add mmd_toon_matcap_fragment.
  */
 
-import { UniformsUtils, ShaderLib } from 'three';
+UniformsUtils = window.THREE.UniformsUtils;
+ShaderLib = window.THREE.ShaderLib;
 
 const lights_mmd_toon_pars_fragment = /* glsl */`
 varying vec3 vViewPosition;
@@ -120,4 +121,4 @@ const MMDToonShader = {
 
 };
 
-export { MMDToonShader };
+window.THREE.MMDToonShader = MMDToonShader;

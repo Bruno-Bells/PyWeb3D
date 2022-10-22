@@ -11527,4 +11527,6 @@ var MMDParser = {
   Parser: Parser
 };
 
-export { MMDParser, CharsetEncoder, Parser };
+window.THREE.MMDParser = MMDParser;
+window.THREE.CharsetEncoder = CharsetEncoder;
+window.THREE.Parser = Parser;

@@ -1,10 +1,10 @@
-import {
-	DataUtils,
-	DataTextureLoader,
-	FloatType,
-	HalfFloatType,
-	RGBAFormat
-} from 'three';
+
+DataUtils = window.THREE.DataUtils;
+DataTextureLoader = window.THREE.DataTextureLoader;
+FloatType = window.THREE.FloatType;
+HalfFloatType = window.THREE.HalfFloatType;
+RGBAFormat = window.THREE.RGBAFormat;
+
 
 class LogLuvLoader extends DataTextureLoader {
 
@@ -603,4 +603,4 @@ UTIF._copyTile = function ( tb, tw, th, b, w, h, xoff, yoff ) {
 
 };
 
-export { LogLuvLoader };
+window.THREE.LogLuvLoader = LogLuvLoader;

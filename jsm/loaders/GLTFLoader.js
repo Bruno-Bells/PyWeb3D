@@ -1,67 +1,66 @@
-import {
-	AnimationClip,
-	Bone,
-	Box3,
-	BufferAttribute,
-	BufferGeometry,
-	ClampToEdgeWrapping,
-	Color,
-	DirectionalLight,
-	DoubleSide,
-	FileLoader,
-	FrontSide,
-	Group,
-	ImageBitmapLoader,
-	InterleavedBuffer,
-	InterleavedBufferAttribute,
-	Interpolant,
-	InterpolateDiscrete,
-	InterpolateLinear,
-	Line,
-	LineBasicMaterial,
-	LineLoop,
-	LineSegments,
-	LinearFilter,
-	LinearMipmapLinearFilter,
-	LinearMipmapNearestFilter,
-	Loader,
-	LoaderUtils,
-	Material,
-	MathUtils,
-	Matrix4,
-	Mesh,
-	MeshBasicMaterial,
-	MeshPhysicalMaterial,
-	MeshStandardMaterial,
-	MirroredRepeatWrapping,
-	NearestFilter,
-	NearestMipmapLinearFilter,
-	NearestMipmapNearestFilter,
-	NumberKeyframeTrack,
-	Object3D,
-	OrthographicCamera,
-	PerspectiveCamera,
-	PointLight,
-	Points,
-	PointsMaterial,
-	PropertyBinding,
-	Quaternion,
-	QuaternionKeyframeTrack,
-	RepeatWrapping,
-	Skeleton,
-	SkinnedMesh,
-	Sphere,
-	SpotLight,
-	TangentSpaceNormalMap,
-	Texture,
-	TextureLoader,
-	TriangleFanDrawMode,
-	TriangleStripDrawMode,
-	Vector2,
-	Vector3,
-	VectorKeyframeTrack,
-	sRGBEncoding
-} from 'three';
+
+AnimationClip = window.THREE.AnimationClip;
+Bone = window.THREE.Bone;
+Box3 = window.THREE.Box3;
+BufferAttribute = window.THREE.BufferAttribute;
+BufferGeometry = window.THREE.BufferGeometry;
+ClampToEdgeWrapping = window.THREE.ClampToEdgeWrapping;
+Color = window.THREE.Color;
+DirectionalLight = window.THREE.DirectionalLight;
+DoubleSide = window.THREE.DoubleSide;
+FileLoader = window.THREE.FileLoader;
+FrontSide = window.THREE.FrontSide;
+Group = window.THREE.Group;
+ImageBitmapLoader = window.THREE.ImageBitmapLoader;
+InterleavedBuffer = window.THREE.InterleavedBuffer;
+InterleavedBufferAttribute = window.THREE.InterleavedBufferAttribute;
+Interpolant = window.THREE.Interpolant;
+InterpolateLinear = window.THREE.InterpolateLinear;
+Line = window.THREE.Line;
+LineBasicMaterial = window.THREE.LineBasicMaterial;
+LineLoop = window.THREE.LineLoop;
+LineSegments = window.THREE.LineSegments;
+LinearFilter = window.THREE.LinearFilter;
+LinearMipmapLinearFilter = window.THREE.LinearMipmapLinearFilter;
+LinearMipmapNearestFilter = window.THREE.LinearMipmapNearestFilter;
+Loader = window.THREE.Loader;
+LoaderUtils = window.THREE.LoaderUtils;
+Material = window.THREE.Material;
+MathUtils = window.THREE.MathUtils;
+Matrix4 = window.THREE.Matrix4;
+Mesh = window.THREE.Mesh;
+MeshBasicMaterial = window.THREE.MeshBasicMaterial;
+MeshPhysicalMaterial = window.THREE.MeshPhysicalMaterial;
+MeshStandardMaterial = window.THREE.MeshStandardMaterial;
+MirroredRepeatWrapping = window.THREE.MirroredRepeatWrapping;
+NearestFilter = window.THREE.NearestFilter;
+NearestMipmapLinearFilter = window.THREE.NearestMipmapLinearFilter;
+NearestMipmapNearestFilter = window.THREE.NearestMipmapNearestFilter;
+NumberKeyframeTrack = window.THREE.NumberKeyframeTrack;
+Object3D = window.THREE.Object3D;
+OrthographicCamera = window.THREE.OrthographicCamera;
+PerspectiveCamera = window.THREE.PerspectiveCamera;
+PointLight = window.THREE.PointLight;
+Points = window.THREE.Points;
+PointsMaterial = window.THREE.PointsMaterial;
+PropertyBinding = window.THREE.PropertyBinding;
+Quaternion = window.THREE.Quaternion;
+QuaternionKeyframeTrack = window.THREE.QuaternionKeyframeTrack;
+RepeatWrapping = window.THREE.RepeatWrapping;
+Skeleton = window.THREE.Skeleton;
+SkinnedMesh = window.THREE.SkinnedMesh;
+Sphere = window.THREE.Sphere;
+SpotLight = window.THREE.SpotLight;
+TangentSpaceNormalMap = window.THREE.TangentSpaceNormalMap;
+Texture = window.THREE.Texture;
+TextureLoader = window.THREE.TextureLoader;
+TriangleFanDrawMode = window.THREE.TriangleFanDrawMode;
+TriangleStripDrawMode = window.THREE.TriangleStripDrawMode;
+Vector2 = window.THREE.Vector2;
+Vector3 = window.THREE.Vector3;
+VectorKeyframeTrack = window.THREE.VectorKeyframeTrack;
+sRGBEncoding = window.THREE.sRGBEncoding;
+
 
 class GLTFLoader extends Loader {
 
@@ -4557,4 +4556,4 @@ function toTrianglesDrawMode( geometry, drawMode ) {
 
 }
 
-export { GLTFLoader };
+window.THREE.GLTFLoader = GLTFLoader;

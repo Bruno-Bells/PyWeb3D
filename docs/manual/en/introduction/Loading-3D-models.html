@@ -1,9 +1,4 @@
-<div style="color:rgb(158, 156, 156);align-items: center;	margin-left: auto; margin-right: auto; padding-top:20%;  width: 25em">
-
-	<h1 >Comming Soon...</h1>
-	<h1><a href="https://github.com/Bruno-Odinukweze/PyWeb3D#how-to-contribute" target="_blank" rel="noopener">How to Contribute</a></h1>
-</div >
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -19,11 +14,13 @@
 	<p>
 		3D models are available in hundreds of file formats, each with different
 		purposes, assorted features, and varying complexity. Although
-		<a href="https://github.com/mrdoob/three.js/tree/dev/examples/jsm/loaders" target="_blank" rel="noopener">
-		three.js provides many loaders</a>, choosing the right format and
+		three.js provides many loaders, choosing the right format and
 		workflow will save time and frustration later on. Some formats are
 		difficult to work with, inefficient for realtime experiences, or simply not
 		fully supported at this time.
+	</p>
+	<p>
+		Modified three.js loaders for pyweb3D, can be viewd <a href="https://github.com/Bruno-Odinukweze/PyWeb3D/tree/main/jsm/loaders" target="_blank" rel="noopener">here</a>
 	</p>
 
 	<p>
@@ -33,12 +30,12 @@
 
 	<h2>Before we start</h2>
 
-	<p>
+	<!-- <p>
 		If you're new to running a local server, begin with
 		[link:#manual/introduction/How-to-run-things-locally how to run things locally]
 		first. Many common errors viewing 3D models can be avoided by hosting files
 		correctly.
-	</p>
+	</p> -->
 
 	<h2>Recommended workflow</h2>
 
@@ -87,19 +84,28 @@
 		Only a few loaders (e.g. [page:ObjectLoader]) are included by default with
 		three.js — others should be added to your app individually.
 	</p>
-
+	<p>
+		To add loaders or another other addons, first add the external script file to 
+		the `&lt;script>` tag of your html file.
+	</p>
 	<code>
-		import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+		&lt;script src="https://www.pyweb3d.org/jsm/loaders/GLTFLoader.js">&lt;/script>
+	</code>
+	<p>
+		And then load into you python code using below syntax:
+	</p>
+	<code>
+		GLTFLoader = window.THREE.GLTFLoader.new
 	</code>
 
 	<p>
-		Once you've imported a loader, you're ready to add a model to your scene. Syntax varies among
+		Once you've initialized a loader, you're ready to add a model to your scene. Syntax varies among
 		different loaders — when using another format, check the examples and documentation for that
 		loader. For glTF, usage with global scripts would be:
 	</p>
 
 	<code>
-		const loader = new GLTFLoader();
+		loader = GLTFLoader()
 
 		loader.load( 'path/to/model.glb', function ( gltf ) {
 
@@ -169,4 +175,4 @@
 
 </body>
 
-</html> -->
+</html>

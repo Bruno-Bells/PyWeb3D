@@ -1,11 +1,9 @@
-import {
-	CompressedTextureLoader,
-	RGBAFormat,
-	RGBA_S3TC_DXT3_Format,
-	RGBA_S3TC_DXT5_Format,
-	RGB_ETC1_Format,
-	RGB_S3TC_DXT1_Format
-} from 'three';
+CompressedTextureLoader = window.THREE.CompressedTextureLoader;
+RGBAFormat = window.THREE.RGBAFormat;
+RGBA_S3TC_DXT3_Format = window.THREE.RGBA_S3TC_DXT3_Format;
+RGBA_S3TC_DXT5_Format = window.THREE.RGBA_S3TC_DXT5_Format;
+RGB_ETC1_Format = window.THREE.RGB_ETC1_Format;
+RGB_S3TC_DXT1_Format = window.THREE.RGB_S3TC_DXT1_Format;
 
 class DDSLoader extends CompressedTextureLoader {
 
@@ -271,4 +269,4 @@ class DDSLoader extends CompressedTextureLoader {
 
 }
 
-export { DDSLoader };
+window.THREE.DDSLoader = DDSLoader;

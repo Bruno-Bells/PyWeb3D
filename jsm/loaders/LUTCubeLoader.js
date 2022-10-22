@@ -1,17 +1,17 @@
 // https://wwwimages2.adobe.com/content/dam/acom/en/products/speedgrade/cc/pdfs/cube-lut-specification-1.0.pdf
 
-import {
-	Loader,
-	FileLoader,
-	Vector3,
-	DataTexture,
-	Data3DTexture,
-	UnsignedByteType,
-	ClampToEdgeWrapping,
-	LinearFilter,
-} from 'three';
 
-export class LUTCubeLoader extends Loader {
+Loader = window.THREE.Loader;
+FileLoader = window.THREE.FileLoader;
+Vector3 = window.THREE.Vector3;
+DataTexture = window.THREE.DataTexture;
+Data3DTexture = window.THREE.Data3DTexture;
+UnsignedByteType = window.THREE.UnsignedByteType;
+ClampToEdgeWrapping = window.THREE.ClampToEdgeWrapping;
+LinearFilter = window.THREE.LinearFilter;
+
+
+class LUTCubeLoader extends Loader {
 
 	load( url, onLoad, onProgress, onError ) {
 
@@ -151,3 +151,5 @@ export class LUTCubeLoader extends Loader {
 	}
 
 }
+
+window.THREE.LUTCubeLoader = LUTCubeLoader;

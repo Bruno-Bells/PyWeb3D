@@ -1,16 +1,16 @@
-import {
-	Color,
-	DefaultLoadingManager,
-	FileLoader,
-	FrontSide,
-	Loader,
-	LoaderUtils,
-	MeshPhongMaterial,
-	RepeatWrapping,
-	TextureLoader,
-	Vector2,
-	sRGBEncoding
-} from 'three';
+
+Color = window.THREE.Color;
+DefaultLoadingManager = window.THREE.DefaultLoadingManager;
+FileLoader = window.THREE.FileLoader;
+FrontSide = window.THREE.FrontSide;
+Loader = window.THREE.Loader;
+LoaderUtils = window.THREE.LoaderUtils;
+MeshPhongMaterial = window.THREE.MeshPhongMaterial;
+RepeatWrapping = window.THREE.RepeatWrapping;
+TextureLoader = window.THREE.TextureLoader;
+Vector2 = window.THREE.Vector2;
+sRGBEncoding = window.THREE.sRGBEncoding;
+
 
 /**
  * Loads a Wavefront .mtl file specifying materials
@@ -564,4 +564,4 @@ class MaterialCreator {
 
 }
 
-export { MTLLoader };
+window.THREE.MTLLoader = MTLLoader;

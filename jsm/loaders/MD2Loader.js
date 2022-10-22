@@ -1,11 +1,11 @@
-import {
-	AnimationClip,
-	BufferGeometry,
-	FileLoader,
-	Float32BufferAttribute,
-	Loader,
-	Vector3
-} from 'three';
+
+AnimationClip = window.THREE.AnimationClip;
+BufferGeometry = window.THREE.BufferGeometry;
+FileLoader = window.THREE.FileLoader;
+Float32BufferAttribute = window.THREE.Float32BufferAttribute;
+Loader = window.THREE.Loader;
+Vector3 = window.THREE.Vector3;
+
 
 const _normalData = [
 	[ - 0.525731, 0.000000, 0.850651 ], [ - 0.442863, 0.238856, 0.864188 ],
@@ -396,4 +396,4 @@ class MD2Loader extends Loader {
 
 }
 
-export { MD2Loader };
+window.THREE.MD2Loader = MD2Loader;

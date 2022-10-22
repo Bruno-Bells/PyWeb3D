@@ -1,9 +1,9 @@
-import {
-	BufferAttribute,
-	BufferGeometry,
-	FileLoader,
-	Loader
-} from 'three';
+
+BufferAttribute = window.THREE.BufferAttribute;
+BufferGeometry = window.THREE.BufferGeometry;
+FileLoader = window.THREE.FileLoader;
+Loader = window.THREE.Loader;
+
 
 /**
  * See https://github.com/kchapelier/PRWM for more informations about this file format
@@ -296,4 +296,4 @@ class PRWMLoader extends Loader {
 
 }
 
-export { PRWMLoader };
+window.THREE.PRWMLoader = PRWMLoader;

@@ -10,13 +10,13 @@
  * vertex data for each frame (sequence of float32)
  */
 
-import {
-	AnimationClip,
-	BufferAttribute,
-	FileLoader,
-	Loader,
-	NumberKeyframeTrack
-} from 'three';
+
+AnimationClip = window.THREE.AnimationClip;
+BufferAttribute = window.THREE.BufferAttribute;
+FileLoader = window.THREE.FileLoader;
+Loader = window.THREE.Loader;
+NumberKeyframeTrack = window.THREE.NumberKeyframeTrack;
+
 
 class MDDLoader extends Loader {
 
@@ -99,4 +99,4 @@ class MDDLoader extends Loader {
 
 }
 
-export { MDDLoader };
+window.THREE.MDDLoader = MDDLoader;

@@ -1,29 +1,29 @@
-import {
-	BufferGeometryLoader,
-	FileLoader,
-	Loader,
-	Object3D,
-	MeshStandardMaterial,
-	Mesh,
-	Color,
-	Points,
-	PointsMaterial,
-	Line,
-	LineBasicMaterial,
-	Matrix4,
-	DirectionalLight,
-	PointLight,
-	SpotLight,
-	RectAreaLight,
-	Vector3,
-	Sprite,
-	SpriteMaterial,
-	CanvasTexture,
-	LinearFilter,
-	ClampToEdgeWrapping,
-	RepeatWrapping,
-	TextureLoader
-} from 'three';
+
+BufferGeometryLoader = window.THREE.BufferGeometryLoader;
+FileLoader = window.THREE.FileLoader;
+Loader = window.THREE.Loader;
+Object3D = window.THREE.Object3D;
+MeshStandardMaterial = window.THREE.MeshStandardMaterial;
+Mesh = window.THREE.Mesh;
+Color = window.THREE.Color;
+Points = window.THREE.Points;
+PointsMaterial = window.THREE.PointsMaterial;
+Line = window.THREE.Line;
+LineBasicMaterial = window.THREE.LineBasicMaterial;
+Matrix4 = window.THREE.Matrix4;
+DirectionalLight = window.THREE.DirectionalLight;
+PointLight = window.THREE.PointLight;
+SpotLight = window.THREE.SpotLight;
+RectAreaLight = window.THREE.RectAreaLight;
+Vector3 = window.THREE.Vector3;
+Sprite = window.THREE.Sprite;
+SpriteMaterial = window.THREE.SpriteMaterial;
+CanvasTexture = window.THREE.CanvasTexture;
+LinearFilter = window.THREE.LinearFilter;
+ClampToEdgeWrapping = window.THREE.ClampToEdgeWrapping;
+RepeatWrapping = window.THREE.RepeatWrapping;
+TextureLoader = window.THREE.TextureLoader;
+
 
 const _taskCache = new WeakMap();
 
@@ -1492,4 +1492,4 @@ function Rhino3dmWorker() {
 
 }
 
-export { Rhino3dmLoader };
+window.THREE.Rhino3dmLoader = Rhino3dmLoader;

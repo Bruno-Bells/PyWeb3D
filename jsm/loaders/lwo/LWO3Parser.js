@@ -370,4 +370,4 @@ class LWO3Parser {
 
 }
 
-export { LWO3Parser };
+window.THREE.LWO3Parser = LWO3Parser;

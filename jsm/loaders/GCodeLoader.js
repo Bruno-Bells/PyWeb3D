@@ -1,13 +1,13 @@
-import {
-	BufferGeometry,
-	Euler,
-	FileLoader,
-	Float32BufferAttribute,
-	Group,
-	LineBasicMaterial,
-	LineSegments,
-	Loader
-} from 'three';
+
+BufferGeometry = window.THREE.BufferGeometry;
+Euler = window.THREE.Euler;
+FileLoader = window.THREE.FileLoader;
+Float32BufferAttribute = window.THREE.Float32BufferAttribute;
+Group = window.THREE.Group;
+LineBasicMaterial = window.THREE.LineBasicMaterial;
+LineSegments = window.THREE.LineSegments;
+Loader = window.THREE.Loader;
+
 
 /**
  * GCodeLoader is used to load gcode files usually used for 3D printing or CNC applications.
@@ -259,4 +259,4 @@ class GCodeLoader extends Loader {
 
 }
 
-export { GCodeLoader };
+window.THREE.GCodeLoader = GCodeLoader;

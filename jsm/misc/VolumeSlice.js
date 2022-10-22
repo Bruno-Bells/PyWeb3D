@@ -1,12 +1,12 @@
-import {
-	ClampToEdgeWrapping,
-	DoubleSide,
-	LinearFilter,
-	Mesh,
-	MeshBasicMaterial,
-	PlaneGeometry,
-	Texture
-} from 'three';
+
+ClampToEdgeWrapping = window.THREE.ClampToEdgeWrapping;
+DoubleSide = window.THREE.DoubleSide;
+LinearFilter = window.THREE.LinearFilter;
+Mesh = window.THREE.Mesh;
+MeshBasicMaterial = window.THREE.MeshBasicMaterial;
+PlaneGeometry = window.THREE.PlaneGeometry;
+Texture = window.THREE.Texture;
+
 
 /**
  * This class has been made to hold a slice of a volume data
@@ -224,4 +224,4 @@ class VolumeSlice {
 
 }
 
-export { VolumeSlice };
+window.THREE.VolumeSlice = VolumeSlice;
