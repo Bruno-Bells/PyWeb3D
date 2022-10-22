@@ -1,21 +1,21 @@
-import {
-	CompressedTexture,
-	FileLoader,
-	LinearFilter,
-	LinearMipmapLinearFilter,
-	Loader,
-	RGBAFormat,
-	RGBA_ASTC_4x4_Format,
-	RGBA_BPTC_Format,
-	RGBA_ETC2_EAC_Format,
-	RGBA_PVRTC_4BPPV1_Format,
-	RGBA_S3TC_DXT5_Format,
-	RGB_ETC1_Format,
-	RGB_ETC2_Format,
-	RGB_PVRTC_4BPPV1_Format,
-	RGB_S3TC_DXT1_Format,
-	UnsignedByteType
-} from 'three';
+
+CompressedTexture = window.THREE.CompressedTexture;
+FileLoader = window.THREE.FileLoader;
+LinearFilter = window.THREE.LinearFilter;
+LinearMipmapLinearFilter = window.THREE.LinearMipmapLinearFilter;
+Loader = window.THREE.Loader;
+RGBAFormat = window.THREE.RGBAFormat;
+RGBA_ASTC_4x4_Format = window.THREE.RGBA_ASTC_4x4_Format;
+RGBA_BPTC_Format = window.THREE.RGBA_BPTC_Format;
+RGBA_ETC2_EAC_Format = window.THREE.RGBA_ETC2_EAC_Format;
+RGBA_PVRTC_4BPPV1_Format = window.THREE.RGBA_PVRTC_4BPPV1_Format;
+RGBA_S3TC_DXT5_Format = window.THREE.RGBA_S3TC_DXT5_Format;
+RGB_ETC1_Format = window.THREE.RGB_ETC1_Format;
+RGB_ETC2_Format = window.THREE.RGB_ETC2_Format;
+RGB_PVRTC_4BPPV1_Format = window.THREE.RGB_PVRTC_4BPPV1_Format;
+RGB_S3TC_DXT1_Format = window.THREE.RGB_S3TC_DXT1_Format;
+UnsignedByteType = window.THREE.UnsignedByteType;
+
 
 /**
  * Loader for Basis Universal GPU Texture Codec.
@@ -787,4 +787,4 @@ BasisTextureLoader.BasisWorker = function () {
 
 };
 
-export { BasisTextureLoader };
+window.THREE.BasisTextureLoader = BasisTextureLoader;

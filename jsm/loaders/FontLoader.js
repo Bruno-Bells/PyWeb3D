@@ -3,7 +3,6 @@ FileLoader = window.THREE.FileLoader;
 Loader = window.THREE.Loader;
 ShapePath = window.THREE.ShapePath;
 
-
 class FontLoader extends Loader {
 
 	constructor( manager ) {

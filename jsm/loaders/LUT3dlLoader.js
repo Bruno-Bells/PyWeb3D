@@ -1,17 +1,17 @@
 // http://download.autodesk.com/us/systemdocs/help/2011/lustre/index.html?url=./files/WSc4e151a45a3b785a24c3d9a411df9298473-7ffd.htm,topicNumber=d0e9492
 // https://community.foundry.com/discuss/topic/103636/format-spec-for-3dl?mode=Post&postID=895258
-import {
-	Loader,
-	FileLoader,
-	DataTexture,
-	Data3DTexture,
-	RGBAFormat,
-	UnsignedByteType,
-	ClampToEdgeWrapping,
-	LinearFilter,
-} from 'three';
 
-export class LUT3dlLoader extends Loader {
+Loader = window.THREE.Loader;
+FileLoader = window.THREE.FileLoader;
+DataTexture = window.THREE.DataTexture;
+Data3DTexture = window.THREE.Data3DTexture;
+RGBAFormat = window.THREE.RGBAFormat;
+UnsignedByteType = window.THREE.UnsignedByteType;
+ClampToEdgeWrapping = window.THREE.ClampToEdgeWrapping;
+LinearFilter = window.THREE.LinearFilter;
+
+
+class LUT3dlLoader extends Loader {
 
 	load( url, onLoad, onProgress, onError ) {
 
@@ -149,3 +149,5 @@ export class LUT3dlLoader extends Loader {
 	}
 
 }
+
+window.THREE.LUT3dlLoader = LUT3dlLoader;

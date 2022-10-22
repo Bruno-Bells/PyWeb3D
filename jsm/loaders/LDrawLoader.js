@@ -1,21 +1,21 @@
-import {
-	BufferAttribute,
-	BufferGeometry,
-	Color,
-	FileLoader,
-	Group,
-	LineBasicMaterial,
-	LineSegments,
-	Loader,
-	Matrix4,
-	Mesh,
-	MeshStandardMaterial,
-	ShaderMaterial,
-	UniformsLib,
-	UniformsUtils,
-	Vector3,
-	Ray
-} from 'three';
+
+BufferAttribute = window.THREE.BufferAttribute;
+BufferGeometry = window.THREE.BufferGeometry;
+Color = window.THREE.Color;
+FileLoader = window.THREE.FileLoader;
+Group = window.THREE.Group;
+LineBasicMaterial = window.THREE.LineBasicMaterial;
+LineSegments = window.THREE.LineSegments;
+Loader = window.THREE.Loader;
+Matrix4 = window.THREE.Matrix4;
+Mesh = window.THREE.Mesh;
+MeshStandardMaterial = window.THREE.MeshStandardMaterial;
+ShaderMaterial = window.THREE.ShaderMaterial;
+UniformsLib = window.THREE.UniformsLib;
+UniformsUtils = window.THREE.UniformsUtils;
+Vector3 = window.THREE.Vector3;
+Ray = window.THREE.Ray;
+
 
 // Special surface finish tag types.
 // Note: "MATERIAL" tag (e.g. GLITTER, SPECKLE) is not implemented
@@ -2461,4 +2461,4 @@ class LDrawLoader extends Loader {
 
 }
 
-export { LDrawLoader };
+window.THREE.LDrawLoader = LDrawLoader;

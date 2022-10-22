@@ -1,12 +1,12 @@
-import {
-	BufferAttribute,
-	BufferGeometry,
-	FileLoader,
-	Float32BufferAttribute,
-	Loader,
-	LoaderUtils,
-	Vector3
-} from 'three';
+
+BufferAttribute = window.THREE.BufferAttribute;
+BufferGeometry = window.THREE.BufferGeometry;
+FileLoader = window.THREE.FileLoader;
+Float32BufferAttribute = window.THREE.Float32BufferAttribute;
+Loader = window.THREE.Loader;
+LoaderUtils = window.THREE.LoaderUtils;
+Vector3 = window.THREE.Vector3;
+
 
 /**
  * Description: A THREE loader for STL ASCII files, as created by Solidworks and other CAD programs.
@@ -396,4 +396,4 @@ class STLLoader extends Loader {
 
 }
 
-export { STLLoader };
+window.THREE.STLLoader = STLLoader;

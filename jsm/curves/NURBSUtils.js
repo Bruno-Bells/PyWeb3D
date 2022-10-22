@@ -2,7 +2,6 @@
 Vector3 = window.THREE.Vector3;
 Vector4 = window.THREE.Vector4;
 
-
 /**
  * NURBS utils
  *

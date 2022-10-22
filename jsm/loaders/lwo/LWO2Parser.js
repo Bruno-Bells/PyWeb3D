@@ -411,4 +411,4 @@ class LWO2Parser {
 
 }
 
-export { LWO2Parser };
+window.THREE.LWO2Parser = LWO2Parser;

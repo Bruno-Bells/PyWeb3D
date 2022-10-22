@@ -1,11 +1,11 @@
-import {
-	DataTextureLoader,
-	RGBAFormat,
-	LinearFilter,
-	CubeTexture,
-	HalfFloatType,
-	DataUtils
-} from 'three';
+
+DataTextureLoader = window.THREE.DataTextureLoader;
+RGBAFormat = window.THREE.RGBAFormat;
+LinearFilter = window.THREE.LinearFilter;
+CubeTexture = window.THREE.CubeTexture;
+HalfFloatType = window.THREE.HalfFloatType;
+DataUtils = window.THREE.DataUtils;
+
 
 class RGBMLoader extends DataTextureLoader {
 
@@ -1062,4 +1062,4 @@ UPNG._copyTile = function ( sb, sw, sh, tb, tw, th, xoff, yoff, mode ) {
 
 };
 
-export { RGBMLoader };
+window.THREE.RGBMLoader = RGBMLoader;

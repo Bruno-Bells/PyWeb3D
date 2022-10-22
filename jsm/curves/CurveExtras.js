@@ -2,7 +2,6 @@
 Curve = window.THREE.Curve;
 Vector3 = window.THREE.Vector3;
 
-
 /**
  * A bunch of parametric curves
  *

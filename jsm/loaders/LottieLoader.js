@@ -1,9 +1,9 @@
-import {
-	FileLoader,
-	Loader,
-	CanvasTexture,
-	NearestFilter
-} from 'three';
+
+FileLoader = window.THREE.FileLoader;
+Loader = window.THREE.Loader;
+CanvasTexture = window.THREE.CanvasTexture;
+NearestFilter = window.THREE.NearestFilter;
+
 
 class LottieLoader extends Loader {
 
@@ -70,4 +70,4 @@ class LottieLoader extends Loader {
 
 }
 
-export { LottieLoader };
+window.THREE.LottieLoader = LottieLoader;

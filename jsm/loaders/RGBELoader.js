@@ -1,11 +1,11 @@
-import {
-	DataTextureLoader,
-	DataUtils,
-	FloatType,
-	HalfFloatType,
-	LinearEncoding,
-	LinearFilter
-} from 'three';
+
+DataTextureLoader = window.THREE.DataTextureLoader;
+DataUtils = window.THREE.DataUtils;
+FloatType = window.THREE.FloatType;
+HalfFloatType = window.THREE.HalfFloatType;
+LinearEncoding = window.THREE.LinearEncoding;
+LinearFilter = window.THREE.LinearFilter;
+
 
 // https://github.com/mrdoob/three.js/issues/5552
 // http://en.wikipedia.org/wiki/RGBE_image_format
@@ -465,4 +465,4 @@ class RGBELoader extends DataTextureLoader {
 
 }
 
-export { RGBELoader };
+window.THREE.RGBELoader = RGBELoader;

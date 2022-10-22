@@ -1,9 +1,9 @@
-import {
-	BufferGeometry,
-	FileLoader,
-	Float32BufferAttribute,
-	Loader
-} from 'three';
+
+BufferGeometry = window.THREE.BufferGeometry;
+FileLoader = window.THREE.FileLoader;
+Float32BufferAttribute = window.THREE.Float32BufferAttribute;
+Loader = window.THREE.Loader;
+
 
 class XYZLoader extends Loader {
 
@@ -97,4 +97,4 @@ class XYZLoader extends Loader {
 
 }
 
-export { XYZLoader };
+window.THREE.XYZLoader = XYZLoader;

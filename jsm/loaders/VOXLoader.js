@@ -1,15 +1,15 @@
-import {
-	BufferGeometry,
-	Data3DTexture,
-	FileLoader,
-	Float32BufferAttribute,
-	Loader,
-	LinearFilter,
-	Mesh,
-	MeshStandardMaterial,
-	NearestFilter,
-	RedFormat
-} from 'three';
+
+BufferGeometry = window.THREE.BufferGeometry;
+Data3DTexture = window.THREE.Data3DTexture;
+FileLoader = window.THREE.FileLoader;
+Float32BufferAttribute = window.THREE.Float32BufferAttribute;
+Loader = window.THREE.Loader;
+LinearFilter = window.THREE.LinearFilter;
+Mesh = window.THREE.Mesh;
+MeshStandardMaterial = window.THREE.MeshStandardMaterial;
+NearestFilter = window.THREE.NearestFilter;
+RedFormat = window.THREE.RedFormat;
+
 
 class VOXLoader extends Loader {
 
@@ -302,4 +302,6 @@ class VOXData3DTexture extends Data3DTexture {
 
 }
 
-export { VOXLoader, VOXMesh, VOXData3DTexture };
+window.THREE.VOXLoader = VOXLoader;
+window.THREE.VOXMesh = VOXMesh;
+window.THREE.VOXData3DTexture = VOXData3DTexture;

@@ -1,6 +1,5 @@
-import {
-	CompressedTextureLoader
-} from 'three';
+CompressedTextureLoader = window.THREE.CompressedTextureLoader;
+
 
 /**
  * for description see https://www.khronos.org/opengles/sdk/tools/KTX/
@@ -173,4 +172,4 @@ class KhronosTextureContainer {
 
 }
 
-export { KTXLoader };
+window.THREE.KTXLoader = KTXLoader;

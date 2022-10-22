@@ -1,9 +1,9 @@
-import {
-	BufferAttribute,
-	BufferGeometry,
-	FileLoader,
-	Loader
-} from 'three';
+
+BufferAttribute = window.THREE.BufferAttribute;
+BufferGeometry = window.THREE.BufferGeometry;
+FileLoader = window.THREE.FileLoader;
+Loader = window.THREE.Loader;
+
 
 const _taskCache = new WeakMap();
 
@@ -558,4 +558,4 @@ function DRACOWorker() {
 
 }
 
-export { DRACOLoader };
+window.THREE.DRACOLoader = DRACOLoader;

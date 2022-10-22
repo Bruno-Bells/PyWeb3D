@@ -1,14 +1,14 @@
-import {
-	AnimationClip,
-	Bone,
-	FileLoader,
-	Loader,
-	Quaternion,
-	QuaternionKeyframeTrack,
-	Skeleton,
-	Vector3,
-	VectorKeyframeTrack
-} from 'three';
+
+AnimationClip = window.THREE.AnimationClip;
+Bone = window.THREE.Bone;
+FileLoader = window.THREE.FileLoader;
+Loader = window.THREE.Loader;
+Quaternion = window.THREE.Quaternion;
+QuaternionKeyframeTrack = window.THREE.QuaternionKeyframeTrack;
+Skeleton = window.THREE.Skeleton;
+Vector3 = window.THREE.Vector3;
+VectorKeyframeTrack = window.THREE.VectorKeyframeTrack;
+
 
 /**
  * Description: reads BVH files and outputs a single Skeleton and an AnimationClip
@@ -434,4 +434,4 @@ class BVHLoader extends Loader {
 
 }
 
-export { BVHLoader };
+window.THREE.BVHLoader = BVHLoader;

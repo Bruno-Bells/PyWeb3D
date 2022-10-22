@@ -1,13 +1,13 @@
-import {
-	BufferGeometry,
-	FileLoader,
-	Float32BufferAttribute,
-	Int32BufferAttribute,
-	Loader,
-	LoaderUtils,
-	Points,
-	PointsMaterial
-} from 'three';
+
+BufferGeometry = window.THREE.BufferGeometry;
+FileLoader = window.THREE.FileLoader;
+Float32BufferAttribute = window.THREE.Float32BufferAttribute;
+Int32BufferAttribute = window.THREE.Int32BufferAttribute;
+Loader = window.THREE.Loader;
+LoaderUtils = window.THREE.LoaderUtils;
+Points = window.THREE.Points;
+PointsMaterial = window.THREE.PointsMaterial;
+
 
 class PCDLoader extends Loader {
 
@@ -450,4 +450,4 @@ class PCDLoader extends Loader {
 
 }
 
-export { PCDLoader };
+window.THREE.PCDLoader = PCDLoader;

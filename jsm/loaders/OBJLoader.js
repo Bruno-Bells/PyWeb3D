@@ -1,19 +1,19 @@
-import {
-	BufferGeometry,
-	FileLoader,
-	Float32BufferAttribute,
-	Group,
-	LineBasicMaterial,
-	LineSegments,
-	Loader,
-	Material,
-	Mesh,
-	MeshPhongMaterial,
-	Points,
-	PointsMaterial,
-	Vector3,
-	Color
-} from 'three';
+
+BufferGeometry = window.THREE.BufferGeometry;
+FileLoader = window.THREE.FileLoader;
+Float32BufferAttribute = window.THREE.Float32BufferAttribute;
+Group = window.THREE.Group;
+LineBasicMaterial = window.THREE.LineBasicMaterial;
+LineSegments = window.THREE.LineSegments;
+Loader = window.THREE.Loader;
+Material = window.THREE.Material;
+Mesh = window.THREE.Mesh;
+MeshPhongMaterial = window.THREE.MeshPhongMaterial;
+Points = window.THREE.Points;
+PointsMaterial = window.THREE.PointsMaterial;
+Vector3 = window.THREE.Vector3;
+Color = window.THREE.Color;
+
 
 // o object_name | g group_name
 const _object_pattern = /^[og]\s*(.+)?/;
@@ -902,4 +902,4 @@ class OBJLoader extends Loader {
 
 }
 
-export { OBJLoader };
+window.THREE.OBJLoader = OBJLoader;

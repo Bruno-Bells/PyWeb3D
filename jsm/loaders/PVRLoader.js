@@ -1,10 +1,10 @@
-import {
-	CompressedTextureLoader,
-	RGBA_PVRTC_2BPPV1_Format,
-	RGBA_PVRTC_4BPPV1_Format,
-	RGB_PVRTC_2BPPV1_Format,
-	RGB_PVRTC_4BPPV1_Format
-} from 'three';
+
+CompressedTextureLoader = window.THREE.CompressedTextureLoader;
+RGBA_PVRTC_2BPPV1_Format = window.THREE.RGBA_PVRTC_2BPPV1_Format;
+RGBA_PVRTC_4BPPV1_Format = window.THREE.RGBA_PVRTC_4BPPV1_Format;
+RGB_PVRTC_2BPPV1_Format = window.THREE.RGB_PVRTC_2BPPV1_Format;
+RGB_PVRTC_4BPPV1_Format = window.THREE.RGB_PVRTC_4BPPV1_Format;
+
 
 /*
  *	 PVR v2 (legacy) parser
@@ -248,4 +248,4 @@ function _extract( pvrDatas ) {
 
 }
 
-export { PVRLoader };
+window.THREE.PVRLoader = PVRLoader;

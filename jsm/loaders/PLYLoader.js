@@ -1,11 +1,11 @@
-import {
-	BufferGeometry,
-	FileLoader,
-	Float32BufferAttribute,
-	Loader,
-	LoaderUtils,
-	Color
-} from 'three';
+
+BufferGeometry = window.THREE.BufferGeometry;
+FileLoader = window.THREE.FileLoader;
+Float32BufferAttribute = window.THREE.Float32BufferAttribute;
+Loader = window.THREE.Loader;
+LoaderUtils = window.THREE.LoaderUtils;
+Color = window.THREE.Color;
+
 
 /**
  * Description: A THREE loader for PLY ASCII files (known as the Polygon
@@ -561,4 +561,4 @@ class PLYLoader extends Loader {
 
 }
 
-export { PLYLoader };
+window.THREE.PLYLoader = PLYLoader;

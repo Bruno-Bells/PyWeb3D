@@ -1,7 +1,7 @@
-import {
-	DataTextureLoader,
-	LinearMipmapLinearFilter
-} from 'three';
+
+DataTextureLoader = window.THREE.DataTextureLoader;
+LinearMipmapLinearFilter = window.THREE.LinearMipmapLinearFilter;
+
 
 class TGALoader extends DataTextureLoader {
 
@@ -514,4 +514,4 @@ class TGALoader extends DataTextureLoader {
 
 }
 
-export { TGALoader };
+window.THREE.TGALoader = TGALoader;
