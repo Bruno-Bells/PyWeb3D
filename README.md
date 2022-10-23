@@ -8,7 +8,7 @@ In summary PyWeb3D is [three.js](https://threejs.org/) with python syntax.
  - To build a powerful 3D web framework for creating full fledged 3D stores and web applications
 
 ## Current Priorities
- - Writing a detailed documentation
+ - Writing a detailed python documentation
  - Modify and Include all files in `/jsm` directory of three.js
 
 # Try PyWeb3D
