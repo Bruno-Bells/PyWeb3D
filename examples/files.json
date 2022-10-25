@@ -1,6 +1,7 @@
 {
 	"webgl": [
-		"creating_3d_text"
+		"creating_3d_text",
+		"loading_3d_models_NissanZProto"
 	],
 	"webgl / nodes": [
 		
