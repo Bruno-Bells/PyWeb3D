@@ -26,6 +26,7 @@
 	<script type="text/python">
         from browser import document, window
         from  pyweb3d.pyweb3d import *
+        from javascript import UNDEFINED as undefined
         
         GLTFLoader = window.THREE.GLTFLoader.new
         OrbitControls = window.THREE.OrbitControls.new
@@ -101,8 +102,11 @@
         
                 scene.add( car )
                 animate(0)
+
+            def onError(error):
+                print(error)
         
-            loader.load( 'models/Nissan_Z_Proto/scene.gltf', loadGLTF)
+            loader.load( 'models/Nissan_Z_Proto/scene.gltf', loadGLTF, undefined, onError)
         
         def onWindowResize(resize):
         
