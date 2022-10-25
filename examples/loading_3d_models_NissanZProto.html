@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>PyWeb3D webgl - GLTFloader</title>
+	<script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython_stdlib.js"></script>
+	<script src="https://unpkg.com/three@0.145.0/build/three.js"></script>
+	<script src="https://www.pyweb3d.org/pyweb3d/v1.0.0/pyweb3d.brython.js"></script>
+    <link rel="stylesheet" href="main.css">
+	<style>
+	    body { margin: 0; }
+	</style>
+ </head>
+ <body onload="brython(1)">
+    <script src="../jsm/loaders/GLTFLoader.js"></script>
+    <script src="../jsm/controls/OrbitControls.js"></script>
+    <script src="../jsm/loaders/RGBELoader.js"></script>
+
+    <div id="info">
+        <a href="https://pyweb3d.org" target="_blank" rel="noopener">PyWeb3D</a> car materials<br/>
+        Nissan Z Proto model by <a href="https://sketchfab.com/3d-models/nissan-z-proto-db9a5f7ae9d84a0fb01cac96afe3e69c" target="_blank" rel="noopener">Lexyc16</a>
+        <br><br>
+    </div>
+    
+	<script type="text/python">
+        from browser import document, window
+        from  pyweb3d.pyweb3d import *
+        from javascript import UNDEFINED as undefined
+        
+        GLTFLoader = window.THREE.GLTFLoader.new
+        OrbitControls = window.THREE.OrbitControls.new
+        RGBELoader = window.THREE.RGBELoader.new
+        
+        #Variables for setup
+        
+        camera = None
+        renderer = None
+        scene = None
+        car = None
+        
+        def init():
+            global camera
+            global renderer
+            global scene
+            global car
+        
+            #Create scene
+            scene = Scene()
+            scene.background = Color( 0x333333 )
+            scene.environment = RGBELoader().load( 'textures/venice_sunset_1k.hdr' )
+            scene.environment.mapping = EquirectangularReflectionMapping
+            scene.fog = Fog( 0x333333, 10, 15 )
+        
+            grid = GridHelper( 20, 40, 0xffffff, 0xffffff )
+            grid.material.opacity = 0.2
+            grid.material.depthWrite = False
+            grid.material.transparent = True
+            scene.add( grid )
+        
+            fov = 45
+            aspect = window.innerWidth / window.innerHeight
+            near = 1
+            far = 1500
+        
+            #Camera setup
+            camera = PerspectiveCamera(fov, aspect, near, far)
+            camera.position.x = 8
+            camera.position.y = 1
+            camera.position.z = 10
+        
+            ambientLight = AmbientLight( 'white', 2 )
+            scene.add( ambientLight )
+        
+            DirectLight = DirectionalLight( 'white', 3.5 )
+            DirectLight.position.set( 100, 100, 100 )
+            scene.add( DirectLight )
+        
+            hemiLight = HemisphereLight('white', 'darkslategrey', 5)
+            scene.add(hemiLight)
+        
+            #Renderer
+            renderer = WebGLRenderer( { 'antialias': True } )
+            renderer.setPixelRatio( window.devicePixelRatio )
+            renderer.setSize( window.innerWidth, window.innerHeight )
+            document.body.appendChild( renderer.domElement )
+        
+            controls = OrbitControls(camera, renderer.domElement)
+        
+            #Load Model
+            loader = GLTFLoader()
+        
+            def loadGLTF(gltf):
+                car = gltf.scene
+                car.scale.setScalar( 1.5 )
+                # center 
+                box = Box3().setFromObject( car )
+                center = box.getCenter( Vector3() )
+                car.position.x += ( car.position.x - center.x )
+                car.position.y += ( car.position.y - center.y + 1.4)
+                car.position.z += ( car.position.z - center.z )
+        
+                scene.add( car )
+                animate(0)
+
+            def onError(error):
+                print(error)
+        
+            loader.load( 'models/Nissan_Z_Proto/scene.gltf', loadGLTF, undefined, onError)
+        
+        def onWindowResize(resize):
+        
+            camera.aspect = window.innerWidth / window.innerHeight
+            camera.updateProjectionMatrix()
+        
+            renderer.setSize( window.innerWidth, window.innerHeight )
+    
+        window.addEventListener( 'resize', onWindowResize )
+        
+        def animate(time):
+            window.requestAnimationFrame( animate )
+            renderer.render( scene, camera )
+         
+        init()
+	</script>
+ </body>
+</html>

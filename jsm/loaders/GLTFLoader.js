@@ -13,6 +13,7 @@ FrontSide = window.THREE.FrontSide;
 Group = window.THREE.Group;
 ImageBitmapLoader = window.THREE.ImageBitmapLoader;
 InterleavedBuffer = window.THREE.InterleavedBuffer;
+InterpolateDiscrete = window.THREE.InterpolateDiscrete;
 InterleavedBufferAttribute = window.THREE.InterleavedBufferAttribute;
 Interpolant = window.THREE.Interpolant;
 InterpolateLinear = window.THREE.InterpolateLinear;
@@ -230,7 +231,7 @@ class GLTFLoader extends Loader {
 
 		throw new Error(
 
-			'THREE.GLTFLoader: "MSFT_texture_dds" no longer supported. Please update to "KHR_texture_basisu".'
+			'PyWeb3D.GLTFLoader: "MSFT_texture_dds" no longer supported. Please update to "KHR_texture_basisu".'
 
 		);
 
@@ -315,7 +316,7 @@ class GLTFLoader extends Loader {
 
 		if ( json.asset === undefined || json.asset.version[ 0 ] < 2 ) {
 
-			if ( onError ) onError( new Error( 'THREE.GLTFLoader: Unsupported asset. glTF versions >=2.0 are supported.' ) );
+			if ( onError ) onError( new Error( 'PyWeb3D.GLTFLoader: Unsupported asset. glTF versions >=2.0 are supported.' ) );
 			return;
 
 		}
@@ -379,7 +380,7 @@ class GLTFLoader extends Loader {
 
 						if ( extensionsRequired.indexOf( extensionName ) >= 0 && plugins[ extensionName ] === undefined ) {
 
-							console.warn( 'THREE.GLTFLoader: Unknown extension "' + extensionName + '".' );
+							console.warn( 'PyWeb3D.GLTFLoader: Unknown extension "' + extensionName + '".' );
 
 						}
 
@@ -555,7 +556,7 @@ class GLTFLightsExtension {
 				break;
 
 			default:
-				throw new Error( 'THREE.GLTFLoader: Unexpected light type: ' + lightDef.type );
+				throw new Error( 'PyWeb3D.GLTFLoader: Unexpected light type: ' + lightDef.type );
 
 		}
 
@@ -1197,7 +1198,7 @@ class GLTFTextureBasisUExtension {
 
 			if ( json.extensionsRequired && json.extensionsRequired.indexOf( this.name ) >= 0 ) {
 
-				throw new Error( 'THREE.GLTFLoader: setKTX2Loader must be called before loading KTX2 textures' );
+				throw new Error( 'PyWeb3D.GLTFLoader: setKTX2Loader must be called before loading KTX2 textures' );
 
 			} else {
 
@@ -1260,7 +1261,7 @@ class GLTFTextureWebPExtension {
 
 			if ( json.extensionsRequired && json.extensionsRequired.indexOf( name ) >= 0 ) {
 
-				throw new Error( 'THREE.GLTFLoader: WebP required by asset but unsupported.' );
+				throw new Error( 'PyWeb3D.GLTFLoader: WebP required by asset but unsupported.' );
 
 			}
 
@@ -1329,7 +1330,7 @@ class GLTFMeshoptCompression {
 
 				if ( json.extensionsRequired && json.extensionsRequired.indexOf( this.name ) >= 0 ) {
 
-					throw new Error( 'THREE.GLTFLoader: setMeshoptDecoder must be called before loading compressed files' );
+					throw new Error( 'PyWeb3D.GLTFLoader: setMeshoptDecoder must be called before loading compressed files' );
 
 				} else {
 
@@ -1406,11 +1407,11 @@ class GLTFBinaryExtension {
 
 		if ( this.header.magic !== BINARY_EXTENSION_HEADER_MAGIC ) {
 
-			throw new Error( 'THREE.GLTFLoader: Unsupported glTF-Binary header.' );
+			throw new Error( 'PyWeb3D.GLTFLoader: Unsupported glTF-Binary header.' );
 
 		} else if ( this.header.version < 2.0 ) {
 
-			throw new Error( 'THREE.GLTFLoader: Legacy binary file detected.' );
+			throw new Error( 'PyWeb3D.GLTFLoader: Legacy binary file detected.' );
 
 		}
 
@@ -1446,7 +1447,7 @@ class GLTFBinaryExtension {
 
 		if ( this.content === null ) {
 
-			throw new Error( 'THREE.GLTFLoader: JSON content not found.' );
+			throw new Error( 'PyWeb3D.GLTFLoader: JSON content not found.' );
 
 		}
 
@@ -1465,7 +1466,7 @@ class GLTFDracoMeshCompressionExtension {
 
 		if ( ! dracoLoader ) {
 
-			throw new Error( 'THREE.GLTFLoader: No DRACOLoader instance provided.' );
+			throw new Error( 'PyWeb3D.GLTFLoader: No DRACOLoader instance provided.' );
 
 		}
 
@@ -1554,7 +1555,7 @@ class GLTFTextureTransformExtension {
 
 		if ( transform.texCoord !== undefined ) {
 
-			console.warn( 'THREE.GLTFLoader: Custom UV sets in "' + this.name + '" extension not yet supported.' );
+			console.warn( 'PyWeb3D.GLTFLoader: Custom UV sets in "' + this.name + '" extension not yet supported.' );
 
 		}
 
@@ -2177,7 +2178,7 @@ function assignExtrasToUserData( object, gltfDef ) {
 
 		} else {
 
-			console.warn( 'THREE.GLTFLoader: Ignoring primitive type .extras, ' + gltfDef.extras );
+			console.warn( 'PyWeb3D.GLTFLoader: Ignoring primitive type .extras, ' + gltfDef.extras );
 
 		}
 
@@ -2309,7 +2310,7 @@ function updateMorphTargets( mesh, meshDef ) {
 
 		} else {
 
-			console.warn( 'THREE.GLTFLoader: Invalid extras.targetNames length. Ignoring names.' );
+			console.warn( 'PyWeb3D.GLTFLoader: Invalid extras.targetNames length. Ignoring names.' );
 
 		}
 
@@ -2374,7 +2375,7 @@ function getNormalizedComponentScale( constructor ) {
 			return 1 / 65535;
 
 		default:
-			throw new Error( 'THREE.GLTFLoader: Unsupported normalized accessor component type.' );
+			throw new Error( 'PyWeb3D.GLTFLoader: Unsupported normalized accessor component type.' );
 
 	}
 
@@ -2674,7 +2675,7 @@ class GLTFParser {
 	 * Requests the specified dependency asynchronously, with caching.
 	 * @param {string} type
 	 * @param {number} index
-	 * @return {Promise<Object3D|Material|THREE.Texture|AnimationClip|ArrayBuffer|Object>}
+	 * @return {Promise<Object3D|Material|PyWeb3D.Texture|AnimationClip|ArrayBuffer|Object>}
 	 */
 	getDependency( type, index ) {
 
@@ -2802,7 +2803,7 @@ class GLTFParser {
 
 		if ( bufferDef.type && bufferDef.type !== 'arraybuffer' ) {
 
-			throw new Error( 'THREE.GLTFLoader: ' + bufferDef.type + ' buffer type is not supported.' );
+			throw new Error( 'PyWeb3D.GLTFLoader: ' + bufferDef.type + ' buffer type is not supported.' );
 
 		}
 
@@ -2819,7 +2820,7 @@ class GLTFParser {
 
 			loader.load( LoaderUtils.resolveURL( bufferDef.uri, options.path ), resolve, undefined, function () {
 
-				reject( new Error( 'THREE.GLTFLoader: Failed to load buffer "' + bufferDef.uri + '".' ) );
+				reject( new Error( 'PyWeb3D.GLTFLoader: Failed to load buffer "' + bufferDef.uri + '".' ) );
 
 			} );
 
@@ -2966,7 +2967,7 @@ class GLTFParser {
 					if ( itemSize >= 2 ) bufferAttribute.setY( index, sparseValues[ i * itemSize + 1 ] );
 					if ( itemSize >= 3 ) bufferAttribute.setZ( index, sparseValues[ i * itemSize + 2 ] );
 					if ( itemSize >= 4 ) bufferAttribute.setW( index, sparseValues[ i * itemSize + 3 ] );
-					if ( itemSize >= 5 ) throw new Error( 'THREE.GLTFLoader: Unsupported itemSize in sparse BufferAttribute.' );
+					if ( itemSize >= 5 ) throw new Error( 'PyWeb3D.GLTFLoader: Unsupported itemSize in sparse BufferAttribute.' );
 
 				}
 
@@ -3085,7 +3086,7 @@ class GLTFParser {
 
 		} else if ( sourceDef.uri === undefined ) {
 
-			throw new Error( 'THREE.GLTFLoader: Image ' + sourceIndex + ' is missing URI and bufferView' );
+			throw new Error( 'PyWeb3D.GLTFLoader: Image ' + sourceIndex + ' is missing URI and bufferView' );
 
 		}
 
@@ -3128,7 +3129,7 @@ class GLTFParser {
 
 		} ).catch( function ( error ) {
 
-			console.error( 'THREE.GLTFLoader: Couldn\'t load texture', sourceURI );
+			console.error( 'PyWeb3D.GLTFLoader: Couldn\'t load texture', sourceURI );
 			throw error;
 
 		} );
@@ -3155,7 +3156,7 @@ class GLTFParser {
 			// However, we will copy UV set 0 to UV set 1 on demand for aoMap
 			if ( mapDef.texCoord !== undefined && mapDef.texCoord != 0 && ! ( mapName === 'aoMap' && mapDef.texCoord == 1 ) ) {
 
-				console.warn( 'THREE.GLTFLoader: Custom UV set ' + mapDef.texCoord + ' for texture ' + mapName + ' not yet supported.' );
+				console.warn( 'PyWeb3D.GLTFLoader: Custom UV set ' + mapDef.texCoord + ' for texture ' + mapName + ' not yet supported.' );
 
 			}
 
@@ -3654,7 +3655,7 @@ class GLTFParser {
 
 				} else {
 
-					throw new Error( 'THREE.GLTFLoader: Primitive mode unsupported: ' + primitive.mode );
+					throw new Error( 'PyWeb3D.GLTFLoader: Primitive mode unsupported: ' + primitive.mode );
 
 				}
 
@@ -3720,7 +3721,7 @@ class GLTFParser {
 
 		if ( ! params ) {
 
-			console.warn( 'THREE.GLTFLoader: Missing camera parameters.' );
+			console.warn( 'PyWeb3D.GLTFLoader: Missing camera parameters.' );
 			return;
 
 		}
@@ -4246,7 +4247,7 @@ function buildNodeHierarchy( nodeId, parentObject, json, parser ) {
 
 					} else {
 
-						console.warn( 'THREE.GLTFLoader: Joint "%s" could not be found.', skinEntry.joints[ j ] );
+						console.warn( 'PyWeb3D.GLTFLoader: Joint "%s" could not be found.', skinEntry.joints[ j ] );
 
 					}
 
@@ -4324,7 +4325,7 @@ function computeBounds( geometry, primitiveDef, parser ) {
 
 		} else {
 
-			console.warn( 'THREE.GLTFLoader: Missing min/max properties for accessor POSITION.' );
+			console.warn( 'PyWeb3D.GLTFLoader: Missing min/max properties for accessor POSITION.' );
 
 			return;
 
@@ -4378,7 +4379,7 @@ function computeBounds( geometry, primitiveDef, parser ) {
 
 				} else {
 
-					console.warn( 'THREE.GLTFLoader: Missing min/max properties for accessor POSITION.' );
+					console.warn( 'PyWeb3D.GLTFLoader: Missing min/max properties for accessor POSITION.' );
 
 				}
 
@@ -4492,7 +4493,7 @@ function toTrianglesDrawMode( geometry, drawMode ) {
 
 		} else {
 
-			console.error( 'THREE.GLTFLoader.toTrianglesDrawMode(): Undefined position attribute. Processing not possible.' );
+			console.error( 'PyWeb3D.GLTFLoader.toTrianglesDrawMode(): Undefined position attribute. Processing not possible.' );
 			return geometry;
 
 		}
@@ -4543,7 +4544,7 @@ function toTrianglesDrawMode( geometry, drawMode ) {
 
 	if ( ( newIndices.length / 3 ) !== numberOfTriangles ) {
 
-		console.error( 'THREE.GLTFLoader.toTrianglesDrawMode(): Unable to generate correct amount of triangles.' );
+		console.error( 'PyWeb3D.GLTFLoader.toTrianglesDrawMode(): Unable to generate correct amount of triangles.' );
 
 	}
 

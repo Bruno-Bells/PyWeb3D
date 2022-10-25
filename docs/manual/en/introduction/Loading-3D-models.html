@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -79,18 +79,21 @@
 		three.js — others should be added to your app individually.
 	</p>
 	<p>
-		To add loaders or another other addons, first add the external script file to 
-		the `&lt;script>` tag of your html file.
+		To add loaders or any other addons, first load the external `&lt;script>` file into 
+		the `&lt;body>` tag of your html file.
 	</p>
 	<code>
 		&lt;script src="https://www.pyweb3d.org/jsm/loaders/GLTFLoader.js">&lt;/script>
 	</code>
 	<p>
-		And then load into you python code using below syntax:
+		And then initialize the addon in your python code using below syntax:
 	</p>
 	<code>
 		GLTFLoader = window.THREE.GLTFLoader.new
 	</code>
+	<p>
+		<strong>Note:</strong> Only the addon name will always change for the above syntax
+	</p>
 
 	<p>
 		Once you've initialized a loader, you're ready to add a model to your scene. Syntax varies among
@@ -101,17 +104,25 @@
 	<code>
 		loader = GLTFLoader()
 
-		loader.load( 'path/to/model.glb', function ( gltf ) {
+		def myGLTF(gltf):
+			scene.add( gltf.scene )
 
-			scene.add( gltf.scene );
+		def onError(error):
+			print(error)
 
-		}, undefined, function ( error ) {
-
-			console.error( error );
-
-		} );
+		loader.load( 'path/to/model.glb', myGLTF, undefined, onError);
 	</code>
+	<p>
+		import `undefined` as follows: 
+		<code>
+			from javascript import UNDEFINED as undefined
+		</code>
+	</p>
 
+	<p>
+		See an [example:loading_3d_models_NissanZProto example model] loaded with GLTFLoader
+		
+	</p>
 	<p>
 		See [page:GLTFLoader GLTFLoader documentation] for further details.
 	</p>
@@ -134,8 +145,8 @@
 			are available for
 			<a href="https://gltf-viewer.donmccurdy.com/" target="_blank" rel="noopener">three.js</a> and
 			<a href="https://sandbox.babylonjs.com/" target="_blank" rel="noopener">babylon.js</a>. If the model
-			appears correctly in one or more applications,
-			<a href="https://github.com/mrdoob/three.js/issues/new" target="_blank" rel="noopener">file a bug against three.js</a>.
+			appears correctly in one or more applications, file a bug against
+			<a href="https://github.com/mrdoob/three.js/issues/new" target="_blank" rel="noopener">three.js</a> or <a href="https://github.com/Bruno-Odinukweze/PyWeb3D/issues/new" target="_blank" rel="noopener">pyweb3D</a> .
 			If the model cannot be shown in any application, we strongly encourage
 			filing a bug with the application used to create the model.
 		</li>
@@ -155,7 +166,7 @@
 		</li>
 	</ol>
 
-	<h2>Asking for help</h2>
+	<!-- <h2>Asking for help</h2>
 
 	<p>
 		If you've gone through the troubleshooting process above and your model
@@ -165,8 +176,8 @@
 		include your model (or a simpler model with the same problem) in any formats
 		you have available. Include enough information for someone else to reproduce
 		the issue quickly — ideally, a live demo.
-	</p>
+	</p> -->
 
 </body>
 
-</html> -->
+</html>
