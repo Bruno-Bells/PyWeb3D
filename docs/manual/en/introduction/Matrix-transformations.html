@@ -1,9 +1,4 @@
-<div style="color:rgb(158, 156, 156);align-items: center;	margin-left: auto; margin-right: auto; padding-top:20%;  width: 25em">
-
-	<h1 >Comming Soon...</h1>
-	<h1><a href="https://github.com/Bruno-Odinukweze/PyWeb3D#how-to-contribute" target="_blank" rel="noopener">How to Contribute</a></h1>
-</div >
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -28,27 +23,27 @@
 				Modify the object's `position`, `quaternion`, and `scale` properties, and let three.js recompute
 				the object's matrix from these properties:
 				<code>
-object.position.copy( start_position );
-object.quaternion.copy( quaternion );
+object.position.copy( start_position )
+object.quaternion.copy( quaternion )
 				</code>
 				By default, the `matrixAutoUpdate` property is set true, and the matrix will be automatically recalculated.
 				If the object is static, or you wish to manually control when recalculation occurs, better performance can be obtained by setting the property false:
 				<code>
-object.matrixAutoUpdate = false;
+object.matrixAutoUpdate = False
 				</code>
 				And after changing any properties, manually update the matrix:
 				<code>
-object.updateMatrix();
+object.updateMatrix()
 				</code>
 			</li>
 			<li>
 				Modify the object's matrix directly. The [page:Matrix4] class has various methods for modifying the matrix:
 				<code>
-object.matrix.setRotationFromQuaternion( quaternion );
-object.matrix.setPosition( start_position );
-object.matrixAutoUpdate = false;
+object.matrix.setRotationFromQuaternion( quaternion )
+object.matrix.setPosition( start_position )
+object.matrixAutoUpdate = False
 				</code>
-				Note that `matrixAutoUpdate` <em>must</em> be set to `false` in this case, and you should make sure <em>not</em> to call `updateMatrix`. Calling `updateMatrix` will clobber the manual changes made to the matrix, recalculating the matrix from `position`, `scale`, and so on.
+				Note that `matrixAutoUpdate` <em>must</em> be set to `False` in this case, and you should make sure <em>not</em> to call `updateMatrix`. Calling `updateMatrix` will clobber the manual changes made to the matrix, recalculating the matrix from `position`, `scale`, and so on.
 			</li>
 		</ol>
 
@@ -69,4 +64,4 @@ object.matrixAutoUpdate = false;
 		</p>
 
 	</body>
-</html> -->
+</html>
