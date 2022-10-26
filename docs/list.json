@@ -16,9 +16,8 @@
 			},
 
 			"Next Steps": {
+				"JavaScript vs Python Types" : "manual/en/introduction/JavaScript-vs-Python-Types",
 				"How to dispose of objects": "manual/en/introduction/How-to-dispose-of-objects",
-				"How to create VR content": "manual/en/introduction/How-to-create-VR-content",
-				"How to use post-processing": "manual/en/introduction/How-to-use-post-processing",
 				"Matrix transformations": "manual/en/introduction/Matrix-transformations",
 				"Animation system": "manual/en/introduction/Animation-system",
 				"Color management": "manual/en/introduction/Color-management"

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        <title>PyWeb3D webgl - webgl memory test I</title>
+        <script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython_stdlib.js"></script>
+        <script src="https://unpkg.com/three@0.145.0/build/three.js"></script>
+        <script src="https://www.pyweb3d.org/pyweb3d/v1.0.0/pyweb3d.brython.js"></script>
+        <link rel="stylesheet" href="main.css">
+            
+		<style>
+			body {
+				background-color: #fff;
+				color: #000;
+			}
+			a {
+				color: #08f;
+			}
+		</style>
+	</head>
+
+	<body onload="brython(1)">
+		<div id="info">
+			<a href="https://pyweb3d.org" target="_blank" rel="noopener">PyWeb3D</a> - memory test I
+		</div>
+
+		
+
+
+		<script type="text/python">
+            from browser import document, window
+            from  pyweb3d.pyweb3d import *
+            from javascript import UNDEFINED as undefined, Math
+            
+            camera, scene, renderer = None, None, None
+            
+            
+            
+            def init():
+                global camera
+                global scene
+                global renderer
+            
+                container = document.createElement( 'div' )
+                document.body.appendChild( container )
+            
+                camera = PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 10000 )
+                camera.position.z = 200
+            
+                scene = Scene()
+                scene.background = Color( 0xffffff )
+            
+                renderer = WebGLRenderer()
+                renderer.setPixelRatio( window.devicePixelRatio )
+                renderer.setSize( window.innerWidth, window.innerHeight )
+                container.appendChild( renderer.domElement )
+            
+            
+            
+            def createImage():
+            
+                canvas = document.createElement( 'canvas' )
+                canvas.width = 256
+                canvas.height = 256
+            
+                context = canvas.getContext( '2d' )
+                context.fillStyle = f"rgb( {Math.floor( Math.random() * 256 ) } , {Math.floor( Math.random() * 256 )} , {Math.floor( Math.random() * 256 )} )"
+                context.fillRect( 0, 0, 256, 256 )
+            
+                return canvas
+            
+            
+            def animate(time):
+                window.requestAnimationFrame( animate )
+                render()
+            
+            
+            def render():
+            
+                geometry = SphereGeometry( 50, Math.random() * 64, Math.random() * 32 )
+            
+                texture = CanvasTexture( createImage() )
+            
+                material = MeshBasicMaterial( { 'map': texture, 'wireframe': True } )
+            
+                mesh = Mesh( geometry, material )
+            
+                scene.add( mesh )
+            
+                renderer.render( scene, camera )
+            
+                scene.remove( mesh )
+            
+                geometry.dispose()
+                material.dispose()
+                texture.dispose()
+            
+            init()
+            animate(0)
+		</script>
+
+	</body>
+</html>
