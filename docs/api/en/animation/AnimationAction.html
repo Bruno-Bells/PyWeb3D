@@ -32,7 +32,7 @@
 		</p>
 
 
-		<h2>Properties</h2>
+		<h2>Properties or Instance Attributes</h2>
 
 		<h3>[property:Number blendMode]</h3>
 		<p>
@@ -42,14 +42,14 @@
 
 		<h3>[property:Boolean clampWhenFinished]</h3>
 		<p>
-			If `clampWhenFinished` is set to true the animation will automatically be [page:.paused paused]
+			If `clampWhenFinished` is set to `True` the animation will automatically be [page:.paused paused]
 			on its last frame.<br /><br />
 
-			If `clampWhenFinished` is set to false, [page:.enabled enabled] will automatically be switched
+			If `clampWhenFinished` is set to `False`, [page:.enabled enabled] will automatically be switched
 			to false when the last loop of the action has finished, so that this action has no further
 			impact.<br /><br />
 
-			Default is false.<br /><br />
+			Default is `False`.<br /><br />
 
 			Note: `clampWhenFinished` has no impact if the action is interrupted (it has only an effect if
 			its last loop has really finished).
@@ -57,14 +57,14 @@
 
 		<h3>[property:Boolean enabled]</h3>
 		<p>
-			Setting `enabled` to `false` disables this action, so that it has no impact. Default is `true`.<br /><br />
+			Setting `enabled` to `False` disables this action, so that it has no impact. Default is `True`.<br /><br />
 
 			When the action is re-enabled, the animation continues from its current [page:.time time]
-			(setting `enabled` to `false` doesn't reset the action).<br /><br />
+			(setting `enabled` to `False` doesn't reset the action).<br /><br />
 
-			Note: Setting `enabled` to `true` doesn’t automatically restart the animation. Setting `enabled`
-			to `true` will only restart the animation immediately if the following condition is fulfilled:
-			[page:.paused paused] is `false`, this action has not been deactivated in the meantime (by
+			Note: Setting `enabled` to `True` doesn’t automatically restart the animation. Setting `enabled`
+			to `True` will only restart the animation immediately if the following condition is fulfilled:
+			[page:.paused paused] is `False`, this action has not been deactivated in the meantime (by
 			executing a [page:.stop stop] or [page:.reset reset] command), and neither [page:.weight weight]
 			nor [page:.timeScale timeScale] is `0`.
 		</p>
@@ -84,8 +84,8 @@
 
 		<h3>[property:Boolean paused]</h3>
 		<p>
-			Setting `paused` to `true` pauses the execution of the action by setting the effective time scale
-			to `0`. Default is `false`.<br /><br />
+			Setting `paused` to `True` pauses the execution of the action by setting the effective time scale
+			to `0`. Default is `False`.<br /><br />
 		</p>
 
 		<h3>[property:Number repetitions]</h3>
@@ -123,7 +123,7 @@
 		<h3>[property:Number weight]</h3>
 		<p>
 			The degree of influence of this action (in the interval `[0, 1]`). Values between `0` (no impact)
-			and 1 (full impact) can be used to blend between several actions. Default is `1`. <br /><br />
+			and `1` (full impact) can be used to blend between several actions. Default is `1`. <br /><br />
 			Properties/methods concerning `weight` are:
 			[page:.crossFadeFrom crossFadeFrom],
 			[page:.crossFadeTo crossFadeTo],
@@ -137,19 +137,19 @@
 
 		<h3>[property:Boolean zeroSlopeAtEnd]</h3>
 		<p>
-			Enables smooth interpolation without separate clips for start, loop and end. Default is `true`.
+			Enables smooth interpolation without separate clips for start, loop and end. Default is `True`.
 		</p>
 
 		<h3>[property:Boolean zeroSlopeAtStart]</h3>
 		<p>
-			Enables smooth interpolation without separate clips for start, loop and end. Default is `true`.
+			Enables smooth interpolation without separate clips for start, loop and end. Default is `True`.
 		</p>
 
 
 		<h2>Methods</h2>
 
 
-		<h3>[method:this crossFadeFrom]( [param:AnimationAction fadeOutAction], [param:Number durationInSeconds], [param:Boolean warpBoolean] )</h3>
+		<h3>[method:self crossFadeFrom]( [param:AnimationAction fadeOutAction], [param:Number durationInSeconds], [param:Boolean warpBoolean] )</h3>
 		<p>
 			Causes this action to [page:.fadeIn fade in], fading out another action simultaneously, within
 			the passed time interval. This method can be chained.<br /><br />
@@ -161,7 +161,7 @@
 
 		</p>
 
-		<h3>[method:this crossFadeTo]( [param:AnimationAction fadeInAction], [param:Number durationInSeconds], [param:Boolean warpBoolean] )</h3>
+		<h3>[method:self crossFadeTo]( [param:AnimationAction fadeInAction], [param:Number durationInSeconds], [param:Boolean warpBoolean] )</h3>
 		<p>
 			Causes this action to [page:.fadeOut fade out], fading in another action simultaneously, within
 			the passed time interval. This method can be chained.<br /><br />
@@ -171,13 +171,13 @@
 			Note: Like with `fadeIn`/`fadeOut`, the fading starts/ends with a weight of 1.
 		</p>
 
-		<h3>[method:this fadeIn]( [param:Number durationInSeconds] )</h3>
+		<h3>[method:self fadeIn]( [param:Number durationInSeconds] )</h3>
 		<p>
 			Increases the [page:.weight weight] of this action gradually from `0` to `1`, within the passed time
 			interval. This method can be chained.
 		</p>
 
-		<h3>[method:this fadeOut]( [param:Number durationInSeconds] )</h3>
+		<h3>[method:self fadeOut]( [param:Number durationInSeconds] )</h3>
 		<p>
 			Decreases the [page:.weight weight] of this action gradually from `1` to `0`, within the passed time
 			interval. This method can be chained.
@@ -210,7 +210,7 @@
 			Returns the root object on which this action is performed.
 		</p>
 
-		<h3>[method:this halt]( [param:Number durationInSeconds] )</h3>
+		<h3>[method:self halt]( [param:Number durationInSeconds] )</h3>
 		<p>
 			Decelerates this animation's speed to `0` by decreasing [page:.timeScale timeScale] gradually
 			(starting from its current value), within the passed time interval. This method can be chained.
@@ -236,19 +236,19 @@
 			conditions for [page:.isRunning isRunning]).
 		</p>
 
-		<h3>[method:this play]()</h3>
+		<h3>[method:self play]()</h3>
 		<p>
 			Tells the mixer to activate the action. This method can be chained.<br /><br />
 
 			Note: Activating this action doesn’t necessarily mean that the animation starts immediately:
 			If the action had already finished before (by reaching the end of its last loop), or if a time
 			for a delayed start has been set (via [page:.startAt startAt]), a [page:.reset reset] must be
-			executed first. Some other settings ([page:.paused paused]=true, [page:.enabled enabled]=false,
+			executed first. Some other settings ([page:.paused paused]=True, [page:.enabled enabled]=False,
 			[page:.weight weight]=0, [page:.timeScale timeScale]=0) can prevent the animation from playing,
 			too.
 		</p>
 
-		<h3>[method:this reset]()</h3>
+		<h3>[method:self reset]()</h3>
 		<p>
 			Resets the action. This method can be chained.<br /><br />
 
@@ -260,13 +260,13 @@
 			This means: If you want both, resetting and stopping, don’t call .`reset`; call .`stop` instead.
 		</p>
 
-		<h3>[method:this setDuration]( [param:Number durationInSeconds] )</h3>
+		<h3>[method:self setDuration]( [param:Number durationInSeconds] )</h3>
 		<p>
 			Sets the duration for a single loop of this action (by adjusting [page:.timeScale timeScale]
 			and stopping any scheduled warping). This method can be chained.
 		</p>
 
-		<h3>[method:this setEffectiveTimeScale]( [param:Number timeScale] )</h3>
+		<h3>[method:self setEffectiveTimeScale]( [param:Number timeScale] )</h3>
 		<p>
 			Sets the [page:.timeScale timeScale] and stops any scheduled warping. This method can be chained.<br /><br />
 
@@ -278,7 +278,7 @@
 			this method.
 		</p>
 
-		<h3>[method:this setEffectiveWeight]( [param:Number weight] )</h3>
+		<h3>[method:self setEffectiveWeight]( [param:Number weight] )</h3>
 		<p>
 			Sets the [page:.weight weight] and stops any scheduled fading. This method can be chained.<br /><br />
 
@@ -290,13 +290,13 @@
 			this method.
 		</p>
 
-		<h3>[method:this setLoop]( [param:Number loopMode], [param:Number repetitions] )</h3>
+		<h3>[method:self setLoop]( [param:Number loopMode], [param:Number repetitions] )</h3>
 		<p>
 			Sets the [page:.loop loop mode] and the number of [page:.repetitions repetitions]. This method
 			can be chained.
 		</p>
 
-		<h3>[method:this startAt]( [param:Number startTimeInSeconds] )</h3>
+		<h3>[method:self startAt]( [param:Number startTimeInSeconds] )</h3>
 		<p>
 			Defines the time for a delayed start (usually passed as [page:AnimationMixer.time] +
 			deltaTimeInSeconds). This method can be chained.<br /><br />
@@ -306,7 +306,7 @@
 			call of .`play`, without stopping or resetting it in the meantime).
 		</p>
 
-		<h3>[method:this stop]()</h3>
+		<h3>[method:self stop]()</h3>
 		<p>
 			Tells the mixer to deactivate this action. This method can be chained.<br /><br />
 
@@ -316,19 +316,19 @@
 			[page:AnimationMixer.stopAllAction mixer.stopAllAction].
 		</p>
 
-		<h3>[method:this stopFading]()</h3>
+		<h3>[method:self stopFading]()</h3>
 		<p>
 			Stops any scheduled [page:.fadeIn fading] which is applied to this action. This method can be
 			chained.
 		</p>
 
-		<h3>[method:this stopWarping]()</h3>
+		<h3>[method:self stopWarping]()</h3>
 		<p>
 			Stops any scheduled [page:.warp warping] which is applied to this action. This method can be
 			chained.
 		</p>
 
-		<h3>[method:this syncWith]( [param:AnimationAction otherAction] )</h3>
+		<h3>[method:self syncWith]( [param:AnimationAction otherAction] )</h3>
 		<p>
 			Synchronizes this action with the passed other action. This method can be chained.<br /><br />
 
@@ -338,7 +338,7 @@
 			Note: Future changes of the other action's `time` and `timeScale` will not be detected.
 		</p>
 
-		<h3>[method:this warp]( [param:Number startTimeScale], [param:Number endTimeScale], [param:Number durationInSeconds] )</h3>
+		<h3>[method:self warp]( [param:Number startTimeScale], [param:Number endTimeScale], [param:Number durationInSeconds] )</h3>
 		<p>
 			Changes the playback speed, within the passed time interval, by modifying
 			[page:.timeScale timeScale] gradually from `startTimeScale` to `endTimeScale`. This method can
@@ -353,14 +353,19 @@
 			There are two events indicating when a single loop of the action respectively the entire action has finished. You can react to them with:
 		</p>
 		<code>
-		mixer.addEventListener( 'loop', function( e ) { …} ); // properties of e: type, action and loopDelta
-		mixer.addEventListener( 'finished', function( e ) { …} ); // properties of e: type, action and direction
+		def loopEvent(e): # properties of e: type, action and loopDelta
+			...
+		def finishEvent(e): # properties of e: type, action and direction
+			...
+
+		mixer.addEventListener( 'loop', loopEvent )
+		mixer.addEventListener( 'finished', finishEvent )
 		</code>
 
-		<h2>Source</h2>
+		<!-- <h2>Source</h2>
 
 		<p>
 			[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
-		</p>
+		</p> -->
 	</body>
 </html>
