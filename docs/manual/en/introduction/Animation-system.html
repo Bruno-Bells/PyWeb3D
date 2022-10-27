@@ -1,9 +1,4 @@
-<div style="color:rgb(158, 156, 156);align-items: center;	margin-left: auto; margin-right: auto; padding-top:20%;  width: 25em">
-
-	<h1 >Comming Soon...</h1>
-	<h1><a href="https://github.com/Bruno-Odinukweze/PyWeb3D#how-to-contribute" target="_blank" rel="noopener">How to Contribute</a></h1>
-</div >
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -126,27 +121,25 @@
 		<h2>Example</h2>
 
 		<code>
-		let mesh;
+		mesh = None
 
-		// Create an AnimationMixer, and get the list of AnimationClip instances
-		const mixer = new THREE.AnimationMixer( mesh );
-		const clips = mesh.animations;
+		# Create an AnimationMixer, and get the list of AnimationClip instances
+		mixer = AnimationMixer( mesh )
+		clips = mesh.animations
 
-		// Update the mixer on each frame
-		function update () {
-			mixer.update( deltaSeconds );
-		}
+		# Update the mixer on each frame
+		def update():
+			mixer.update( deltaSeconds )
 
-		// Play a specific animation
-		const clip = THREE.AnimationClip.findByName( clips, 'dance' );
-		const action = mixer.clipAction( clip );
-		action.play();
+		# Play a specific animation
+		clip = AnimationClip.findByName( clips, 'dance' )
+		action = mixer.clipAction( clip )
+		action.play()
 
-		// Play all animations
-		clips.forEach( function ( clip ) {
-			mixer.clipAction( clip ).play();
-		} );
+		# Play all animations
+		for clip in clips:
+			mixer.clipAction( clip ).play()
 		</code>
 
 	</body>
-</html> -->
+</html>

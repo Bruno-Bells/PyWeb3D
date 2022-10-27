@@ -1,7 +1,8 @@
 {
 	"webgl": [
 		"creating_3d_text",
-		"loading_3d_models_NissanZProto"
+		"loading_3d_models_NissanZProto",
+		"webgl_test_memory"
 	],
 	"webgl / nodes": [
 		
