@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>PyWeb3D webgl - GLTFloader</title>
+        <script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython_stdlib.js"></script>
+        <script src="https://unpkg.com/three@0.145.0/build/three.js"></script>
+        <script src="https://www.pyweb3d.org/pyweb3d/v1.0.0/pyweb3d.brython.js"></script>
+        <link rel="stylesheet" href="main.css">
+        <style>
+            body{
+                margin: 0;
+            }
+			a {
+				color: #f00;
+			}
+		</style>
+     </head>
+	<body onload="brython(1)">
+        <script src="../jsm/loaders/GLTFLoader.js"></script>
+        <script src="../jsm/controls/OrbitControls.js"></script>
+
+        <div id="info">
+			<a href="https://pyweb3d.org" target="_blank" rel="noopener">PyWeb3D</a> - 3D Animation
+			(model from <a href="https://sketchfab.com/3d-models/passive-marker-man-walking-4b1ef9a1d8814e4c9ff4fe668d62bff1" target="_blank" rel="noopener">sketchfab.com</a>)<br/>
+		</div>
+
+        <script type="text/python">
+            from browser import document, window
+            from  pyweb3d.pyweb3d import *
+            from javascript import UNDEFINED as undefined, Math
+            
+            scene, renderer, camera = None, None, None
+            model, mixer, clock = None, None, None
+            mesh = None
+            
+            GLTFLoader = window.THREE.GLTFLoader.new
+            OrbitControls = window.THREE.OrbitControls.new
+            
+            def init():
+                global scene
+                global renderer
+                global camera
+                global model
+                global clock
+                global mesh
+                #Camera
+                camera = PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 1000 )
+                camera.position.set( 0, 1.5, 5 )
+                camera.lookAt( 0, 1, 0 )
+                #Clock
+                clock = Clock()
+                #Scene
+                scene = Scene()
+                scene.background = Color( "skyblue" )
+                scene.fog = Fog( 0xa0a0a0, 10, 50 )
+            
+                #Lights
+                hemiLight = HemisphereLight( 0xffffff, 0x444444 )
+                hemiLight.position.set( 0, 20, 0 )
+                scene.add( hemiLight )
+            
+                dirLight = DirectionalLight( 0xffffff )
+                dirLight.position.set(5, 10, 10 )
+                dirLight.castShadow = True
+                dirLight.shadow.camera.top = 2
+                dirLight.shadow.camera.bottom = - 2
+                dirLight.shadow.camera.left = - 2
+                dirLight.shadow.camera.right = 2
+                dirLight.shadow.camera.near = 0.1
+                dirLight.shadow.camera.far = 40
+                scene.add( dirLight )
+            
+                # ground
+                textureLoader = TextureLoader()
+                texture = textureLoader.load('textures/texture1.jpg')
+                texture.wrapS = RepeatWrapping
+                texture.wrapT = RepeatWrapping
+                texture.repeat.set( 50, 50 )
+            
+                material = MeshPhongMaterial( { 'map': texture, 'color': 0x999999, 'depthWrite': False } ) 
+                plain1 = PlaneGeometry( 100, 100 )
+                mesh = Mesh(plain1, material)
+                mesh.rotation.x = - Math.PI / 2
+                mesh.receiveShadow = True
+                scene.add( mesh )
+            
+                # Loader
+                loader = GLTFLoader()
+            
+                def myGLTF(gltf):
+                    global mixer
+                    model = gltf.scene
+                    model.scale.setScalar(0.5)
+                    scene.add( model )
+            
+                    def checkMesh(object):
+                        try:
+                            object.castShadow = True
+                        except:
+                            ...
+                    model.traverse(checkMesh)
+            
+                    # Animations
+                    animations = gltf.animations
+                    print(len(animations))
+            
+                    mixer = AnimationMixer( model )
+            
+                    action = mixer.clipAction( animations[ 0 ] )
+                    action.play()
+            
+                    animate(0)
+            
+                loader.load( 'models/passive_marker_man_walking.glb', myGLTF)
+                # Renderer
+                renderer = WebGLRenderer( { 'antialias': True } )
+                renderer.setPixelRatio( window.devicePixelRatio )
+                renderer.setSize( window.innerWidth, window.innerHeight )
+                renderer.outputEncoding = sRGBEncoding
+                renderer.toneMapping = ACESFilmicToneMapping
+                renderer.toneMappingExposure = 0.85
+                renderer.shadowMap.enabled = True
+                document.body.appendChild( renderer.domElement )
+                #Controls
+                controls = OrbitControls(camera, renderer.domElement)
+                #window resize
+                window.addEventListener( 'resize', onWindowResize )
+            
+            def onWindowResize():
+                camera.aspect = window.innerWidth / window.innerHeight
+                camera.updateProjectionMatrix()
+                renderer.setSize( window.innerWidth, window.innerHeight )
+            
+            def animate(time):
+                window.requestAnimationFrame( animate )
+                mixerUpdateDelta = clock.getDelta()
+                N_time = - window.performance.now() / 1000
+                # make the backeground (this will create a walking illusion)
+                mesh.position.z = + ( N_time ) % 2
+                mixer.update( mixerUpdateDelta )
+                renderer.render( scene, camera )
+            
+            init()       
+        </script>
+
+	</body>
+</html>
