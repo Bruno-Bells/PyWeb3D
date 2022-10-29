@@ -104,7 +104,6 @@
             
                     # Animations
                     animations = gltf.animations
-                    print(len(animations))
             
                     mixer = AnimationMixer( model )
             
@@ -137,7 +136,7 @@
                 window.requestAnimationFrame( animate )
                 mixerUpdateDelta = clock.getDelta()
                 N_time = - window.performance.now() / 1000
-                # make the backeground (this will create a walking illusion)
+                # make the backeground move backwards (this will create a walking illusion)
                 mesh.position.z = + ( N_time ) % 2
                 mixer.update( mixerUpdateDelta )
                 renderer.render( scene, camera )
