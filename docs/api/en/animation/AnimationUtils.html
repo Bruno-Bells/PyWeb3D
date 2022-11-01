@@ -1,9 +1,4 @@
-<div style="color:rgb(158, 156, 156);align-items: center;	margin-left: auto; margin-right: auto; padding-top:20%;  width: 25em">
-
-	<h1 >Comming Soon...</h1>
-	<h1><a href="https://github.com/Bruno-Odinukweze/PyWeb3D#how-to-contribute" target="_blank" rel="noopener">How to Contribute</a></h1>
-</div >
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -22,51 +17,46 @@
 		<h2>Methods</h2>
 
 
-		<h3>[method:Array arraySlice]( array, from, to )</h3>
+		<h3>[method:list arraySlice]( list, from, to )</h3>
 		<p>
-		This is the same as Array.prototype.slice, but also works on typed arrays.
+		This method works the same way as Python `slice`, or JavaScript `Array.prototype.slice` but also works on typed arrays in JavaScript. Examples of JavaScript typed array: `Int8Array`, `Uint8Array`, `Uint8ClampedArray` and more.
 		</p>
 
-		<h3>[method:Array convertArray]( array, type, forceClone )</h3>
+		<h3>[method:list convertArray]( list, type, forceClone )</h3>
 		<p>
-		Converts an array to a specific type.
+		Converts a list to a specific type in JavaScript.
 		</p>
 
-		<h3>[method:Array flattenJSON]( jsonKeys, times, values, valuePropertyName )</h3>
+		<h3>[method:list flattenJSON]( jsonKeys, times, values, valuePropertyName )</h3>
 		<p>
 		Used for parsing AOS keyframe formats.
 		</p>
 
-		<h3>[method:Array getKeyframeOrder]( times )</h3>
+		<h3>[method:list getKeyframeOrder]( times )</h3>
 		<p>
-		Returns an array by which times and values can be sorted.
+		Returns a list by which times and values can be sorted.
 		</p>
 
-		<h3>[method:Boolean isTypedArray]( object )</h3>
+		<h3>[method:bool isTypedArray]( object )</h3>
 		<p>
-		Returns `true` if the object is a typed array.
+		Returns `True` if the object is a JavaScript typed array.
 		</p>
 
-		<h3>[method:AnimationClip makeClipAdditive]( [param:AnimationClip targetClip], [param:Number referenceFrame], [param:AnimationClip referenceClip], [param:Number fps] )</h3>
+		<h3>[method:AnimationClip makeClipAdditive]( [param:AnimationClip targetClip], [param:int referenceFrame], [param:AnimationClip referenceClip], [param:int fps] )</h3>
 		<p>
 		Converts the keyframes of the given animation clip to an additive format.
 		</p>
 
-		<h3>[method:Array sortedArray]( values, stride, order )</h3>
+		<h3>[method:list sortedArray]( values, stride, order )</h3>
 		<p>
 		Sorts the array previously returned by [page:AnimationUtils.getKeyframeOrder getKeyframeOrder].
 		</p>
 
-		<h3>[method:AnimationClip subclip]( [param:AnimationClip clip], [param:String name], [param:Number startFrame], [param:Number endFrame], [param:Number fps] )</h3>
+		<h3>[method:AnimationClip subclip]( [param:AnimationClip clip], [param:str name], [param:int startFrame], [param:int endFrame], [param:int fps] )</h3>
 		<p>
 		Creates a new clip, containing only the segment of the original clip between the given frames.
 		</p>
 
-		<h2>Source</h2>
 
-
-		<p>
-			[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
-		</p>
 	</body>
-</html> -->
+</html>

@@ -25,7 +25,7 @@
 			[page:AnimationMixer mixer] - the `AnimationMixer` that is controlled by this action.<br />
 			[page:AnimationClip clip] - the `AnimationClip` that holds the animation data for this action.<br />
 			[page:Object3D localRoot] - the root object on which this action is performed.<br />
-			[page:Number blendMode] - defines how the animation is blended/combined when two or more animations are simultaneously played.<br /><br />
+			[page:int blendMode] - defines how the animation is blended/combined when two or more animations are simultaneously played.<br /><br />
 
 			Note: Instead of calling this constructor directly you should instantiate an AnimationAction with
 			[page:AnimationMixer.clipAction] since this method provides caching for better performance.
@@ -34,19 +34,19 @@
 
 		<h2>Properties or Instance Attributes</h2>
 
-		<h3>[property:Number blendMode]</h3>
+		<h3>[property:int blendMode]</h3>
 		<p>
 			Defines how the animation is blended/combined when two or more animations are simultaneously played. 
 			Valid values are *NormalAnimationBlendMode* (default) and *AdditiveAnimationBlendMode*.
 		</p>
 
-		<h3>[property:Boolean clampWhenFinished]</h3>
+		<h3>[property:bool clampWhenFinished]</h3>
 		<p>
 			If `clampWhenFinished` is set to `True` the animation will automatically be [page:.paused paused]
 			on its last frame.<br /><br />
 
 			If `clampWhenFinished` is set to `False`, [page:.enabled enabled] will automatically be switched
-			to false when the last loop of the action has finished, so that this action has no further
+			to `False` when the last loop of the action has finished, so that this action has no further
 			impact.<br /><br />
 
 			Default is `False`.<br /><br />
@@ -55,7 +55,7 @@
 			its last loop has really finished).
 		</p>
 
-		<h3>[property:Boolean enabled]</h3>
+		<h3>[property:bool enabled]</h3>
 		<p>
 			Setting `enabled` to `False` disables this action, so that it has no impact. Default is `True`.<br /><br />
 
@@ -69,7 +69,7 @@
 			nor [page:.timeScale timeScale] is `0`.
 		</p>
 
-		<h3>[property:Number loop]</h3>
+		<h3>[property:int loop]</h3>
 		<p>
 			The looping mode (can be changed with [page:.setLoop setLoop]). Default is
 			[page:Animation THREE.LoopRepeat] (with an infinite number of [page:.repetitions repetitions])<br /><br />
@@ -82,13 +82,13 @@
 			alternately playing forward and backward.
 		</p>
 
-		<h3>[property:Boolean paused]</h3>
+		<h3>[property:bool paused]</h3>
 		<p>
 			Setting `paused` to `True` pauses the execution of the action by setting the effective time scale
 			to `0`. Default is `False`.<br /><br />
 		</p>
 
-		<h3>[property:Number repetitions]</h3>
+		<h3>[property:int repetitions]</h3>
 		<p>
 			The number of repetitions of the performed [page:AnimationClip] over the course of this action.
 			Can be set via [page:.setLoop setLoop]. Default is `Infinity`.<br /><br />
@@ -96,7 +96,7 @@
 			[page:Animation THREE.LoopOnce].
 		</p>
 
-		<h3>[property:Number time]</h3>
+		<h3>[property:int time]</h3>
 		<p>
 			The local time of this action (in seconds, starting with `0`).<br /><br />
 
@@ -105,7 +105,7 @@
 			[page:.setEffectiveTimeScale setEffectiveTimeScale] or [page:.setDuration setDuration]).<br />
 		</p>
 
-		<h3>[property:Number timeScale]</h3>
+		<h3>[property:int timeScale]</h3>
 		<p>
 			Scaling factor for the [page:.time time]. A value of `0` causes the animation to pause. Negative
 			values cause the animation to play backwards. Default is `1`.<br /><br />
@@ -120,7 +120,7 @@
 			[page:.warp warp].
 		</p>
 
-		<h3>[property:Number weight]</h3>
+		<h3>[property:int weight]</h3>
 		<p>
 			The degree of influence of this action (in the interval `[0, 1]`). Values between `0` (no impact)
 			and `1` (full impact) can be used to blend between several actions. Default is `1`. <br /><br />
@@ -135,12 +135,12 @@
 			[page:.stopFading stopFading].
 		</p>
 
-		<h3>[property:Boolean zeroSlopeAtEnd]</h3>
+		<h3>[property:bool zeroSlopeAtEnd]</h3>
 		<p>
 			Enables smooth interpolation without separate clips for start, loop and end. Default is `True`.
 		</p>
 
-		<h3>[property:Boolean zeroSlopeAtStart]</h3>
+		<h3>[property:bool zeroSlopeAtStart]</h3>
 		<p>
 			Enables smooth interpolation without separate clips for start, loop and end. Default is `True`.
 		</p>
@@ -149,47 +149,47 @@
 		<h2>Methods</h2>
 
 
-		<h3>[method:self crossFadeFrom]( [param:AnimationAction fadeOutAction], [param:Number durationInSeconds], [param:Boolean warpBoolean] )</h3>
+		<h3>[method:self crossFadeFrom]( [param:AnimationAction fadeOutAction], [param:int durationInSeconds], [param:bool warpBoolean] )</h3>
 		<p>
 			Causes this action to [page:.fadeIn fade in], fading out another action simultaneously, within
 			the passed time interval. This method can be chained.<br /><br />
 
-			If warpBoolean is true, additional [page:.warp warping] (gradually changes of the time scales)
+			If warpBoolean is `True`, additional [page:.warp warping] (gradually changes of the time scales)
 			will be applied.<br /><br />
 
 			Note: Like with `fadeIn`/`fadeOut`, the fading starts/ends with a weight of 1.
 
 		</p>
 
-		<h3>[method:self crossFadeTo]( [param:AnimationAction fadeInAction], [param:Number durationInSeconds], [param:Boolean warpBoolean] )</h3>
+		<h3>[method:self crossFadeTo]( [param:AnimationAction fadeInAction], [param:int durationInSeconds], [param:bool warpBoolean] )</h3>
 		<p>
 			Causes this action to [page:.fadeOut fade out], fading in another action simultaneously, within
 			the passed time interval. This method can be chained.<br /><br />
-			If warpBoolean is true, additional [page:.warp warping] (gradually changes of the time scales)
+			If warpBoolean is `True`, additional [page:.warp warping] (gradually changes of the time scales)
 			will be applied.<br /><br />
 
 			Note: Like with `fadeIn`/`fadeOut`, the fading starts/ends with a weight of 1.
 		</p>
 
-		<h3>[method:self fadeIn]( [param:Number durationInSeconds] )</h3>
+		<h3>[method:self fadeIn]( [param:int durationInSeconds] )</h3>
 		<p>
 			Increases the [page:.weight weight] of this action gradually from `0` to `1`, within the passed time
 			interval. This method can be chained.
 		</p>
 
-		<h3>[method:self fadeOut]( [param:Number durationInSeconds] )</h3>
+		<h3>[method:self fadeOut]( [param:int durationInSeconds] )</h3>
 		<p>
 			Decreases the [page:.weight weight] of this action gradually from `1` to `0`, within the passed time
 			interval. This method can be chained.
 		</p>
 
-		<h3>[method:Number getEffectiveTimeScale]()</h3>
+		<h3>[method:int getEffectiveTimeScale]()</h3>
 		<p>
 			Returns the effective time scale (considering the current states of warping and
 			[page:.paused paused]).
 		</p>
 
-		<h3>[method:Number getEffectiveWeight]()</h3>
+		<h3>[method:int getEffectiveWeight]()</h3>
 		<p>
 			Returns the effective weight (considering the current states of fading and
 			[page:.enabled enabled]).
@@ -210,28 +210,28 @@
 			Returns the root object on which this action is performed.
 		</p>
 
-		<h3>[method:self halt]( [param:Number durationInSeconds] )</h3>
+		<h3>[method:self halt]( [param:int durationInSeconds] )</h3>
 		<p>
 			Decelerates this animation's speed to `0` by decreasing [page:.timeScale timeScale] gradually
 			(starting from its current value), within the passed time interval. This method can be chained.
 		</p>
 
-		<h3>[method:Boolean isRunning]()</h3>
+		<h3>[method:bool isRunning]()</h3>
 		<p>
-			Returns true if the action’s [page:.time time] is currently running.<br /><br />
+			Returns `True` if the action’s [page:.time time] is currently running.<br /><br />
 
 			In addition to being activated in the mixer (see [page:.isScheduled isScheduled]) the following conditions must be fulfilled:
-			[page:.paused paused] is equal to false, [page:.enabled enabled] is equal to true,
+			[page:.paused paused] is equal to `False`, [page:.enabled enabled] is equal to `True`,
 			[page:.timeScale timeScale] is different from `0`, and there is no scheduling for a delayed start
 			([page:.startAt startAt]).<br /><br />
 
-			Note: `isRunning` being true doesn’t necessarily mean that the animation can actually be seen.
+			Note: `isRunning` being `True` doesn’t necessarily mean that the animation can actually be seen.
 			This is only the case, if [page:.weight weight] is additionally set to a non-zero value.
 		</p>
 
-		<h3>[method:Boolean isScheduled]()</h3>
+		<h3>[method:bool isScheduled]()</h3>
 		<p>
-			Returns true, if this action is activated in the mixer.<br /><br />
+			Returns `True`, if this action is activated in the mixer.<br /><br />
 			Note: This doesn’t necessarily mean that the animation is actually running (compare the additional
 			conditions for [page:.isRunning isRunning]).
 		</p>
@@ -252,7 +252,7 @@
 		<p>
 			Resets the action. This method can be chained.<br /><br />
 
-			This method sets [page:.paused paused] to false, [page:.enabled enabled] to true,
+			This method sets [page:.paused paused] to `False`, [page:.enabled enabled] to `True`,
 			[page:.time time] to `0`, interrupts any scheduled fading and warping, and removes the internal
 			loop count and scheduling for delayed starting.<br /><br />
 
@@ -260,43 +260,43 @@
 			This means: If you want both, resetting and stopping, don’t call .`reset`; call .`stop` instead.
 		</p>
 
-		<h3>[method:self setDuration]( [param:Number durationInSeconds] )</h3>
+		<h3>[method:self setDuration]( [param:int durationInSeconds] )</h3>
 		<p>
 			Sets the duration for a single loop of this action (by adjusting [page:.timeScale timeScale]
 			and stopping any scheduled warping). This method can be chained.
 		</p>
 
-		<h3>[method:self setEffectiveTimeScale]( [param:Number timeScale] )</h3>
+		<h3>[method:self setEffectiveTimeScale]( [param:int timeScale] )</h3>
 		<p>
 			Sets the [page:.timeScale timeScale] and stops any scheduled warping. This method can be chained.<br /><br />
 
-			If [page:.paused paused] is false, the effective time scale (an internal property) will also be set
+			If [page:.paused paused] is `False`, the effective time scale (an internal property) will also be set
 			to this value; otherwise the effective time scale (directly affecting the animation at
 			this moment) will be set to `0`.<br /><br />
 
-			Note: .`paused` will not be switched to `true` automatically, if .`timeScale` is set to `0` by
+			Note: .`paused` will not be switched to `True` automatically, if .`timeScale` is set to `0` by
 			this method.
 		</p>
 
-		<h3>[method:self setEffectiveWeight]( [param:Number weight] )</h3>
+		<h3>[method:self setEffectiveWeight]( [param:int weight] )</h3>
 		<p>
 			Sets the [page:.weight weight] and stops any scheduled fading. This method can be chained.<br /><br />
 
-			If [page:.enabled enabled] is true, the effective weight (an internal property) will also be set
+			If [page:.enabled enabled] is `True`, the effective weight (an internal property) will also be set
 			to this value; otherwise the effective weight (directly affecting the animation at this moment)
 			will be set to `0`.<br /><br />
 
-			Note: .`enabled` will not be switched to `false` automatically, if .`weight` is set to `0` by
+			Note: .`enabled` will not be switched to `False` automatically, if .`weight` is set to `0` by
 			this method.
 		</p>
 
-		<h3>[method:self setLoop]( [param:Number loopMode], [param:Number repetitions] )</h3>
+		<h3>[method:self setLoop]( [param:int loopMode], [param:int repetitions] )</h3>
 		<p>
 			Sets the [page:.loop loop mode] and the number of [page:.repetitions repetitions]. This method
 			can be chained.
 		</p>
 
-		<h3>[method:self startAt]( [param:Number startTimeInSeconds] )</h3>
+		<h3>[method:self startAt]( [param:int startTimeInSeconds] )</h3>
 		<p>
 			Defines the time for a delayed start (usually passed as [page:AnimationMixer.time] +
 			deltaTimeInSeconds). This method can be chained.<br /><br />
@@ -338,7 +338,7 @@
 			Note: Future changes of the other action's `time` and `timeScale` will not be detected.
 		</p>
 
-		<h3>[method:self warp]( [param:Number startTimeScale], [param:Number endTimeScale], [param:Number durationInSeconds] )</h3>
+		<h3>[method:self warp]( [param:int startTimeScale], [param:int endTimeScale], [param:int durationInSeconds] )</h3>
 		<p>
 			Changes the playback speed, within the passed time interval, by modifying
 			[page:.timeScale timeScale] gradually from `startTimeScale` to `endTimeScale`. This method can
