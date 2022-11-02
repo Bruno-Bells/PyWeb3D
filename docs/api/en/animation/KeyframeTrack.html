@@ -51,7 +51,7 @@
 			<li>[page:ColorKeyframeTrack]</li>
 			<li>[page:intKeyframeTrack]</li>
 			<li>[page:QuaternionKeyframeTrack]</li>
-			<li>[page:StringKeyframeTrack]</li>
+			<li>[page:strKeyframeTrack]</li>
 			<li>[page:VectorKeyframeTrack]</li>
 		</ul>
 
@@ -77,10 +77,10 @@
 
 		<h3>[name]( [param:str name], [param:list times], [param:list values], [param:Constant interpolation] )</h3>
 		<p>
-			[page:String name] - the identifier for the `KeyframeTrack`.<br />
-			[page:Array times] - a list of keyframe times, converted internally to a
+			[page:str name] - the identifier for the `KeyframeTrack`.<br />
+			[page:list times] - a list of keyframe times, converted internally to a
 			[link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array Float32Array] (list of 32-bit floating point numbers).<br />
-			[page:Array values] - a list with the values related to the times list, converted internally to a
+			[page:list values] - a list with the values related to the times list, converted internally to a
 			[link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array Float32Array] (list of 32-bit floating point numbers).<br />
 			[page:Constant interpolation] - the type of interpolation to use. See
 			[page:Animation Animation Constants] for possible values. Default is [page:Animation InterpolateLinear].
