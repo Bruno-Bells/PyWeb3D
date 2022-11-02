@@ -1,9 +1,4 @@
-<div style="color:rgb(158, 156, 156);align-items: center;	margin-left: auto; margin-right: auto; padding-top:20%;  width: 25em">
-
-	<h1 >Comming Soon...</h1>
-	<h1><a href="https://github.com/Bruno-Odinukweze/PyWeb3D#how-to-contribute" target="_blank" rel="noopener">How to Contribute</a></h1>
-</div >
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -29,21 +24,21 @@
 		<p>
 			In contrast to the animation hierarchy of the
 			[link:https://github.com/mrdoob/three.js/wiki/JSON-Model-format-3 JSON model format] a
-			`KeyframeTrack` doesn't store its single keyframes as objects in a "keys" array (holding the
+			`KeyframeTrack` doesn't store its single keyframes as objects in a "keys" list (holding the
 			times and the values for each frame together in one place).
 		</p>
 
 		<p>
-			Instead of this there are always two arrays in a `KeyframeTrack`: the [page:.times times] array
+			Instead of this there are always two lists in a `KeyframeTrack`: the [page:.times times] list
 			stores the time values for all keyframes of this track in sequential order, and the
-			[page:.values values] array contains the corresponding changing values of the animated property.
+			[page:.values values] list contains the corresponding changing values of the animated property.
 		</p>
 
 		<p>
 			A single value, belonging to a certain point of time, can not only be a simple number, but (for
 			example) a vector (if a position is animated) or a quaternion (if a rotation is animated). For
-			this reason the values array (which is a flat array, too) might be three or four times as long as the
-			times array.
+			this reason the values list (which is a flat list, too) might be three or four times as long as the
+			times list.
 		</p>
 
 		<p>
@@ -54,20 +49,20 @@
 		<ul>
 			<li>[page:BooleanKeyframeTrack]</li>
 			<li>[page:ColorKeyframeTrack]</li>
-			<li>[page:NumberKeyframeTrack]</li>
+			<li>[page:intKeyframeTrack]</li>
 			<li>[page:QuaternionKeyframeTrack]</li>
-			<li>[page:StringKeyframeTrack]</li>
+			<li>[page:strKeyframeTrack]</li>
 			<li>[page:VectorKeyframeTrack]</li>
 		</ul>
 
 		<p>
 			Some examples of how to manually create [page:AnimationClip AnimationClips] with different sorts
-			of KeyframeTracks can be found in the [link:https://threejs.org/examples/jsm/animation/AnimationClipCreator.js AnimationClipCreator]
+			of KeyframeTracks can be found in the [link:https://pyweb3d.org/jsm/animation/AnimationClipCreator.js AnimationClipCreator]
 			file.
 		</p>
 
 		<p>
-			Since explicit values are only specified for the discrete points of time stored in the times array,
+			Since explicit values are only specified for the discrete points of time stored in the times list,
 			all values in between have to be interpolated.
 		</p>
 
@@ -80,22 +75,22 @@
 		<h2>Constructor</h2>
 
 
-		<h3>[name]( [param:String name], [param:Array times], [param:Array values], [param:Constant interpolation] )</h3>
+		<h3>[name]( [param:str name], [param:list times], [param:list values], [param:Constant interpolation] )</h3>
 		<p>
-			[page:String name] - the identifier for the `KeyframeTrack`.<br />
-			[page:Array times] - an array of keyframe times, converted internally to a
-			[link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array Float32Array].<br />
-			[page:Array values] - an array with the values related to the times array, converted internally to a
-			[link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array Float32Array].<br />
+			[page:str name] - the identifier for the `KeyframeTrack`.<br />
+			[page:list times] - a list of keyframe times, converted internally to a
+			[link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array Float32Array] (list of 32-bit floating point numbers).<br />
+			[page:list values] - a list with the values related to the times list, converted internally to a
+			[link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array Float32Array] (list of 32-bit floating point numbers).<br />
 			[page:Constant interpolation] - the type of interpolation to use. See
 			[page:Animation Animation Constants] for possible values. Default is [page:Animation InterpolateLinear].
 		</p>
 
 
-		<h2>Properties</h2>
+		<h2>Instance Attributes</h2>
 
 
-		<h3>[property:String name]</h3>
+		<h3>[property:str name]</h3>
 		<p>
 			The track's name can refer to morph targets or [page:SkinnedMesh bones] or possibly other values within an animated object. See
 			[page:PropertyBinding.parseTrackName] for the forms of strings that can be parsed for property
@@ -117,7 +112,7 @@
 		<p>
 			You can also specify bones or multimaterials by using an object name, for example:
 			.bones[R_hand].scale; the red channel of the diffuse color of the fourth material in a
-			materials array - as a further example - can be accessed with .materials[3].diffuse[r].
+			materials list - as a further example - can be accessed with .materials[3].diffuse[r].
 		</p>
 
 		<p>
@@ -132,14 +127,14 @@
 
 		<h3>[property:Float32Array times]</h3>
 		<p>
-			A [link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array Float32Array],
-			converted from the times array which is passed in the constructor.
+			A [link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array Float32Array] (list of 32-bit floating point numbers),
+			converted from the times list which is passed in the constructor.
 		</p>
 
 		<h3>[property:Float32Array values]</h3>
 		<p>
-			A [link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array Float32Array],
-			converted from the values array which is passed in the constructor.
+			A [link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array Float32Array] (list of 32-bit floating point numbers),
+			converted from the values list which is passed in the constructor.
 		</p>
 
 		<h3>[property:Constant DefaultInterpolation]</h3>
@@ -149,13 +144,13 @@
 
 		<h3>[property:Constant TimeBufferType ]</h3>
 		<p>
-			[link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array Float32Array],
+			[link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array Float32Array] (list of 32-bit floating point numbers),
 			the type of the buffer internally used for the times.
 		</p>
 
 		<h3>[property:Constant ValueBufferType ]</h3>
 		<p>
-			[link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array Float32Array],
+			[link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array Float32Array] (list of 32-bit floating point numbers),
 			the type of the buffer internally used for the values.
 		</p>
 
@@ -180,42 +175,42 @@
 			Returns the interpolation type.
 		</p>
 
-		<h3>[method:Number getValueSize]()</h3>
+		<h3>[method:int getValueSize]()</h3>
 		<p>
-			Returns the size of each value (that is the length of the [page:.values values] array divided
-			by the length of the [page:.times times] array).
+			Returns the size of each value (that is the length of the [page:.values values] list divided
+			by the length of the [page:.times times] list).
 		</p>
 
 		<h3>[method:DiscreteInterpolant InterpolantFactoryMethodDiscrete]( [link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array result] )</h3>
 		<p>
 			Creates a new [page:DiscreteInterpolant DiscreteInterpolant] from the
-			[page:KeyframeTrack.times times] and [page:KeyframeTrack.times values]. A Float32Array can be
-			passed which will receive the results. Otherwise a new array with the appropriate size will be
+			[page:KeyframeTrack.times times] and [page:KeyframeTrack.times values]. A Float32Array(list of 32-bit floating point numbers) can be
+			passed which will receive the results. Otherwise a new list with the appropriate size will be
 			created automatically.
 		</p>
 
 		<h3>[method:LinearInterpolant InterpolantFactoryMethodLinear]( [link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array result] )</h3>
 		<p>
 			Creates a new [page:LinearInterpolant LinearInterpolant] from the
-			[page:KeyframeTrack.times times] and [page:KeyframeTrack.times values]. A Float32Array can be
-			passed which will receive the results. Otherwise a new array with the appropriate size will be
+			[page:KeyframeTrack.times times] and [page:KeyframeTrack.times values]. A Float32Array (list of 32-bit floating point numbers) can be
+			passed which will receive the results. Otherwise a new list with the appropriate size will be
 			created automatically.
 		</p>
 
 		<h3>[method:CubicInterpolant InterpolantFactoryMethodSmooth]( [link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array result] )</h3>
 		<p>
 			Create a new [page:CubicInterpolant CubicInterpolant] from the
-			[page:KeyframeTrack.times times] and [page:KeyframeTrack.times values]. A Float32Array can be
-			passed which will receive the results. Otherwise a new array with the appropriate size will be
+			[page:KeyframeTrack.times times] and [page:KeyframeTrack.times values]. A Float32Array (list of 32-bit floating point numbers) can be
+			passed which will receive the results. Otherwise a new list with the appropriate size will be
 			created automatically.
 		</p>
 
-		<h3>[method:this optimize]()</h3>
+		<h3>[method:self optimize]()</h3>
 		<p>
 			Removes equivalent sequential keys, which are common in morph target sequences.
 		</p>
 
-		<h3>[method:this scale]()</h3>
+		<h3>[method:self scale]()</h3>
 		<p>
 			Scales all keyframe times by a factor.<br /><br />
 
@@ -224,46 +219,39 @@
 			[page:AnimationClip.CreateFromMorphTargetSequence animationClip.CreateFromMorphTargetSequence]).
 		</p>
 
-		<h3>[method:this setInterpolation]( [param:Constant interpolationType] )</h3>
+		<h3>[method:self setInterpolation]( [param:Constant interpolationType] )</h3>
 		<p>
 			Sets the interpolation type. See [page:Animation Animation Constants] for choices.
 		</p>
 
-		<h3>[method:this shift]( [param:Number timeOffsetInSeconds] )</h3>
+		<h3>[method:self shift]( [param:int timeOffsetInSeconds] )</h3>
 		<p>
 			Moves all keyframes either forward or backward in time.
 		</p>
 
 
-		<h3>[method:this trim]( [param:Number startTimeInSeconds], [param:Number endTimeInSeconds] )</h3>
+		<h3>[method:self trim]( [param:int startTimeInSeconds], [param:int endTimeInSeconds] )</h3>
 		<p>
 			Removes keyframes before `startTime` and after `endTime`,
 			without changing any values within the range [`startTime`, `endTime`].
 		</p>
 
-		<h3>[method:Boolean validate]()</h3>
+		<h3>[method:bool validate]()</h3>
 		<p>
-			Performs minimal validation on the tracks. Returns true if valid.
+			Performs minimal validation on the tracks. Returns `True` if valid.
 		</p>
 
 		<p>
-			This method logs errors to the console, if a track is empty, if the [page:.valueSize value size] is not valid, if an item
-			in the [page:.times times] or [page:.values values] array is not a valid number or if the items in the `times` array are out of order.
+			This method prints errors in the console, if a track is empty, if the [page:.valueSize value size] is not valid, if an item
+			in the [page:.times times] or [page:.values values] list is not a valid number or if the items in the `times` list are out of order.
 		</p>
 
 		<h2>Static Methods</h2>
 
-		<h3>[method:JSON toJSON]( [param:KeyframeTrack track] )</h3>
+		<h3>[method:dict toJSON]( [param:KeyframeTrack track] )</h3>
 		<p>
 		Converts the track to JSON.
 		</p>
 
-
-		<h2>Source</h2>
-
-
-		<p>
-			[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
-		</p>
 	</body>
-</html> -->
+</html>
