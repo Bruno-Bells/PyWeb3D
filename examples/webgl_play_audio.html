@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>PyWeb3D - Audio Play</title>
+        <script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython_stdlib.js"></script>
+        <script src="https://unpkg.com/three@0.145.0/build/three.js"></script>
+        <script src="https://www.pyweb3d.org/pyweb3d/v1.0.0/pyweb3d.brython.js"></script>
+        <link rel="stylesheet" href="main.css">
+        <style>
+            body{
+                margin: 0;
+            }
+			a {
+				color: rgb(13, 154, 230);
+			}
+            p{
+                color: black;
+            }
+		</style>
+     </head>
+	<body onload="brython(1)">
+        <script src="../jsm/loaders/GLTFLoader.js"></script>
+        <script src="../jsm/controls/OrbitControls.js"></script>
+
+        <div id="info">
+			<a href="https://pyweb3d.org" target="_blank" rel="noopener">PyWeb3D</a> - Audio Play <br>
+            <p>(model from <a href="https://sketchfab.com/3d-models/meditation-597cb6b4fb57433aa098f582194a6401">sketchfab.com</a> ) <br></p>
+			(Music by <a href="https://pixabay.com/users/ashot-danielyan-composer-27049680/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=118554">Ashot-Danielyan-Composer</a> from <a href="https://pixabay.com/music//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=118554">Pixabay</a>)<br/>
+            
+		</div>
+        
+        <div id="overlay">
+			<button id="startButton">Play</button>
+		</div>
+        <script type="text/python">
+            from browser import document, window
+            from  pyweb3d.pyweb3d import *
+            
+            mixer = None
+            controls = None
+            
+            GLTFLoader = window.THREE.GLTFLoader.new
+            OrbitControls = window.THREE.OrbitControls.new
+            
+            def init(ev):
+                global controls
+            
+                audio_test = document.getElementById('overlay')
+                audio_test.remove()
+                #Camera
+                camera = PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 1000 )
+                camera.position.set( 0, 1.5, 5 )
+                camera.lookAt( 0, 0, 0 )
+            
+                #Scene
+                scene = Scene()
+                scene.background = Color( 0xF8EDE3 )
+                scene.fog = Fog( 0xa0a0a0, 10, 50 )
+            
+                # create an AudioListener and add it to the camera
+                listener = AudioListener()
+                camera.add( listener )
+            
+                ambient_light = AmbientLight(0xffffff, 2)
+                scene.add(ambient_light)
+            
+                directLight = DirectionalLight("white", 2.5 )
+                directLight.position.set(2, 30, 2)
+                directLight.castShadow = True
+                scene.add(directLight)
+            
+                #create a global audio source
+                sound = Audio( listener )
+            
+                # load a sound and set it as the Audio object's buffer
+                audioLoader = AudioLoader()
+                # load Dancer
+                gltfLoader = GLTFLoader()
+            
+                def load_audio(buffer):
+                    sound.setBuffer( buffer )
+                    sound.setLoop( True )
+                    sound.setVolume( 0.5 )
+                    sound.play()
+            
+                audioLoader.load( 'audio/meditation.mp3', load_audio)
+            
+                def load_dancer(gltf):
+                    global mixer
+            
+                    model = gltf.scene
+                    model.scale.setScalar(1.4)
+                    scene.add(model)
+                   
+                gltfLoader.load('models/meditation.glb', load_dancer)
+            
+                renderer = WebGLRenderer()
+                renderer.setPixelRatio( window.devicePixelRatio )
+                renderer.setSize( window.innerWidth, window.innerHeight )
+                document.body.appendChild( renderer.domElement )
+                
+                controls = OrbitControls(camera, renderer.domElement)
+                controls.autoRotateSpeed = 1.5
+                controls.autoRotate = True
+                
+            
+                def animate(time):
+                    window.requestAnimationFrame(animate)
+                    controls.update()
+                    renderer.render( scene, camera )
+                animate(0)
+            
+            audio_test1 = document.getElementById('startButton')
+            audio_test1.addEventListener( 'click', init )
+        </script>
+    </body>
+</html>
