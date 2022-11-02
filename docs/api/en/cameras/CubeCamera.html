@@ -1,9 +1,4 @@
-<div style="color:rgb(158, 156, 156);align-items: center;	margin-left: auto; margin-right: auto; padding-top:20%;  width: 25em">
-
-	<h1 >Comming Soon...</h1>
-	<h1><a href="https://github.com/Bruno-Odinukweze/PyWeb3D#how-to-contribute" target="_blank" rel="noopener">How to Contribute</a></h1>
-</div >
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -21,38 +16,38 @@
 		<h2>Code Example</h2>
 
 		<code>
-		// Create cube render target
-		const cubeRenderTarget = new THREE.WebGLCubeRenderTarget( 128, { generateMipmaps: true, minFilter: THREE.LinearMipmapLinearFilter } );
+		# Create cube render target
+		cubeRenderTarget = WebGLCubeRenderTarget( 128, { 'generateMipmaps': True, 'minFilter': LinearMipmapLinearFilter } )
 
-		// Create cube camera
-		const cubeCamera = new THREE.CubeCamera( 1, 100000, cubeRenderTarget );
-		scene.add( cubeCamera );
+		# Create cube camera
+		cubeCamera = CubeCamera( 1, 100000, cubeRenderTarget )
+		scene.add( cubeCamera )
 
-		// Create car
-		const chromeMaterial = new THREE.MeshLambertMaterial( { color: 0xffffff, envMap: cubeRenderTarget.texture } );
-		const car = new THREE.Mesh( carGeometry, chromeMaterial );
-		scene.add( car );
+		# Create car
+		chromeMaterial = MeshLambertMaterial( { 'color': 0xffffff, 'envMap': cubeRenderTarget.texture } )
+		car = Mesh( carGeometry, chromeMaterial )
+		scene.add( car )
 
-		// Update the render target cube
-		car.visible = false;
-		cubeCamera.position.copy( car.position );
-		cubeCamera.update( renderer, scene );
+		# Update the render target cube
+		car.visible = False
+		cubeCamera.position.copy( car.position )
+		cubeCamera.update( renderer, scene )
 
-		// Render the scene
-		car.visible = true;
-		renderer.render( scene, camera );
+		# Render the scene
+		car.visible = True
+		renderer.render( scene, camera )
 		</code>
 
-		<h2>Examples</h2>
+		<!-- <h2>Examples</h2>
 
 		<p>
 			[example:webgl_materials_cubemap_dynamic materials / cubemap / dynamic ]
-		</p>
+		</p> -->
 
 		<h2>Constructor</h2>
 
 
-		<h3>[name]( [param:Number near], [param:Number far], [param:WebGLCubeRenderTarget renderTarget] )</h3>
+		<h3>[name]( [param:int near], [param:int far], [param:WebGLCubeRenderTarget renderTarget] )</h3>
 		<p>
 		near -- The near clipping distance. <br />
 		far -- The far clipping distance. <br />
@@ -64,8 +59,8 @@
 		render to a [page:WebGLCubeRenderTarget].
 		</p>
 
-		<h2>Properties</h2>
-		<p>See the base [page:Object3D] class for common properties.</p>
+		<h2>Instance Attributes</h2>
+		<p>See the base [page:Object3D] class for common attributes.</p>
 
 		<h3>[property:WebGLCubeRenderTarget renderTarget]</h3>
 		<p>
@@ -84,10 +79,5 @@
 		Call this to update the [page:CubeCamera.renderTarget renderTarget].
 		</p>
 
-		<h2>Source</h2>
-
-		<p>
-			[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
-		</p>
 	</body>
-</html> -->
+</html>
