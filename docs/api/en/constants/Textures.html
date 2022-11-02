@@ -1,9 +1,4 @@
-<div style="color:rgb(158, 156, 156);align-items: center;	margin-left: auto; margin-right: auto; padding-top:20%;  width: 25em">
-
-	<h1 >Comming Soon...</h1>
-	<h1><a href="https://github.com/Bruno-Odinukweze/PyWeb3D#how-to-contribute" target="_blank" rel="noopener">How to Contribute</a></h1>
-</div >
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -14,14 +9,21 @@
 	<body>
 		<h1>Texture Constants</h1>
 
+		<p>
+			<strong>Note:</strong> All constant variables are imported from PyWeb3D. Assuming you imported PyWeb3D as follow:
+			<code>
+				from pyweb3d.pyweb3d import *
+			</code>
+		</p>
+
 		<h2>Mapping Modes</h2>
 		<code>
-		THREE.UVMapping
-		THREE.CubeReflectionMapping
-		THREE.CubeRefractionMapping
-		THREE.EquirectangularReflectionMapping
-		THREE.EquirectangularRefractionMapping
-		THREE.CubeUVReflectionMapping
+		UVMapping
+		CubeReflectionMapping
+		CubeRefractionMapping
+		EquirectangularReflectionMapping
+		EquirectangularRefractionMapping
+		CubeUVReflectionMapping
 		</code>
 
 		<p>
@@ -40,15 +42,15 @@
 		vertical axis, with the top and bottom edges of the image corresponding to the north and south poles
 		of a mapped sphere.<br /><br />
 
-		See the [example:webgl_materials_envmaps materials / envmaps] example.
+		<!-- See the [example:webgl_materials_envmaps materials / envmaps] example. -->
 		</p>
 
 
 		<h2>Wrapping Modes</h2>
 		<code>
-		THREE.RepeatWrapping
-		THREE.ClampToEdgeWrapping
-		THREE.MirroredRepeatWrapping
+		RepeatWrapping
+		ClampToEdgeWrapping
+		MirroredRepeatWrapping
 		</code>
 		<p>
 		These define the texture's [page:Texture.wrapS wrapS] and [page:Texture.wrapT wrapT] properties,
@@ -64,8 +66,8 @@
 
 		<h2>Magnification Filters</h2>
 		<code>
-		THREE.NearestFilter
-		THREE.LinearFilter
+		NearestFilter
+		LinearFilter
 		</code>
 
 		<p>
@@ -84,12 +86,12 @@
 
 		<h2>Minification Filters</h2>
 		<code>
-		THREE.NearestFilter
-		THREE.NearestMipmapNearestFilter
-		THREE.NearestMipmapLinearFilter
-		THREE.LinearFilter
-		THREE.LinearMipmapNearestFilter
-		THREE.LinearMipmapLinearFilter
+		NearestFilter
+		NearestMipmapNearestFilter
+		NearestMipmapLinearFilter
+		LinearFilter
+		LinearMipmapNearestFilter
+		LinearMipmapLinearFilter
 		</code>
 
 		<p>
@@ -118,22 +120,22 @@
 		that most closely match the size of the pixel being textured and uses the [page:constant LinearFilter] criterion
 		to produce a texture value from each mipmap. The final texture value is a weighted average of those two values.<br /><br />
 
-		See the [example:webgl_materials_texture_filters materials / texture / filters] example.
+		<!-- See the [example:webgl_materials_texture_filters materials / texture / filters] example. -->
 		</p>
 
 		<h2>Types</h2>
 		<code>
-		THREE.UnsignedByteType
-		THREE.ByteType
-		THREE.ShortType
-		THREE.UnsignedShortType
-		THREE.IntType
-		THREE.UnsignedIntType
-		THREE.FloatType
-		THREE.HalfFloatType
-		THREE.UnsignedShort4444Type
-		THREE.UnsignedShort5551Type
-		THREE.UnsignedInt248Type
+		UnsignedByteType
+		ByteType
+		ShortType
+		UnsignedShortType
+		IntType
+		UnsignedIntType
+		FloatType
+		HalfFloatType
+		UnsignedShort4444Type
+		UnsignedShort5551Type
+		UnsignedInt248Type
 		</code>
 		<p>
 		For use with a texture's [page:Texture.type type]	property, which must correspond to the correct format. See below for details.<br /><br />
@@ -143,17 +145,17 @@
 
 		<h2>Formats</h2>
 		<code>
-		THREE.AlphaFormat
-		THREE.RedFormat
-		THREE.RedIntegerFormat
-		THREE.RGFormat
-		THREE.RGIntegerFormat
-		THREE.RGBAFormat
-		THREE.RGBAIntegerFormat
-		THREE.LuminanceFormat
-		THREE.LuminanceAlphaFormat
-		THREE.DepthFormat
-		THREE.DepthStencilFormat
+		AlphaFormat
+		RedFormat
+		RedIntegerFormat
+		RGFormat
+		RGIntegerFormat
+		RGBAFormat
+		RGBAIntegerFormat
+		LuminanceFormat
+		LuminanceAlphaFormat
+		DepthFormat
+		DepthStencilFormat
 		</code>
 		<p>
 		For use with a texture's [page:Texture.format format]	property, these define
@@ -207,10 +209,10 @@
 
 		<h2>DDS / ST3C Compressed Texture Formats</h2>
 		<code>
-		THREE.RGB_S3TC_DXT1_Format
-		THREE.RGBA_S3TC_DXT1_Format
-		THREE.RGBA_S3TC_DXT3_Format
-		THREE.RGBA_S3TC_DXT5_Format
+		RGB_S3TC_DXT1_Format
+		RGBA_S3TC_DXT1_Format
+		RGBA_S3TC_DXT3_Format
+		RGBA_S3TC_DXT5_Format
 		</code>
 		<p>
 		For use with a [page:CompressedTexture CompressedTexture]'s [page:Texture.format format]	property,
@@ -227,10 +229,10 @@
 
 		<h2>PVRTC Compressed Texture Formats</h2>
 		<code>
-		THREE.RGB_PVRTC_4BPPV1_Format
-		THREE.RGB_PVRTC_2BPPV1_Format
-		THREE.RGBA_PVRTC_4BPPV1_Format
-		THREE.RGBA_PVRTC_2BPPV1_Format
+		RGB_PVRTC_4BPPV1_Format
+		RGB_PVRTC_2BPPV1_Format
+		RGBA_PVRTC_4BPPV1_Format
+		RGBA_PVRTC_2BPPV1_Format
 		</code>
 		<p>
 		For use with a [page:CompressedTexture CompressedTexture]'s [page:Texture.format format]	property,
@@ -247,9 +249,9 @@
 
 		<h2>ETC Compressed Texture Format</h2>
 		<code>
-		THREE.RGB_ETC1_Format
-		THREE.RGB_ETC2_Format
-		THREE.RGBA_ETC2_EAC_Format
+		RGB_ETC1_Format
+		RGB_ETC2_Format
+		RGBA_ETC2_EAC_Format
 		</code>
 		<p>
 		For use with a [page:CompressedTexture CompressedTexture]'s [page:Texture.format format]	property,
@@ -260,20 +262,20 @@
 
 		<h2>ASTC Compressed Texture Format</h2>
 		<code>
-		THREE.RGBA_ASTC_4x4_Format
-		THREE.RGBA_ASTC_5x4_Format
-		THREE.RGBA_ASTC_5x5_Format
-		THREE.RGBA_ASTC_6x5_Format
-		THREE.RGBA_ASTC_6x6_Format
-		THREE.RGBA_ASTC_8x5_Format
-		THREE.RGBA_ASTC_8x6_Format
-		THREE.RGBA_ASTC_8x8_Format
-		THREE.RGBA_ASTC_10x5_Format
-		THREE.RGBA_ASTC_10x6_Format
-		THREE.RGBA_ASTC_10x8_Format
-		THREE.RGBA_ASTC_10x10_Format
-		THREE.RGBA_ASTC_12x10_Format
-		THREE.RGBA_ASTC_12x12_Format
+		RGBA_ASTC_4x4_Format
+		RGBA_ASTC_5x4_Format
+		RGBA_ASTC_5x5_Format
+		RGBA_ASTC_6x5_Format
+		RGBA_ASTC_6x6_Format
+		RGBA_ASTC_8x5_Format
+		RGBA_ASTC_8x6_Format
+		RGBA_ASTC_8x8_Format
+		RGBA_ASTC_10x5_Format
+		RGBA_ASTC_10x6_Format
+		RGBA_ASTC_10x8_Format
+		RGBA_ASTC_10x10_Format
+		RGBA_ASTC_12x10_Format
+		RGBA_ASTC_12x12_Format
 		</code>
 		<p>
 		For use with a [page:CompressedTexture CompressedTexture]'s [page:Texture.format format] property,
@@ -282,7 +284,7 @@
 
 		<h2>BPTC Compressed Texture Format</h2>
 		<code>
-		THREE.RGBA_BPTC_Format
+		RGBA_BPTC_Format
 		</code>
 		<p>
 		For use with a [page:CompressedTexture CompressedTexture]'s [page:Texture.format format] property,
@@ -544,10 +546,10 @@
 
 		<h2>Encoding</h2>
 		<code>
-		THREE.LinearEncoding
-		THREE.sRGBEncoding
-		THREE.BasicDepthPacking
-		THREE.RGBADepthPacking
+		LinearEncoding
+		sRGBEncoding
+		BasicDepthPacking
+		RGBADepthPacking
 		</code>
 		<p>
 		For use with a Texture's [page:Texture.encoding encoding]	property.<br /><br />
@@ -559,10 +561,10 @@
 		Values other than this are only valid for a material's map, envMap and emissiveMap.
 		</p>
 
-		<h2>Source</h2>
+		<!-- <h2>Source</h2>
 
 		<p>
 			[link:https://github.com/mrdoob/three.js/blob/master/src/constants.js src/constants.js]
-		</p>
+		</p> -->
 	</body>
-</html> -->
+</html>
