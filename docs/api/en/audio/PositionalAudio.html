@@ -1,9 +1,4 @@
-<div style="color:rgb(158, 156, 156);align-items: center;	margin-left: auto; margin-right: auto; padding-top:20%;  width: 25em">
-
-	<h1 >Comming Soon...</h1>
-	<h1><a href="https://github.com/Bruno-Odinukweze/PyWeb3D#how-to-contribute" target="_blank" rel="noopener">How to Contribute</a></h1>
-</div >
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -25,38 +20,40 @@
 		<h2>Code Example</h2>
 
 		<code>
-		// create an AudioListener and add it to the camera
-		const listener = new THREE.AudioListener();
-		camera.add( listener );
+		# create an AudioListener and add it to the camera
+		listener = AudioListener()
+		camera.add( listener )
 
-		// create the PositionalAudio object (passing in the listener)
-		const sound = new THREE.PositionalAudio( listener );
+		# create the PositionalAudio object (passing in the listener)
+		sound = PositionalAudio( listener )
 
-		// load a sound and set it as the PositionalAudio object's buffer
-		const audioLoader = new THREE.AudioLoader();
-		audioLoader.load( 'sounds/song.ogg', function( buffer ) {
-			sound.setBuffer( buffer );
-			sound.setRefDistance( 20 );
-			sound.play();
-		});
+		# load a sound and set it as the PositionalAudio object's buffer
+		audioLoader = AudioLoader()
 
-		// create an object for the sound to play from
-		const sphere = new THREE.SphereGeometry( 20, 32, 16 );
-		const material = new THREE.MeshPhongMaterial( { color: 0xff2200 } );
-		const mesh = new THREE.Mesh( sphere, material );
-		scene.add( mesh );
+		def audio_settings(buffer):
+			sound.setBuffer( buffer )
+			sound.setRefDistance( 20 )
+			sound.play()
 
-		// finally add the sound to the mesh
-		mesh.add( sound );
+		audioLoader.load( 'sounds/song.ogg', audio_settings)
+
+		# create an object for the sound to play from
+		sphere = SphereGeometry( 20, 32, 16 )
+		material = MeshPhongMaterial( { 'color': 0xff2200 } )
+		mesh = Mesh( sphere, material )
+		scene.add( mesh )
+
+		# finally add the sound to the mesh
+		mesh.add( sound )
 		</code>
 
-		<h2>Examples</h2>
+		<!-- <h2>Examples</h2>
 
 		<p>
 			[example:webaudio_orientation webaudio / orientation ]<br />
 			[example:webaudio_sandbox webaudio / sandbox ]<br />
 			[example:webaudio_timing webaudio / timing ]
-		</p>
+		</p> -->
 
 		<h2>Constructor</h2>
 
@@ -66,7 +63,7 @@
 		</p>
 
 
-		<h2>Properties</h2>
+		<h2>Instance Attributes</h2>
 
 		<p>
 			See the [page:Audio Audio] class for inherited properties.
@@ -87,55 +84,50 @@
 		Returns the [page:PositionalAudio.panner panner].
 		</p>
 
-		<h3>[method:Float getRefDistance]()</h3>
+		<h3>[method:float getRefDistance]()</h3>
 		<p>
 		Returns the value of [link:https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/refDistance panner.refDistance].
 		</p>
 
-		<h3>[method:this setRefDistance]( [param:Float value] )</h3>
+		<h3>[method:self setRefDistance]( [param:float value] )</h3>
 		<p>
 		Sets the value of [link:https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/refDistance panner.refDistance].
 		</p>
 
-		<h3>[method:Float getRolloffFactor]()</h3>
+		<h3>[method:float getRolloffFactor]()</h3>
 		<p>
 		Returns the value of [link:https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/rolloffFactor panner.rolloffFactor].
 		</p>
 
-		<h3>[method:this setRolloffFactor]( [param:Float value] )</h3>
+		<h3>[method:self setRolloffFactor]( [param:float value] )</h3>
 		<p>
 		Sets the value of [link:https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/rolloffFactor panner.rolloffFactor].
 		</p>
 
-		<h3>[method:String getDistanceModel]()</h3>
+		<h3>[method:str getDistanceModel]()</h3>
 		<p>
 		Returns the value of [link:https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/distanceModel panner.distanceModel].
 		</p>
 
-		<h3>[method:this setDistanceModel]( [param:String value] )</h3>
+		<h3>[method:self setDistanceModel]( [param:str value] )</h3>
 		<p>
 		Sets the value of [link:https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/distanceModel panner.distanceModel].
 		</p>
 
-		<h3>[method:Float getMaxDistance]()</h3>
+		<h3>[method:float getMaxDistance]()</h3>
 		<p>
 		Returns the value of [link:https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/maxDistance panner.maxDistance].
 		</p>
 
-		<h3>[method:this setMaxDistance]( [param:Float value] )</h3>
+		<h3>[method:self setMaxDistance]( [param:float value] )</h3>
 		<p>
 		Sets the value of [link:https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/maxDistance panner.maxDistance].
 		</p>
 
-		<h3>[method:this setDirectionalCone]( [param:Float coneInnerAngle], [param:Float coneOuterAngle], [param:Float coneOuterGain] )</h3>
+		<h3>[method:self setDirectionalCone]( [param:float coneInnerAngle], [param:float coneOuterAngle], [param:float coneOuterGain] )</h3>
 		<p>
 		This method can be used in order to transform an omnidirectional sound into a [link:https://developer.mozilla.org/en-US/docs/Web/API/PannerNode directional sound].
 		</p>
 
-		<h2>Source</h2>
-
-		<p>
-			[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
-		</p>
 	</body>
-</html> -->
+</html>

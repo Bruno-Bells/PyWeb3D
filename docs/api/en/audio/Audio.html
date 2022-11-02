@@ -1,9 +1,4 @@
-<div style="color:rgb(158, 156, 156);align-items: center;	margin-left: auto; margin-right: auto; padding-top:20%;  width: 25em">
-
-	<h1 >Comming Soon...</h1>
-	<h1><a href="https://github.com/Bruno-Odinukweze/PyWeb3D#how-to-contribute" target="_blank" rel="noopener">How to Contribute</a></h1>
-</div >
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -25,28 +20,30 @@
 		<h2>Code Example</h2>
 
 		<code>
-		// create an AudioListener and add it to the camera
-		const listener = new THREE.AudioListener();
-		camera.add( listener );
+		# create an AudioListener and add it to the camera
+		listener = AudioListener()
+		camera.add( listener )
 
-		// create a global audio source
-		const sound = new THREE.Audio( listener );
+		# create a global audio source
+		sound = Audio( listener )
 
-		// load a sound and set it as the Audio object's buffer
-		const audioLoader = new THREE.AudioLoader();
-		audioLoader.load( 'sounds/ambient.ogg', function( buffer ) {
-			sound.setBuffer( buffer );
-			sound.setLoop( true );
-			sound.setVolume( 0.5 );
-			sound.play();
-		});
+		# load a sound and set it as the Audio object's buffer
+		audioLoader = AudioLoader()
+
+		def audio_settings(buffer):
+			sound.setBuffer( buffer )
+			sound.setLoop( True )
+			sound.setVolume( 0.5 )
+			sound.play()
+
+		audioLoader.load( 'sounds/ambient.ogg', audio_settings)
+
 		</code>
 
 		<h2>Examples</h2>
 
 		<p>
-			[example:webaudio_sandbox webaudio / sandbox ]<br />
-			[example:webaudio_visualizer webaudio / visualizer ]
+			[example:webaudio_play_audio play / audio ]<br />
 		</p>
 
 		<h2>Constructor</h2>
@@ -58,85 +55,85 @@
 		</p>
 
 
-		<h2>Properties</h2>
+		<h2>Instance Attributes</h2>
 
-		<h3>[property:Boolean autoplay]</h3>
-		<p>Whether to start playback automatically. Default is `false`.</p>
+		<h3>[property:bool autoplay]</h3>
+		<p>Whether to start playback automatically. Default is `False`.</p>
 
 		<h3>[property:AudioContext context]</h3>
 		<p>The [link:https://developer.mozilla.org/en-US/docs/Web/API/AudioContext AudioContext] of the [page:AudioListener listener] given in the constructor.</p>
 
-		<h3>[property:Number detune]</h3>
+		<h3>[property:int detune]</h3>
 		<p>Modify pitch, measured in cents. +/- 100 is a semitone. +/- 1200 is an octave. Default is `0`.</p>
 
-		<h3>[property:Array filters]</h3>
-		<p>Represents an array of [link:https://developer.mozilla.org/en-US/docs/Web/API/AudioNode AudioNodes]. Can be used to apply a variety of low-order filters to create more complex sound effects.
-			In most cases, the array contains instances of [link:https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode BiquadFilterNodes]. Filters are set via [page:Audio.setFilter] or [page:Audio.setFilters].</p>
+		<h3>[property:list filters]</h3>
+		<p>Represents a list of [link:https://developer.mozilla.org/en-US/docs/Web/API/AudioNode AudioNodes]. Can be used to apply a variety of low-order filters to create more complex sound effects.
+			In most cases, the list contains instances of [link:https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode BiquadFilterNodes]. Filters are set via [page:Audio.setFilter] or [page:Audio.setFilters].</p>
 
 		<h3>[property:GainNode gain]</h3>
 		<p>A [link:https://developer.mozilla.org/en-US/docs/Web/API/GainNode GainNode] created
 		using [link:https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createGain AudioContext.createGain]().</p>
 
-		<h3>[property:Boolean hasPlaybackControl]</h3>
+		<h3>[property:bool hasPlaybackControl]</h3>
 		<p>Whether playback can be controlled using the [page:Audio.play play](),
-			[page:Audio.pause pause]() etc. methods. Default is `true`.</p>
+			[page:Audio.pause pause]() etc. methods. Default is `True`.</p>
 
-		<h3>[property:Boolean isPlaying]</h3>
+		<h3>[property:bool isPlaying]</h3>
 		<p>Whether the audio is currently playing.</p>
 
 		<h3>[property:AudioListener listener]</h3>
 		<p>A reference to the listener object of this audio.</p>
 
-		<h3>[property:Number playbackRate]</h3>
+		<h3>[property:int playbackRate]</h3>
 		<p>Speed of playback. Default is `1`.</p>
 
-		<h3>[property:Number offset]</h3>
+		<h3>[property:int offset]</h3>
 		<p>An offset to the time within the audio buffer that playback should begin. Same as the `offset` parameter of [link:https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/start AudioBufferSourceNode.start](). Default is `0`.</p>
 
-		<h3>[property:Number duration]</h3>
+		<h3>[property:int duration]</h3>
 		<p>Overrides the duration of the audio. Same as the `duration` parameter of [link:https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/start AudioBufferSourceNode.start](). Default is `undefined` to play the whole buffer.</p>
 
-		<h3>[property:String source]</h3>
+		<h3>[property:str source]</h3>
 		<p>An [link:https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode AudioBufferSourceNode] created
 		using [link:https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createBufferSource AudioContext.createBufferSource]().</p>
 
-		<h3>[property:String sourceType]</h3>
+		<h3>[property:str sourceType]</h3>
 		<p>Type of the audio source. Default is string 'empty'.</p>
 
-		<h3>[property:String type]</h3>
+		<h3>[property:str type]</h3>
 		<p>String denoting the type, set to 'Audio'.</p>
 
 
 		<h2>Methods</h2>
 
-		<h3>[method:this connect]()</h3>
+		<h3>[method:self connect]()</h3>
 		<p>
 		Connect to the [page:Audio.source]. This is used internally on initialisation and when
 		setting / removing filters.
 		</p>
 
-		<h3>[method:this disconnect]()</h3>
+		<h3>[method:self disconnect]()</h3>
 		<p>
 		Disconnect from the [page:Audio.source]. This is used internally when
 		setting / removing filters.
 		</p>
 
-		<h3>[method:Float getDetune]()</h3>
+		<h3>[method:float getDetune]()</h3>
 		<p>
 		Returns the detuning of oscillation in cents.
 		</p>
 
 		<h3>[method:BiquadFilterNode getFilter]()</h3>
 		<p>
-		Returns the first element of the [page:Audio.filters filters] array.
+		Returns the first element of the [page:Audio.filters filters] list.
 		</p>
 
-		<h3>[method:Array getFilters]()</h3>
+		<h3>[method:list getFilters]()</h3>
 		<p>
-		Returns the [page:Audio.filters filters] array.
+		Returns the [page:Audio.filters filters] list.
 		</p>
 
-		<h3>[method:Boolean getLoop]()</h3>
+		<h3>[method:bool getLoop]()</h3>
 		<p>
 		Return the value of [link:https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/loop source.loop]
 		 (whether playback should loop).
@@ -147,24 +144,24 @@
 		Return the [page:Audio.gain gainNode].
 		</p>
 
-		<h3>[method:Float getPlaybackRate]()</h3>
+		<h3>[method:float getPlaybackRate]()</h3>
 		<p>
 		Return the value of [page:Audio.playbackRate playbackRate].
 		</p>
 
-		<h3>[method:Float getVolume]( value )</h3>
+		<h3>[method:float getVolume]( value )</h3>
 		<p>
 		Return the current volume.
 		</p>
 
-		<h3>[method:this play]( delay )</h3>
+		<h3>[method:self play]( delay )</h3>
 		<p>
-		If [page:Audio.hasPlaybackControl hasPlaybackControl] is true, starts playback.
+		If [page:Audio.hasPlaybackControl hasPlaybackControl] is `True`, starts playback.
 		</p>
 
-		<h3>[method:this pause]()</h3>
+		<h3>[method:self pause]()</h3>
 		<p>
-		If [page:Audio.hasPlaybackControl hasPlaybackControl] is true, pauses playback.
+		If [page:Audio.hasPlaybackControl hasPlaybackControl] is `True`, pauses playback.
 		</p>
 
 		<h3>[method:undefined onEnded]()</h3>
@@ -172,82 +169,77 @@
 		Called automatically when playback finished.
 		</p>
 
-		<h3>[method:this setBuffer]( audioBuffer )</h3>
+		<h3>[method:self setBuffer]( audioBuffer )</h3>
 		<p>
 		Setup the [page:Audio.source source] to the audioBuffer, and sets [page:Audio.sourceType sourceType] to 'buffer'.<br />
 		If [page:Audio.autoplay autoplay], also starts playback.
 		</p>
 
-		<h3>[method:this setDetune]( [param:Float value] )</h3>
+		<h3>[method:self setDetune]( [param:float value] )</h3>
 		<p>
 		Defines the detuning of oscillation in cents.
 		</p>
 
-		<h3>[method:this setFilter]( filter )</h3>
+		<h3>[method:self setFilter]( filter )</h3>
 		<p>
 		Applies a single filter node to the audio.
 		</p>
 
-		<h3>[method:this setFilters]( [param:Array value] )</h3>
+		<h3>[method:self setFilters]( [param:list value] )</h3>
 		<p>
-		value - arrays of filters.<br />
-		Applies an array of filter nodes to the audio.
+		value - lists of filters.<br />
+		Applies a list of filter nodes to the audio.
 		</p>
 
-		<h3>[method:this setLoop]( [param:Boolean value] )</h3>
+		<h3>[method:self setLoop]( [param:bool value] )</h3>
 		<p>
 		Set [link:https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/loop source.loop] to `value`
 		(whether playback should loop).
 		</p>
 
-		<h3>[method:this setLoopStart]( [param:Float value] )</h3>
+		<h3>[method:self setLoopStart]( [param:float value] )</h3>
 		<p>
 		Set [link:https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/loopStart source.loopStart] to `value`.
 		</p>
 
-		<h3>[method:this setLoopEnd]( [param:Float value] )</h3>
+		<h3>[method:self setLoopEnd]( [param:float value] )</h3>
 		<p>
 		Set [link:https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/loopEnd source.loopEnd] to `value`.
 		</p>
 
-		<h3>[method:this setMediaElementSource]( mediaElement )</h3>
+		<h3>[method:self setMediaElementSource]( mediaElement )</h3>
 		<p>
 		Applies the given object of type [link:https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement HTMLMediaElement] as the source of this audio.<br />
-		Also sets [page:Audio.hasPlaybackControl hasPlaybackControl] to false.
+		Also sets [page:Audio.hasPlaybackControl hasPlaybackControl] to `False`.
 		</p>
 
-		<h3>[method:this setMediaStreamSource]( mediaStream )</h3>
+		<h3>[method:self setMediaStreamSource]( mediaStream )</h3>
 		<p>
 		Applies the given object of type [link:https://developer.mozilla.org/en-US/docs/Web/API/MediaStream MediaStream] as the source of this audio.<br />
-		Also sets [page:Audio.hasPlaybackControl hasPlaybackControl] to false.
+		Also sets [page:Audio.hasPlaybackControl hasPlaybackControl] to `False`.
 		</p>
 
-		<h3>[method:this setNodeSource]( audioNode )</h3>
+		<h3>[method:self setNodeSource]( audioNode )</h3>
 		<p>
 		Setup the [page:Audio.source source] to the audioBuffer, and sets [page:Audio.sourceType sourceType] to 'audioNode'.<br />
-		Also sets [page:Audio.hasPlaybackControl hasPlaybackControl] to false.
+		Also sets [page:Audio.hasPlaybackControl hasPlaybackControl] to `False`.
 
 		</p>
 
-		<h3>[method:this setPlaybackRate]( [param:Float value] )</h3>
+		<h3>[method:self setPlaybackRate]( [param:float value] )</h3>
 		<p>
 		If [page:Audio.hasPlaybackControl hasPlaybackControl] is enabled, set the [page:Audio.playbackRate playbackRate] to `value`.
 		</p>
 
-		<h3>[method:this setVolume]( [param:Float value] )</h3>
+		<h3>[method:self setVolume]( [param:Float value] )</h3>
 		<p>
 		Set the volume.
 		</p>
 
-		<h3>[method:this stop]()</h3>
+		<h3>[method:self stop]()</h3>
 		<p>
 		If [page:Audio.hasPlaybackControl hasPlaybackControl] is enabled, stops playback.
 		</p>
 
-		<h2>Source</h2>
-
-		<p>
-			[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
-		</p>
 	</body>
-</html> -->
+</html>

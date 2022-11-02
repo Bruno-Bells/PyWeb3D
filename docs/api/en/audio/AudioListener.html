@@ -1,9 +1,4 @@
-<div style="color:rgb(158, 156, 156);align-items: center;	margin-left: auto; margin-right: auto; padding-top:20%;  width: 25em">
-
-	<h1 >Comming Soon...</h1>
-	<h1><a href="https://github.com/Bruno-Odinukweze/PyWeb3D#how-to-contribute" target="_blank" rel="noopener">How to Contribute</a></h1>
-</div >
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -17,37 +12,37 @@
 		<h1>[name]</h1>
 
 		<p class="desc">
-			The [name] represents a virtual [link:https://developer.mozilla.org/en-US/docs/Web/API/AudioListener listener] of the all positional and non-positional audio effects in the scene.<br />
-			A three.js application usually creates a single instance of [name]. It is a mandatory construtor parameter for audios entities like [page:Audio Audio] and [page:PositionalAudio PositionalAudio].<br />
+			The [name] represents a virtual [link:https://developer.mozilla.org/en-US/docs/Web/API/AudioListener listener] of all the positional and non-positional audio effects in the scene.<br />
+			A PyWeb3D application usually creates a single instance of [name]. It is a mandatory construtor parameter for audios entities like [page:Audio Audio] and [page:PositionalAudio PositionalAudio].<br />
 			In most cases, the listener object is a child of the camera. So the 3D transformation of the camera represents the 3D transformation of the listener.
 		</p>
 
 		<h2>Code Example</h2>
 
 		<code>
-		// create an AudioListener and add it to the camera
-		const listener = new THREE.AudioListener();
-		camera.add( listener );
+		# create an AudioListener and add it to the camera
+		listener = AudioListener()
+		camera.add( listener )
 
-		// create a global audio source
-		const sound = new THREE.Audio( listener );
+		# create a global audio source
+		const sound = Audio( listener )
 
-		// load a sound and set it as the Audio object's buffer
-		const audioLoader = new THREE.AudioLoader();
-		audioLoader.load( 'sounds/ambient.ogg', function( buffer ) {
-			sound.setBuffer( buffer );
-			sound.setLoop(true);
-			sound.setVolume(0.5);
-			sound.play();
-		});
+		# load a sound and set it as the Audio object's buffer
+		audioLoader = AudioLoader()
+
+		def audio_settings(buffer):
+			sound.setBuffer( buffer )
+			sound.setLoop( True )
+			sound.setVolume( 0.5 )
+			sound.play()
+
+		audioLoader.load( 'sounds/ambient.ogg', audio_settings)
 		</code>
 
 		<h2>Examples</h2>
 
 		<p>
-			[example:webaudio_sandbox webaudio / sandbox ]<br />
-			[example:webaudio_timing webaudio / timing ]<br />
-			[example:webaudio_visualizer webaudio / visualizer ]
+			[example:webaudio_play_audio play / audio ]<br />
 		</p>
 
 		<h2>Constructor</h2>
@@ -59,7 +54,7 @@
 		</p>
 
 
-		<h2>Properties</h2>
+		<h2>Instance Attributes</h2>
 
 		<h3>[property:AudioContext context]</h3>
 		<p>The [link:https://developer.mozilla.org/en-US/docs/Web/API/AudioContext AudioContext] of the [page:AudioListener listener] given in the constructor.</p>
@@ -69,9 +64,9 @@
 		using [link:https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createGain AudioContext.createGain]().</p>
 
 		<h3>[property:AudioNode filter]</h3>
-		<p>Default is `null`.</p>
+		<p>Default is `None`.</p>
 
-		<h3>[property:Number timeDelta]</h3>
+		<h3>[property:int timeDelta]</h3>
 		<p>Time delta value for audio entities. Use in context of [link:https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/linearRampToValueAtTime AudioParam.linearRampToValueAtTimeDefault](). Default is .</p>
 
 		<h2>Methods</h2>
@@ -82,36 +77,29 @@
 		Return the [page:AudioListener.gain gainNode].
 		</p>
 
-		<h3>[method:this removeFilter]()</h3>
+		<h3>[method:self removeFilter]()</h3>
 		<p>
-		Set the [page:AudioListener.filter filter] property to `null`.
+		Set the [page:AudioListener.filter filter] attribute to `None`.
 		</p>
 
 		<h3>[method:AudioNode getFilter]()</h3>
 		<p>
-		Returns the value of the [page:AudioListener.filter filter] property.
+		Returns the value of the [page:AudioListener.filter filter] attribute.
 		</p>
 
-		<h3>[method:this setFilter]( [param:AudioNode value] )</h3>
+		<h3>[method:self setFilter]( [param:AudioNode value] )</h3>
 		<p>
-		Set the [page:AudioListener.filter filter] property to `value`.
+		Set the [page:AudioListener.filter filter] attribute to `value`.
 		</p>
 
-		<h3>[method:Float getMasterVolume]()</h3>
+		<h3>[method:float getMasterVolume]()</h3>
 		<p>
 		Return the volume.
 		</p>
 
-		<h3>[method:this setMasterVolume]( [param:Number value] )</h3>
+		<h3>[method:self setMasterVolume]( [param:Number value] )</h3>
 		<p>
 		Set the volume.
 		</p>
-
-
-		<h2>Source</h2>
-
-		<p>
-			[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
-		</p>
 	</body>
-</html> -->
+</html>
