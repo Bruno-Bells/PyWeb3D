@@ -1,9 +1,4 @@
-<div style="color:rgb(158, 156, 156);align-items: center;	margin-left: auto; margin-right: auto; padding-top:20%;  width: 25em">
-
-	<h1 >Comming Soon...</h1>
-	<h1><a href="https://github.com/Bruno-Odinukweze/PyWeb3D#how-to-contribute" target="_blank" rel="noopener">How to Contribute</a></h1>
-</div >
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -19,12 +14,19 @@
 		with the exception of Texture Combine Operations which only apply to [page:MeshBasicMaterial.combine MeshBasicMaterial], [page:MeshLambertMaterial.combine MeshLambertMaterial] and [page:MeshPhongMaterial.combine MeshPhongMaterial].<br />
 		</p>
 
+		<p>
+			<strong>Note:</strong> All constant variables are imported from PyWeb3D. Assuming you imported PyWeb3D as follow:
+			<code>
+				from pyweb3d.pyweb3d import *
+			</code>
+		</p>
+
 
 		<h2>Side</h2>
 		<code>
-		THREE.FrontSide
-		THREE.BackSide
-		THREE.DoubleSide
+		FrontSide
+		BackSide
+		DoubleSide
 		</code>
 		<p>
 		Defines which side of faces will be rendered - front, back or both.
@@ -33,12 +35,12 @@
 
 		<h2>Blending Mode</h2>
 		<code>
-		THREE.NoBlending
-		THREE.NormalBlending
-		THREE.AdditiveBlending
-		THREE.SubtractiveBlending
-		THREE.MultiplyBlending
-		THREE.CustomBlending
+		NoBlending
+		NormalBlending
+		AdditiveBlending
+		SubtractiveBlending
+		MultiplyBlending
+		CustomBlending
 		</code>
 
 
@@ -51,32 +53,32 @@
 
 		<h2>Depth Mode</h2>
 		<code>
-		THREE.NeverDepth
-		THREE.AlwaysDepth
-		THREE.EqualDepth
-		THREE.LessDepth
-		THREE.LessEqualDepth
-		THREE.GreaterEqualDepth
-		THREE.GreaterDepth
-		THREE.NotEqualDepth
+		NeverDepth
+		AlwaysDepth
+		EqualDepth
+		LessDepth
+		LessEqualDepth
+		GreaterEqualDepth
+		GreaterDepth
+		NotEqualDepth
 		</code>
 		<p>
-		Which depth function the material uses to compare incoming pixels Z-depth against the current Z-depth buffer value. If the result of the comparison is true, the pixel will be drawn.<br />
-		[page:Materials NeverDepth] will never return true.<br />
-		[page:Materials AlwaysDepth] will always return true.<br />
-		[page:Materials EqualDepth] will return true if the incoming pixel Z-depth is equal to the current buffer Z-depth.<br />
-		[page:Materials LessDepth] will return true if the incoming pixel Z-depth is less than the current buffer Z-depth.<br />
-		[page:Materials LessEqualDepth] is the default and will return true if the incoming pixel Z-depth is less than or equal to the current buffer Z-depth.<br />
-		[page:Materials GreaterEqualDepth] will return true if the incoming pixel Z-depth is greater than or equal to the current buffer Z-depth.<br />
-		[page:Materials GreaterDepth] will return true if the incoming pixel Z-depth is greater than the current buffer Z-depth.<br />
-		[page:Materials NotEqualDepth] will return true if the incoming pixel Z-depth is not equal to the current buffer Z-depth.<br />
+		Which depth function the material uses to compare incoming pixels Z-depth against the current Z-depth buffer value. If the result of the comparison is `True', the pixel will be drawn.<br />
+		[page:Materials NeverDepth] will never return `True.<br />
+		[page:Materials AlwaysDepth] will always return `True.<br />
+		[page:Materials EqualDepth] will return `True if the incoming pixel Z-depth is equal to the current buffer Z-depth.<br />
+		[page:Materials LessDepth] will return `True if the incoming pixel Z-depth is less than the current buffer Z-depth.<br />
+		[page:Materials LessEqualDepth] is the default and will return `True if the incoming pixel Z-depth is less than or equal to the current buffer Z-depth.<br />
+		[page:Materials GreaterEqualDepth] will return `True if the incoming pixel Z-depth is greater than or equal to the current buffer Z-depth.<br />
+		[page:Materials GreaterDepth] will return `True if the incoming pixel Z-depth is greater than the current buffer Z-depth.<br />
+		[page:Materials NotEqualDepth] will return `True if the incoming pixel Z-depth is not equal to the current buffer Z-depth.<br />
 		</p>
 
 		<h2>Texture Combine Operations</h2>
 		<code>
-		THREE.MultiplyOperation
-		THREE.MixOperation
-		THREE.AddOperation
+		MultiplyOperation
+		MixOperation
+		AddOperation
 		</code>
 		<p>
 		These define how the result of the surface's color is combined with the environment map (if present), for [page:MeshBasicMaterial.combine MeshBasicMaterial], [page:MeshLambertMaterial.combine MeshLambertMaterial] and [page:MeshPhongMaterial.combine MeshPhongMaterial]. <br />
@@ -87,37 +89,37 @@
 
 		<h2>Stencil Functions</h2>
 		<code>
-		THREE.NeverStencilFunc
-		THREE.LessStencilFunc
-		THREE.EqualStencilFunc
-		THREE.LessEqualStencilFunc
-		THREE.GreaterStencilFunc
-		THREE.NotEqualStencilFunc
-		THREE.GreaterEqualStencilFunc
-		THREE.AlwaysStencilFunc
+		NeverStencilFunc
+		LessStencilFunc
+		EqualStencilFunc
+		LessEqualStencilFunc
+		GreaterStencilFunc
+		NotEqualStencilFunc
+		GreaterEqualStencilFunc
+		AlwaysStencilFunc
 		</code>
 		<p>
 		Which stencil function the material uses to determine whether or not to perform a stencil operation.<br />
-		[page:Materials NeverStencilFunc] will never return true.<br />
-		[page:Materials LessStencilFunc] will return true if the stencil reference value is less than the current stencil value.<br />
-		[page:Materials EqualStencilFunc] will return true if the stencil reference value is equal to the current stencil value.<br />
-		[page:Materials LessEqualStencilFunc] will return true if the stencil reference value is less than or equal to the current stencil value.<br />
-		[page:Materials GreaterStencilFunc] will return true if the stencil reference value is greater than the current stencil value.<br />
-		[page:Materials NotEqualStencilFunc] will return true if the stencil reference value is not equal to the current stencil value.<br />
-		[page:Materials GreaterEqualStencilFunc] will return true if the stencil reference value is greater than or equal to the current stencil value.<br />
-		[page:Materials AlwaysStencilFunc] will always return true.<br />
+		[page:Materials NeverStencilFunc] will never return `True.<br />
+		[page:Materials LessStencilFunc] will return `True if the stencil reference value is less than the current stencil value.<br />
+		[page:Materials EqualStencilFunc] will return `True if the stencil reference value is equal to the current stencil value.<br />
+		[page:Materials LessEqualStencilFunc] will return `True if the stencil reference value is less than or equal to the current stencil value.<br />
+		[page:Materials GreaterStencilFunc] will return `True if the stencil reference value is greater than the current stencil value.<br />
+		[page:Materials NotEqualStencilFunc] will return `True if the stencil reference value is not equal to the current stencil value.<br />
+		[page:Materials GreaterEqualStencilFunc] will return `True if the stencil reference value is greater than or equal to the current stencil value.<br />
+		[page:Materials AlwaysStencilFunc] will always return `True.<br />
 		</p>
 
 		<h2>Stencil Operations</h2>
 		<code>
-		THREE.ZeroStencilOp
-		THREE.KeepStencilOp
-		THREE.ReplaceStencilOp
-		THREE.IncrementStencilOp
-		THREE.DecrementStencilOp
-		THREE.IncrementWrapStencilOp
-		THREE.DecrementWrapStencilOp
-		THREE.InvertStencilOp
+		ZeroStencilOp
+		KeepStencilOp
+		ReplaceStencilOp
+		IncrementStencilOp
+		DecrementStencilOp
+		IncrementWrapStencilOp
+		DecrementWrapStencilOp
+		InvertStencilOp
 		</code>
 		<p>
 		Which stencil operation the material will perform on the stencil buffer pixel if the provided stencil function passes.<br />
@@ -133,8 +135,8 @@
 
 		<h2>Normal map type</h2>
 		<code>
-		THREE.TangentSpaceNormalMap
-		THREE.ObjectSpaceNormalMap
+		TangentSpaceNormalMap
+		ObjectSpaceNormalMap
 		</code>
 		<p>
 		Defines the type of the normal map. 
@@ -145,14 +147,14 @@
 
 		<h2>GLSL Version</h2>
 		<code>
-		THREE.GLSL1
-		THREE.GLSL3
+		GLSL1
+		GLSL3
 		</code>
 
-		<h2>Source</h2>
+		<!-- <h2>Source</h2>
 
 		<p>
 			[link:https://github.com/mrdoob/three.js/blob/master/src/constants.js src/constants.js]
-		</p>
+		</p> -->
 	</body>
-</html> -->
+</html>
