@@ -3,7 +3,7 @@
 
 In summary PyWeb3D is [three.js](https://threejs.org/) with python syntax. 
 
-eRead [documentation](https://www.pyweb3d.org/docs/docs.html#manual/en/introduction/Installation).
+Read [documentation](https://www.pyweb3d.org/docs/docs.html#manual/en/introduction/Installation).
 
 ## Aim of PyWeb3d
  - To extend the [three.js](https://threejs.org/) library and enable python developers to build 3D web applications (without or with basic knowledge of JavaScript)
