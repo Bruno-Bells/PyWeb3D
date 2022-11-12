@@ -1,9 +1,4 @@
-<div style="color:rgb(158, 156, 156);align-items: center;	margin-left: auto; margin-right: auto; padding-top:20%;  width: 25em">
-
-	<h1 >Comming Soon...</h1>
-	<h1><a href="https://github.com/Bruno-Odinukweze/PyWeb3D#how-to-contribute" target="_blank" rel="noopener">How to Contribute</a></h1>
-</div >
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -26,7 +21,7 @@
 		</p>
 
 		<h2>Constructor</h2>
-		<h3>[name]( [param:WebGLBuffer buffer], [param:GLenum type], [param:Integer itemSize], [param:Integer elementSize], [param:Integer count] )</h3>
+		<h3>[name]( [param:WebGLBuffer buffer], [param:GLenum type], [param:int itemSize], [param:int elementSize], [param:int count] )</h3>
 		<p>
 		`buffer` — Must be a <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLBuffer" target="_blank">WebGLBuffer</a>.
 		<br />
@@ -49,24 +44,24 @@
 		`count` — The expected number of vertices in VBO.
 		</p>
 
-		<h2>Properties</h2>
+		<h2>Instance Attributes</h2>
 
 		<h3>[property:WebGLBuffer buffer]</h3>
 		<p>
 			The current <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLBuffer" target="_blank">WebGLBuffer</a> instance.
 		</p>
 
-		<h3>[property:Integer count]</h3>
+		<h3>[property:int count]</h3>
 		<p>
 			The expected number of vertices in VBO.
 		</p>
 
-		<h3>[property:Integer itemSize]</h3>
+		<h3>[property:int itemSize]</h3>
 		<p>
 			How many values make up each item (vertex).
 		</p>
 
-		<h3>[property:Integer elementSize]</h3>
+		<h3>[property:int elementSize]</h3>
 		<p>
 			Stores the corresponding size in bytes for the current `type` property value.
 		</p>
@@ -84,38 +79,34 @@
 			using the `setType` method.
 		</p>
 
-		<h3>[property:Boolean isGLBufferAttribute]</h3>
+		<h3>[property:bool isGLBufferAttribute]</h3>
 		<p>
-			Read-only. Always `true`.
+			Read-only. Always `True`.
 		</p>
 
 		<h2>Methods</h2>
 
-		<h3>[method:this setBuffer]( buffer ) </h3>
+		<h3>[method:self setBuffer]( buffer ) </h3>
 		<p>Sets the `buffer` property.</p>
 
-		<h3>[method:this setType]( type, elementSize ) </h3>
+		<h3>[method:self setType]( type, elementSize ) </h3>
 		<p>Sets the both `type` and `elementSize` properties.</p>
 
-		<h3>[method:this setItemSize]( itemSize ) </h3>
+		<h3>[method:self setItemSize]( itemSize ) </h3>
 		<p>Sets the `itemSize` property.</p>
 
-		<h3>[method:this setCount]( count ) </h3>
+		<h3>[method:self setCount]( count ) </h3>
 		<p>Sets the `count` property.</p>
 
-		<h3>[property:Integer version]</h3>
+		<h3>[property:int version]</h3>
 		<p>
-		A version number, incremented every time the needsUpdate property is set to true.
+		A version number, incremented every time the needsUpdate property is set to True.
 		</p>
 
-		<h3>[property:Boolean needsUpdate]</h3>
+		<h3>[property:bool needsUpdate]</h3>
 		<p>
-		Default is `false`. Setting this to true increments [page:GLBufferAttribute.version version].
+		Default is `False`. Setting this to True increments [page:GLBufferAttribute.version version].
 		</p>
 
-		<h2>Source</h2>
-		<p>
-			[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
-		</p>
 	</body>
-</html> -->
+</html>
