@@ -1,9 +1,4 @@
-<div style="color:rgb(158, 156, 156);align-items: center;	margin-left: auto; margin-right: auto; padding-top:20%;  width: 25em">
-
-	<h1 >Comming Soon...</h1>
-	<h1><a href="https://github.com/Bruno-Odinukweze/PyWeb3D#how-to-contribute" target="_blank" rel="noopener">How to Contribute</a></h1>
-</div >
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -25,11 +20,11 @@
 			All classes that inherit from [page:Object3D] have an [page:Object3D.layers] property which is an instance of this class.
 		</p>
 
-		<h2>Examples</h2>
+		<!-- <h2>Examples</h2>
 
 		<p>
 			[example:webgl_layers WebGL / layers]
-		</p>
+		</p> -->
 
 		<h2>Constructor</h2>
 
@@ -39,9 +34,9 @@
 			Create a new Layers object, with membership initially set to layer 0.
 		</p>
 
-		<h2>Properties</h2>
+		<h2>Instance Attribute</h2>
 
-		<h3>[property:Integer mask]</h3>
+		<h3>[property:int mask]</h3>
 		<p>
 			A bit mask storing which of the 32 layers this layers object is currently a member of.
 		</p>
@@ -49,42 +44,42 @@
 
 		<h2>Methods</h2>
 
-		<h3>[method:undefined disable]( [param:Integer layer] )</h3>
+		<h3>[method:undefined disable]( [param:int layer] )</h3>
 		<p>
 			layer - an integer from 0 to 31.<br /><br />
 
 			Remove membership of this `layer`.
 		</p>
 
-		<h3>[method:undefined enable]( [param:Integer layer] )</h3>
+		<h3>[method:undefined enable]( [param:int layer] )</h3>
 		<p>
 			layer - an integer from 0 to 31.<br /><br />
 
 			Add membership of this `layer`.
 		</p>
 
-		<h3>[method:undefined set]( [param:Integer layer] )</h3>
+		<h3>[method:undefined set]( [param:int layer] )</h3>
 		<p>
 			layer - an integer from 0 to 31.<br /><br />
 
 			Set membership to `layer`, and remove membership all other layers.
 		</p>
 
-		<h3>[method:Boolean test]( [param:Layers layers] )</h3>
+		<h3>[method:bool test]( [param:Layers layers] )</h3>
 		<p>
 			layers - a Layers object<br /><br />
 
 			Returns true if this and the passed `layers` object have at least one layer in common.
 		</p>
 
-		<h3>[method:Boolean isEnabled]( [param:Integer layer] )</h3>
+		<h3>[method:bool isEnabled]( [param:int layer] )</h3>
 		<p>
 			layer - an integer from 0 to 31.<br /><br />
 
 			Returns true if the given layer is enabled.
 		</p>
 
-		<h3>[method:undefined toggle]( [param:Integer layer] )</h3>
+		<h3>[method:undefined toggle]( [param:int layer] )</h3>
 		<p>
 			layer - an integer from 0 to 31.<br /><br />
 
@@ -101,10 +96,6 @@
 			Remove membership from all layers.
 		</p>
 
-		<h2>Source</h2>
-
-		<p>
-			[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
-		</p>
+		
 	</body>
-</html> -->
+</html>

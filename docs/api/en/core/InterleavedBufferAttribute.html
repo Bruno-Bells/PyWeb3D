@@ -1,9 +1,4 @@
-<div style="color:rgb(158, 156, 156);align-items: center;	margin-left: auto; margin-right: auto; padding-top:20%;  width: 25em">
-
-	<h1 >Comming Soon...</h1>
-	<h1><a href="https://github.com/Bruno-Odinukweze/PyWeb3D#how-to-contribute" target="_blank" rel="noopener">How to Contribute</a></h1>
-</div >
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -20,11 +15,11 @@
 		</p>
 
 		<h2>Constructor</h2>
-		<h3>[name]( [param:InterleavedBuffer interleavedBuffer], [param:Integer itemSize], [param:Integer offset], [param:Boolean normalized] )</h3>
+		<h3>[name]( [param:InterleavedBuffer interleavedBuffer], [param:int itemSize], [param:int offset], [param:bool normalized] )</h3>
 		<p>
 		</p>
 
-		<h2>Properties</h2>
+		<h2>Instance Attributes</h2>
 
 		<h3>[property:InterleavedBuffer data]</h3>
 		<p>
@@ -36,7 +31,7 @@
 			The value of [page:InterleavedBufferAttribute.data data].array.
 		</p>
 
-		<h3>[property:Integer count]</h3>
+		<h3>[property:int count]</h3>
 		<p>
 			The value of [page:InterleavedBufferAttribute.data data].count.
 
@@ -44,86 +39,79 @@
 			then this will count the number of such items stored.
 		</p>
 
-		<h3>[property:Boolean isInterleavedBufferAttribute]</h3>
+		<h3>[property:bool isInterleavedBufferAttribute]</h3>
 		<p>
 			Read-only flag to check if a given object is of type [name].
 		</p>
 
-		<h3>[property:Integer itemSize]</h3>
+		<h3>[property:int itemSize]</h3>
 		<p>
 			How many values make up each item.
 		</p>
 
-		<h3>[property:String name]</h3>
+		<h3>[property:str name]</h3>
 		<p>
 		Optional name for this attribute instance. Default is an empty string.
 		</p>
 
-		<h3>[property:Boolean needsUpdate]</h3>
+		<h3>[property:bool needsUpdate]</h3>
 		<p>
-			Default is `false`. Setting this to `true` will send the entire interleaved buffer (not just the specific attribute data) to the GPU again.
+			Default is `False`. Setting this to `True` will send the entire interleaved buffer (not just the specific attribute data) to the GPU again.
 		</p>
 
-		<h3>[property:Boolean normalized]</h3>
+		<h3>[property:bool normalized]</h3>
 		<p>
-			Default is `false`.
+			Default is `False`.
 		</p>
 
-		<h3>[property:Integer offset]</h3>
+		<h3>[property:int offset]</h3>
 		<p>
-			The offset in the underlying array buffer where an item starts.
+			The offset in the underlying array buffer or list where an item starts.
 		</p>
 
 		<h2>Methods</h2>
 
-		<h3>[method:this applyMatrix4]( [param:Matrix4 m] )</h3>
+		<h3>[method:self applyMatrix4]( [param:Matrix4 m] )</h3>
 		<p>Applies matrix [page:Matrix4 m] to every Vector3 element of this InterleavedBufferAttribute.</p>
 
-		<h3>[method:this applyNormalMatrix]( [param:Matrix3 m] )</h3>
+		<h3>[method:self applyNormalMatrix]( [param:Matrix3 m] )</h3>
 		<p>Applies normal matrix [page:Matrix3 m] to every Vector3 element of this InterleavedBufferAttribute.</p>
 
-		<h3>[method:this transformDirection]( [param:Matrix4 m] )</h3>
+		<h3>[method:self transformDirection]( [param:Matrix4 m] )</h3>
 		<p>Applies matrix [page:Matrix4 m] to every Vector3 element of this InterleavedBufferAttribute, interpreting the elements as a direction vectors.</p>
 
-		<h3>[method:Number getX]( [param:Integer index] ) </h3>
+		<h3>[method:Number getX]( [param:int index] ) </h3>
 		<p>Returns the x component of the item at the given index.</p>
 
-		<h3>[method:Number getY]( [param:Integer index] ) </h3>
+		<h3>[method:Number getY]( [param:int index] ) </h3>
 		<p>Returns the y component of the item at the given index.</p>
 
-		<h3>[method:Number getZ]( [param:Integer index] ) </h3>
+		<h3>[method:Number getZ]( [param:int index] ) </h3>
 		<p>Returns the z component of the item at the given index.</p>
 
-		<h3>[method:Number getW]( [param:Integer index] ) </h3>
+		<h3>[method:Number getW]( [param:int index] ) </h3>
 		<p>Returns the w component of the item at the given index.</p>
 
-		<h3>[method:this setX]( [param:Integer index], [param:Float x] ) </h3>
+		<h3>[method:self setX]( [param:int index], [param:float x] ) </h3>
 		<p>Sets the x component of the item at the given index.</p>
 
-		<h3>[method:this setY]( [param:Integer index], [param:Float y] ) </h3>
+		<h3>[method:self setY]( [param:int index], [param:float y] ) </h3>
 		<p>Sets the y component of the item at the given index.</p>
 
-		<h3>[method:this setZ]( [param:Integer index], [param:Float z] ) </h3>
+		<h3>[method:self setZ]( [param:int index], [param:float z] ) </h3>
 		<p>Sets the z component of the item at the given index.</p>
 
-		<h3>[method:this setW]( [param:Integer index], [param:Float w] ) </h3>
+		<h3>[method:self setW]( [param:int index], [param:float w] ) </h3>
 		<p>Sets the w component of the item at the given index.</p>
 
-		<h3>[method:this setXY]( [param:Integer index], [param:Float x], [param:Float y] ) </h3>
+		<h3>[method:self setXY]( [param:int index], [param:float x], [param:float y] ) </h3>
 		<p>Sets the x and y components of the item at the given index.</p>
 
-		<h3>[method:this setXYZ]( [param:Integer index], [param:Float x], [param:Float y], [param:Float z] ) </h3>
+		<h3>[method:self setXYZ]( [param:int index], [param:float x], [param:float y], [param:float z] ) </h3>
 		<p>Sets the x, y and z components of the item at the given index.</p>
 
-		<h3>[method:this setXYZW]( [param:Integer index], [param:Float x], [param:Float y], [param:Float z], [param:Float w] ) </h3>
+		<h3>[method:self setXYZW]( [param:int index], [param:float x], [param:float y], [param:float z], [param:float w] ) </h3>
 		<p>Sets the x, y, z and w components of the item at the given index.</p>
 
-
-
-		<h2>Source</h2>
-
-		<p>
-			[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
-		</p>
 	</body>
-</html> -->
+</html>
