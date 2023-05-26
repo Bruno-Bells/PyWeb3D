@@ -56,7 +56,7 @@ Here's a HTML boilerplate:
 Check out the the [examples directory folder](https://github.com/Bruno-Odinukweze/PyWeb3D/tree/main/examples) for more examples on how to use pyWeb3D, all you need to do is open the `HTML` file in your browser.
 
 # How to Contribute
-If you like this project, please consider helping out. All contributions are welcome as well as donations to [Patreon](https://patreon.com/brunoodinukweze) or in Cryto\
+If you like this project, please consider helping out. All contributions are welcome as well as donations to [Patreon](https://patreon.com/brunoodinukweze) or in Crypto\
 `BTC: bc1qr4e3k6gpk5h82nduttzfq6lt5pnlkxpdjs98rp`\
 `DogeCoin: D7pr1DgNBEV5m5DrHNULFMcE1so5MvA945`\
 `BNB(Smart Chain): 0xa12E5b6370aDc7E714Fb8D901dA2631f22eDb0a5`
