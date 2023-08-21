@@ -4,7 +4,8 @@
 		"webaudio_play_audio",
 		"loading_3d_models_NissanZProto",
 		"webgl_3D_model_animation",
-		"webgl_test_memory"
+		"webgl_test_memory",
+		"webgl_geometry_extrude_shapes"
 	],
 	"webgl / nodes": [
 		
